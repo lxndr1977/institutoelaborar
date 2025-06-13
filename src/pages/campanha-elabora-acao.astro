@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+
+import imgBanner from '../assets/images/services/teste3.png';
+---
+
+<Layout>
+    <div class="py-20 space-y-6">
+        <section class="text-primary-900 pb-12 px-4 max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-secondary-600">Campanha <span class="text-primary-600">ELAbora Ação</span></h2>
+            <p class="mb-6">Você acredita na força da ação coletiva, na escuta, no cuidado e na transformação?</p>
+
+            <p class="mb-6">A <strong>Campanha ELAbora Ação</strong> marca o lançamento do <strong>Instituto ELAborar</strong>, uma organização da sociedade civil comprometida com a equidade, a saúde integral, a segurança e a autonomia das mulheres em comunidades e organizações do trabalho.</p>
+
+            <p class="mb-6"><strong>Nosso objetivo é levantar R$ 60 mil em 60 dias</strong>, para construirmos os primeiros passos desta caminhada de transformação e impacto social, dando sustentação à missão que nos move.</p>
+
+        </section>
+         <section class="w-full text-center">
+            <Image src={imgBanner} alt="Campanha" width="900" height="600" class="mx-auto"/>
+        </section>
+        <section class="text-primary-900 py-12 px-4 max-w-3xl mx-auto">
+
+            <p class="mb-6"><strong>Ao apoiar a campanha, você será reconhecida(o) na Galeria Pioneir@s da Causa ELAborar</strong>, um espaço permanente em nosso site dedicado a valorizar a rede que está construindo essa jornada por equidade, inclusão e pertencimento.</p>
+
+            <p class="mb-6">Não se trata de apoiar um projeto. <strong>Trata-se de apoiar uma missão, um compromisso, um propósito comprometido com justiça social e organizacional.</strong></p>
+
+            <p class="mb-6">Junte-se a nós. ELAbore Ação.</p>
+
+            <p class="mb-6">Apoie. Compartilhe. Inspire outras pessoas.</p>
+
+            <p class="mb-6">Porque Transformação Social se elabora na ação coletiva!</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                <a href="https://www.asaas.com/c/xx1j5nwnb4lsny7u" target="_blank" class="bg-primary-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:bg-primary-700 transition">
+                    Quero apoiar
+                </a>
+            </div>
+        </section>
+    </div>
+</Layout>

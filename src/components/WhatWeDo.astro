@@ -1,0 +1,64 @@
+---
+import { Heart, Book, MessagesSquare } from '@lucide/astro';
+
+const services = [
+  {
+    title: "Saúde Coletiva",
+    description: "Promovemos saúde integral, bem-estar e qualidade de vida, considerando as dimensões biopsicossocial.",
+    audienceText: "Público: Mulheres em vulnerabilidade social e trabalhadores(as)",
+    icon: Heart,
+    delay: 0,
+  },
+  {
+    title: "Educação",
+    description: "Apoiamos a curricularização da extensão, desenvolvendo projetos para a construção de campos de prática que contribuam para a formação profissional ética e cidadã.",
+    audienceText: "Público: Professores e estudantes universitários e técnicos",
+    icon: Book,
+    delay: 100,
+  },
+  {
+    title: "Comunicação",
+    description: "Trabalhamos na construção de redes, desenvolvendo pesquisas, conteúdo, formações e políticas que promovam maior equidade e inclusão. ",
+    audienceText: "Público: Sociedade civil e organizações públicas e privadas",
+    icon: MessagesSquare,
+    delay: 200,
+  },
+];
+---
+
+<section id="o-que-fazemos"  class="w-full bg-tertiary-200 relative py-28">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+    <div class="">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600 mb-6">
+            O que
+            <span class="text-primary-600">fazemos</span>
+          </h2>
+          <p class="text-lg text-foreground-950 leading-relaxed">
+            Trabalhamos para promover Saúde Integral, Equidade e Inclusão para e com mulheres em vulnerabilidade e organizações do trabalho.        
+          </p>
+        </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 space-y-12 sm:space-y-0">
+        {services.map(service => (
+          <div class="bg-primary-600 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300" data-aos="fade-up" data-aos-delay={service.delay}>
+            <div class="bg-[#935549] p-4 rounded-full w-16 h-16 flex items-center justify-center mb-5">
+              <service.icon class="w-8 h-8 text-tertiary-50" />
+            </div>
+            <h3 class="text-2xl font-medium text-tertiary-50 mb-3 pt-12">
+              {service.title}
+            </h3>
+            <p class="text-tertiary-50 mb-4">
+              {service.description}
+            </p>
+            <div class="flex items-center">
+              <span class="text-sm text-white">
+                {service.audienceText}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,63 @@
+---
+import { Handshake, DollarSign, BookOpen, Users, Scale } from '@lucide/astro';
+
+const services = [
+  {
+    title: "Parcerias e projetos",
+    description: "Atuamos na construção de redes, com instituições de ensino e organizações públicas, privadas e da sociedade civil.",
+    icon: Handshake, 
+  },
+  {
+    title: "Mobilização de Recursos",
+    description: "Mobilizamos recursos de formas distintas para viabilizar a realização da nossa missão na execução dos projetos.",
+    icon: DollarSign 
+  },
+  {
+    title: "Gestão Pedagógica", 
+    description: "Relacionamento com as comunidades e públicos; ações coletivas interdisciplinares e interprofissionais; formações docentes e discentes.",
+    icon: BookOpen
+  },
+  {
+    title: "Gestão Executiva",
+    description: "Gestão de recursos, prazos, equipes, atividades e prestação de contas, como responsáveis pela efetividade dos projetos.",
+    icon: Users
+  },
+  {
+    title: "Advocacy",
+    description: "Por meio de cada projeto produzimos diagnósticos sociais para defender, garantir e promover direitos relacionados à equidade de gênero e justiça social.",
+    icon: Scale
+  },
+];
+---
+
+<section id="transformacao-social" class="w-full bg-tertiary-50">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div class="lg:sticky lg:top-32 lg:self-start pr-16">
+          <h2 class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600 mb-6">
+              Transformação
+              <span class="text-primary-600">Social</span>
+          </h2>
+          <p class="text-lg text-primary-900 leading-relaxed">
+              Realizamos projetos de impacto social para promover saúde integral a mulheres em vulnerabilidade e fomentar a educação cidadã.
+          </p>
+        </div>
+
+        <div class="space-y-12">
+        {services.map(service => (
+            <div class="">
+              <div class="bg-tertiary-300 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-5">
+                <service.icon class="w-8 h-8 text-primary-900" />
+              </div>
+                <h3 class="text-2xl font-medium tracking-tighter text-secondary-600 mb-3">
+                    {service.title}
+                </h3>
+                <p class="text-primary-900 mb-4">
+                    {service.description}
+                </p>
+            </div>
+        ))}
+        </div>
+    </div>
+    </section>
+</section>

@@ -1,0 +1,211 @@
+---
+export interface Props {
+  logoText?: string;
+  logoSrc?: string;
+  logoAlt?: string;
+  logoUrl?: string;
+  navItems?: Array<{
+    label: string;
+    href: string;
+  }>;
+  ctaText?: string;
+  ctaUrl?: string;
+}
+
+const {
+  logoText = "",
+  logoSrc = "",
+  logoAlt = "",
+  logoUrl = "/",
+  navItems = [],
+  ctaText = "",
+  ctaUrl = ""
+} = Astro.props;
+
+import { HeartHandshake } from '@lucide/astro';
+
+---
+
+<!-- MAIN NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out bg-tertiary-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-auto py-3">
+            
+            <!-- Mobile menu button -->
+             <div class="flex items-center gap-3">
+            <div class="md:hidden">
+                <button type="button" class="text-primary-800 hover:text-white/80 focus:outline-none" id="mobile-menu-button">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href={logoUrl} class="flex items-centerpy-1">
+                    {logoSrc ? (
+                        <img 
+                            src={logoSrc} 
+                            alt={logoAlt}
+                            class="h-auto w-28 md:w-34" 
+                            width="756"
+                            height="257"
+                        />
+                    ) : (
+                        <div class="text-2xl font-bold">
+                            {logoText}
+                        </div>
+                    )}
+                </a>
+            </div>
+            </div>
+            <!-- Desktop menu -->
+            <div class="hidden md:block">
+                <div class="flex items-baseline space-x-1">
+                    {navItems.map((item) => (
+                        <a href={item.href} class="text-sm text-base text-primary-800 hover:text-primary-600 px-3 py-2 font-medium  tracking-tight transition-colors duration-200">
+                            {item.label}
+                        </a>
+                    ))}
+                </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="flex items-center">
+                <a href={ctaUrl} class=" mouse-pointer flex gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200">
+                    <HeartHandshake /> 
+                    {ctaText}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary-800 shadow-lg">
+            {navItems.map((item) => (
+                <a href={item.href} class="text-white hover:text-white/80 block px-3 py-2 text-base font-medium">
+                    {item.label}
+                </a>
+            ))}
+        </div>
+    </div>
+</nav>
+
+<!-- SECOND NAVBAR (SCROLL) -->
+<nav id="navbar-scroll" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-tertiary-100 shadow-lg transform -translate-y-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-auto py-2">
+            
+            <div class="flex items-center gap-3">
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button type="button" class="text-primary-800 hover:text-white/80 focus:outline-none" id="mobile-menu-button-scroll">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Logo menor -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href={logoUrl} class="flex items-center">
+                    {logoSrc ? (
+                        <img 
+                            src={logoSrc} 
+                            alt={logoAlt}
+                            class="h-auto w-28 md:w-32" 
+                        />
+                    ) : (
+                        <div class="text-lg font-bold text-primary-800">
+                            {logoText}
+                        </div>
+                    )}
+                </a>
+            </div>
+            </div>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:block">
+                <div class="flex items-baseline space-x-1">
+                    {navItems.map((item) => (
+                        <a href={item.href} class="text-primary-800 hover:text-primary-600 px-3 py-2 text-sm  tracking-tight font-medium transition-colors duration-200">
+                            {item.label}
+                        </a>
+                    ))}
+                </div>  
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="flex items-center">
+                <a href={ctaUrl}  class="mouse-pointer flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-1.5 rounded-md text-sm font-medium transition-colors duration-200">
+                    <HeartHandshake />{ctaText}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile menu scroll -->
+    <div class="md:hidden hidden" id="mobile-menu-scroll">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary-600 shadow-lg">
+            {navItems.map((item) => (
+                <a href={item.href} class="text-white hover:text-white/80 block px-3 py-2 text-base font-medium">
+                    {item.label}
+                </a>
+            ))}
+        </div>
+    </div>
+</nav>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    const mobileMenuButtonScroll = document.getElementById('mobile-menu-button-scroll');
+    const mobileMenuScroll = document.getElementById('mobile-menu-scroll');
+    
+    if (mobileMenuButtonScroll && mobileMenuScroll) {
+        mobileMenuButtonScroll.addEventListener('click', () => {
+            mobileMenuScroll.classList.toggle('hidden');
+        });
+    }
+
+    const navbar = document.getElementById('navbar');
+    const navbarScroll = document.getElementById('navbar-scroll');
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateNavbar() {
+        const scrollY = window.scrollY;
+        
+        if (scrollY === 0) {
+            navbar.className = ' transition-all duration-300 ease-in-out bg-tertiary-100 transform translate-y-0';
+            navbarScroll.className = 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-tertiary-100 shadow-lg transform -translate-y-[400px]';
+        } else if (scrollY > 50) {
+            navbar.className = ' transition-all duration-300 ease-in-out bg-tertiary-100 transform -translate-y-[400px]';
+            navbarScroll.className = 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-tertiary-100 shadow-lg transform translate-y-0';
+        }
+        
+        lastScrollY = scrollY;
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }
+
+    if (navbar && navbarScroll) {
+        window.addEventListener('scroll', requestTick);
+        updateNavbar();
+    }
+</script>

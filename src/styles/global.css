@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Em um arquivo .css global, como src/styles/global.css */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+@theme {
+  /* PRIMARY - Base: #833317 */
+/* PRIMARY - Base: #782a1b */
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef4444;
+  --color-primary-600: #782a1b; /* Base */
+  --color-primary-700: #5c1f14;
+  --color-primary-800: #451710;
+  --color-primary-900: #3a140d;
+  --color-primary-950: #1f0b07;
+
+  /* SECONDARY - Base: #de7b5f */
+  --color-secondary-50: #fef7f5;
+  --color-secondary-100: #feeee8;
+  --color-secondary-200: #feddd1;
+  --color-secondary-300: #fcc4ae;
+  --color-secondary-400: #f9a081;
+  --color-secondary-500: #f47c5b;
+  --color-secondary-600: #de7b5f; /* Base */
+  --color-secondary-700: #b85d43;
+  --color-secondary-800: #944a35;
+  --color-secondary-900: #783e2e;
+  --color-secondary-950: #3e1e16;
+
+  /* FOREGROUND - Base: #4b1b0e */
+  --color-foreground-50: #faf6f4;
+  --color-foreground-100: #f5ede7;
+  --color-foreground-200: #ebdbd1;
+  --color-foreground-300: #dcc1b0;
+  --color-foreground-400: #c9a187;
+  --color-foreground-500: #b88467;
+  --color-foreground-600: #4b1b0e; /* Base */
+  --color-foreground-700: #3a150b;
+  --color-foreground-800: #2f1109;
+  --color-foreground-900: #280e08;
+  --color-foreground-950: #140704;
+
+  /* TERTIARY - Base: #fcccbf */
+  --color-tertiary-50: #fffefb;
+  --color-tertiary-100: #fffcf6;
+  --color-tertiary-200: #fff7ec;
+  --color-tertiary-300: #ffeed7;
+  --color-tertiary-400: #ffdeb5;
+  --color-tertiary-500: #fec888;
+  --color-tertiary-600: #fcccbf; /* Base */
+  --color-tertiary-700: #d4a082;
+  --color-tertiary-800: #a97e65;
+  --color-tertiary-900: #896654;
+  --color-tertiary-950: #493629;
+}

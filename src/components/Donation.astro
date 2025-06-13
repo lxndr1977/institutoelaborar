@@ -1,0 +1,144 @@
+---
+// DonationOptions.astro
+const donationOptions = [
+  {
+    id: 'mensal-50',
+    amount: 'R$ 50',
+    frequency: 'Mensal',
+    description: 'Descrição....',
+    icon: '📚',
+    popular: false
+  },
+  {
+    id: 'mensal-100',
+    amount: 'R$ 100',
+    frequency: 'Mensal',
+    description: 'Descrição...',
+    icon: '💝',
+    popular: true
+  },
+  {
+    id: 'mensal-200',
+    amount: 'R$ 200',
+    frequency: 'Mensal',
+    description: 'Descrição...',
+    icon: '⚖️',
+    popular: false
+  },
+  {
+    id: 'unica-500',
+    amount: 'R$ 500',
+    frequency: 'Única',
+    description: 'Descrição...',
+    icon: '🌟',
+    popular: false
+  }
+];
+---
+
+<section class="w-full py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-primary-800 mb-4">
+        Faça Parte da Transformação
+      </h2>
+      <p class="text-lg text-primary-600 max-w-2xl mx-auto">
+        Sua doação fortalece nosso trabalho por justiça e equidade para todas as mulheres do Brasil
+      </p>
+    </div>
+
+    <!-- Donation Options Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      {donationOptions.map((option) => (
+        <div class={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 p-6 cursor-pointer group ${option.popular ? 'border-tertiary-400 ring-2 ring-pink-200' : 'border-primary-200 hover:border-pink-300'}`}>
+          
+          {/* Popular Badge */}
+          {option.popular && (
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="bg-primary-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                Mais Popular
+              </span>
+            </div>
+          )}
+
+
+          <!-- Amount and Frequency -->
+          <div class="text-center mb-4">
+            <div class="text-2xl font-bold text-primary-800 mb-1">
+              {option.amount}
+            </div>
+            <div class="text-sm font-medium text-primary-600 bg-tertiary-100 rounded-full px-3 py-1 inline-block">
+              {option.frequency}
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-primary-600 text-center text-sm mb-6 leading-relaxed">
+            {option.description}
+          </p>
+
+          <!-- CTA Button -->
+          <button 
+            class={`w-full py-3 px-4 rounded-xl font-semibold transition-all duration-200 ${
+              option.popular 
+                ? 'bg-primary-600 hover:bg-primary-600 text-white shadow-lg hover:shadow-xl' 
+                : 'bg-primary-100 hover:bg-primary-600 text-primary-700 hover:text-white group-hover:bg-primary-600 group-hover:text-white'
+            }`}
+            onclick={`handleDonation('${option.id}', '${option.amount}', '${option.frequency}')`}
+          >
+            Doar Agora
+          </button>
+        </div>
+      ))}
+    </div>
+
+    <!-- Additional Info -->
+    <div class="text-center">
+      <p class="text-primary-600 mb-4">
+        💳 Aceitamos PIX, Cartão de Crédito e Transferência Bancária
+      </p>
+      <div class="flex justify-center items-center space-x-4 text-sm text-primary-500">
+        <span class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          Seguro
+        </span>
+        <span class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          Transparente
+        </span>
+        <span class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          Dedutível do IR
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function handleDonation(id, amount, frequency) {
+    // Aqui você pode integrar com seu sistema de pagamento
+    console.log('Doação selecionada:', { id, amount, frequency });
+    
+    // Exemplo de integração com analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'donation_click', {
+        'donation_amount': amount,
+        'donation_frequency': frequency,
+        'donation_id': id
+      });
+    }
+    
+    // Redirecionar para página de pagamento ou abrir modal
+    // window.location.href = `/doar?valor=${amount}&tipo=${frequency}`;
+    
+    alert(`Redirecionando para doação de ${amount} ${frequency.toLowerCase()}...`);
+  }
+</script>

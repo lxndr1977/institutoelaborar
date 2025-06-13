@@ -1,0 +1,208 @@
+---
+import { Image } from 'astro:assets';
+import { Instagram, Linkedin, Smartphone, Mail } from "@lucide/astro";
+
+import logoTauana from '../assets/images/logos/tauana.png';
+import logoTripleA from '../assets/images/logos/logo-triple-a.png';
+import logoAlexandre from '../assets/images/logos/logo-alexandre-pereira.png';
+import logoSoftCs from '../assets/images/logos/logo-softcs.png';
+
+const CONTACT_INFO = {
+  phone: {
+    number: "5551993526153",
+    display: "(51) 99352-6153"
+  },
+  email: "contato@institutoelaborar.org"
+};
+
+const SOCIAL_LINKS = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/instituto.elaborar",
+    icon: Instagram,
+    iconProps: { width: 26, height: 26 }
+  },
+  {
+    name: "LinkedIn", 
+    url: "https://www.linkedin.com/company/institutoelaborar/",
+    icon: Linkedin,
+    iconProps: { width: 26, height: 20 }
+  },
+  {
+    name: "Spotify",
+    url: "https://open.spotify.com/show/23V0qlT5pEgUC1qpi3W72K?si=de7d6b918ffc4aaf",
+    icon: null, 
+    iconProps: null
+  }
+];
+
+const NAVIGATION_LINKS = [
+  { href: "#quem-somos", label: "Quem somos" },
+  { href: "#o-que-fazemos", label: "O que fazemos" },
+  { href: "#transformacao-social", label: "Transformação Social" },
+  { href: "#transformacao-organizacional", label: "Transformação Organizacional" }
+];
+
+const SUPPORTERS = [
+  { logo: logoTauana, alt: "Tauana", maxHeight: "max-h-12" },
+  { 
+    logo: logoTripleA, 
+    alt: "Triple A", 
+    maxHeight: "max-h-12",
+    url: "https://tripleaie.com.br/"
+  },
+  { logo: logoAlexandre, alt: "Alexandre", maxHeight: "max-h-10" },
+  { 
+    logo: logoSoftCs, 
+    alt: "SoftCs", 
+    maxHeight: "max-h-10",
+    url: "https://softcs.com.br/"
+  }
+];
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<footer id="contatos" class="bg-tertiary-200 text-primary-900">
+  <div class="max-w-7xl mx-auto px-6 py-28">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <div class="space-y-6 lg:col-span-2">
+        <div class="space-y-3">
+          <div class="flex items-center">
+            <img 
+              src={`${baseUrl}logo-instituto-elaborar.svg`} 
+              alt="Logo Instituto ELAborar" 
+              class="w-64 h-auto"
+              width="756"
+              height="314"
+            >
+          </div>
+          <p class="text-primary-900 text-sm">CNPJ: 12.345.678/0001-90</p>
+        </div>
+        
+        <div>
+          <h2 class="text-lg font-semibold text-primary-900 mb-2">Fale conosco</h2>
+          
+          <div class="mb-1">
+            <a href={`tel:${CONTACT_INFO.phone.number}`} class="flex items-center gap-2">
+              <Smartphone width={20} height={20} />
+              <span class="text-primary-600">{CONTACT_INFO.phone.display}</span>
+            </a>
+          </div>
+          
+          <div>
+            <a href={`mailto:${CONTACT_INFO.email}`} class="flex items-center gap-2">
+              <Mail width={20} height={20} />
+              <span class="text-primary-600">{CONTACT_INFO.email}</span>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h2 class="text-sm font-semibold text-primary-900 mb-3">Siga nas redes sociais</h2>
+          <div class="flex space-x-4">
+            {SOCIAL_LINKS.map((social) => (
+              <a 
+                href={social.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors"
+                aria-label={`Seguir no ${social.name}`}
+              >
+                {social.icon ? (
+                  <social.icon 
+                    class="text-tertiary-50" 
+                    {...social.iconProps}
+                  />
+                ) : (
+                  <div class="fill-tertiary-50 ps-[1px]">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="26" 
+                      height="26" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="#fffefb" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round" 
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-brand-spotify"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                      <path d="M8 11.973c2.5 -1.473 5.5 -.973 7.5 .527" />
+                      <path d="M9 15c1.5 -1 4 -1 5 .5" />
+                      <path d="M7 9c2 -1 6 -2 10 .5" />
+                    </svg>
+                  </div>
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex flex-col justify-between h-full">
+        <div>
+          <h2 class="text-lg font-semibold text-primary-900 mb-6">Informações</h2>
+          <nav class="grid grid-cols-1 gap-4">
+            <div class="space-y-3">
+              {NAVIGATION_LINKS.map((link) => (
+                <a 
+                  href={`${baseUrl}${link.href}`} 
+                  class="text-primary-900 hover:text-primary-900 transition-colors block"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </nav>
+        </div>
+        
+        <div class="mt-8">
+          <h2 class="text-sm font-semibold text-primary-900 mb-4">Nossos Apoiadores</h2>
+          <div class="flex flex-wrap items-center gap-4 justify-start">
+            {SUPPORTERS.map((supporter) => (
+              <div class="w-20 md:w-28 flex items-center justify-center">
+                {supporter.url ? (
+                  <a href={supporter.url} target="_blank" rel="noopener noreferrer">
+                    <Image 
+                      src={supporter.logo} 
+                      alt={supporter.alt} 
+                      class={`w-auto h-auto ${supporter.maxHeight}`}
+                    />
+                  </a>
+                ) : (
+                  <Image 
+                    src={supporter.logo} 
+                    alt={supporter.alt} 
+                    format="webp"
+                    class={`w-auto h-auto ${supporter.maxHeight}`}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bg-tertiary-300">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+        <p class="text-primary-900 text-sm">
+          © 2025 Instituto ELAborar. Todos os direitos reservados.
+        </p>
+        
+        <a 
+          href={`${baseUrl}politica-de-privacidade`} 
+          class="text-primary-900 hover:text-primary-900 transition-colors text-sm"
+        >
+          Política de Privacidade
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

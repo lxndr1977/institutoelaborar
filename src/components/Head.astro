@@ -1,0 +1,118 @@
+---
+import { Font } from 'astro:assets';
+import { SEO } from "astro-seo";
+
+const seoConfig = {
+  title: "Instituto ELAborar | Saúde Integral, Equidade e Inclusão para Mulheres",
+  description: "OSC que promove saúde integral e equidade para mulheres em vulnerabilidade social através de projetos educacionais, transformação organizacional e advocacy. Atuamos em pesquisa, ensino e assistência em todo o Brasil.",
+  canonical: "https://institutoelaborar.org", 
+  openGraph: {
+    basic: {
+      title: "Instituto ELAborar - Transformação Social e Organizacional",
+      type: "website",
+      image: "https://institutoelaborar.org/og-image.jpg", // Substitua pela imagem real
+      url: "https://institutoelaborar.org"
+    },
+    optional: {
+      description: "Organização da Sociedade Civil que trabalha por e com mulheres, promovendo saúde integral, equidade e inclusão através de projetos de impacto social e serviços especializados para organizações.",
+      locale: "pt_BR",
+      siteName: "Instituto ELAborar"
+    }
+  },
+  extend: {
+    link: [
+      { rel: "icon", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+      { rel: "manifest", href: "/site.webmanifest" }
+    ],
+    meta: [
+      
+      // Meta tags adicionais para SEO
+      {
+        name: "keywords",
+        content: "saúde integral, equidade de gênero, mulheres vulnerabilidade social, transformação social, educação cidadã, organizações trabalho, inclusão, pertencimento, advocacy, justiça social, OSC, ONGs Brasil, terceiro setor, empreendedorismo social, Brasil"
+      },
+      {
+        name: "author",
+        content: "Instituto ELAborar"
+      },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        name: "theme-color",
+        content: "#782a1b" // Substitua pela cor primária do site
+      },
+      
+      // Dados estruturados para organizações
+      {
+        name: "geo.region",
+        content: "BR"
+      },
+      {
+        name: "geo.country",
+        content: "Brasil"
+      },
+      
+      // Meta tags específicas para organizações sociais
+      {
+        property: "og:type",
+        content: "website"
+      },
+      {
+        property: "og:locale",
+        content: "pt_BR"
+      }
+    ]
+  }
+};
+---
+<Font cssVariable='--font-be-vietnam-pro' preload/>
+
+<SEO
+  title={seoConfig.title}
+  description={seoConfig.description}
+  canonical={seoConfig.canonical}
+  openGraph={seoConfig.openGraph}
+  extend={seoConfig.extend}
+/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Instituto ELAborar",
+  "alternateName": "ELAborar",
+  "url": "https://institutoelaborar.org",
+  "logo": "https://institutoelaborar.org/logo-instituto-elaborar.svg",
+  "description": "OSC que promove saúde integral e equidade para mulheres em vulnerabilidade social através de projetos educacionais, transformação organizacional e advocacy.",
+  "foundingDate": "2025",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR",
+    "addressRegion": "Brasil"
+  },
+  "areaServed": "BR",
+  "knowsAbout": [
+    "Saúde Integral",
+    "Equidade de Gênero",
+    "Transformação Social",
+    "Educação Cidadã",
+    "Advocacy",
+    "Justiça Social"
+  ],
+  "sameAs": [
+    "https://www.instagram.com/instituto.elaborar",
+    "https://www.linkedin.com/company/institutoelaborar",
+  ]
+}
+</script>
+
+<style>
+    body {
+        font-family: var(--font-be-vietnam-pro);
+    }
+</style>

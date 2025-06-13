@@ -1,11 +1,70 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import '../styles/global.css'
+import Navbar from '../components/Navbar.astro';
+import AboutUs from '../components/AboutUs.astro';
+import Members from '../components/Members.astro';
+import Partners from '../components/Partners.astro';
+import Services from '../components/Services.astro';
+import Hero2 from '../components/Hero2.astro';
+import SocialAction from '../components/SocialAction.astro';
+import Project from '../components/Project.astro';
+import MissionVision from '../components/MissionVision.astro';
+import Cta from '../components/Cta.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappButton from '../components/WhatsappButton.astro';
 import Layout from '../layouts/Layout.astro';
+import WhatWeDo from '../components/WhatWeDo.astro';
+import Ods from '../components/Ods.astro';
+import Segments from '../components/Segments.astro';
+import FoundingMembers from '../components/FoundingMembers.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const navItems = [
+  { label: "Quem Somos", href: `${import.meta.env.BASE_URL}#quem-somos` },
+  { label: "O que fazemos", href: `${import.meta.env.BASE_URL}#o-que-fazemos` },
+  { label: "Transformação Social", href: `${import.meta.env.BASE_URL}#transformacao-social` },
+  { label: "Transformação Organizacional", href: `${import.meta.env.BASE_URL}#transformacao-organizacional` },
+  { label: "Contato", href: `${import.meta.env.BASE_URL}/#contatos` }
+];
 ---
 
 <Layout>
-	<Welcome />
+    
+    <!-- <section class="relative"> -->
+      
+    <Hero2 />
+    <!-- </section> -->
+   
+    <AboutUs />
+
+    <Segments />
+
+    <MissionVision />
+
+    <Members />
+
+    <FoundingMembers />
+
+    <WhatWeDo />
+     
+    <SocialAction />
+
+    <Partners />
+      
+    <Project />
+    
+    <Services />
+    
+    <Cta />
+    
+    <Ods /> 
+
+    <WhatsappButton />
+
 </Layout>
+

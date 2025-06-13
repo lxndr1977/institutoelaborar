@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+
+import logoUnisinos from '../assets/images/logos/logo-unisinos.png';
+import logoSjmr from '../assets/images/logos/logo-sjmr.png';
+import logoApac from '../assets/images/logos/logo-apac-bh.png';
+const logos = [
+  {
+    src: logoUnisinos,
+    alt: 'Unisinos',
+    delay: 0,
+    url: 'https://www.unisinos.br/'
+  },
+  {
+    src: logoSjmr,
+    alt: 'SJMR Brasil',
+    delay: 100,
+    url: 'https://sjmrbrasil.org/'
+  },
+  {
+    src: logoApac,
+    alt: 'Apac BH',
+    delay: 200,
+    url: 'https://www.instagram.com/apacfemininabh/'
+  }
+]
+---
+
+<section class="w-full bg-tertiary-100">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-28">
+        
+        <div class="mb-2">
+          <h2 class="text-4xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-4">
+            Parceiros
+            <span class="text-primary-600">Institucionais</span>
+          </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            {logos.map(logo => (
+                <div class="flex justify-center" data-aos="fade-up" data-aos-delay={logo.delay}>
+                    <a href={logo.url} target="_blank">
+                      <Image src={logo.src} alt={logo.alt} width="300" height="300"/>
+                    </a>
+                </div>
+            ))}
+        </div>
+    </section>
+</section>

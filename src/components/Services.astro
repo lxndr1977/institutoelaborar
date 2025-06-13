@@ -1,0 +1,138 @@
+---
+import { Presentation, LibraryBig, NotebookPen, Users } from '@lucide/astro';
+import { Image } from 'astro:assets';
+
+import img1 from '../assets/images/services/saude-coletiva.jpg';
+import img2 from '../assets/images/services/educacao2.jpg';
+import img3 from '../assets/images/services/comunicacao.jpg';
+
+const SECTION_INFO = {
+  title: "Transformação",
+  titleHighlight: "Organizacional",
+  description: [
+    "Realizamos serviços especializados para Organizações do Trabalho, para promover saúde e equidade de gênero de maneira interseccional.",
+    "Os serviços estão direcionados ao fortalecimento da nossa missão. <strong>Todo o lucro é revertido para a sustentabilidade do Instituto ELAborar e suas ações sociais</strong>. Os serviços são customizáveis e ofertados em português e/ou inglês."
+  ]
+};
+
+const METHODOLOGY_SERVICES = [
+  {
+    icon: NotebookPen,
+    title: "Pesquisas e Diagnósticos",
+    description: "Trabalhamos com diferentes metodologias e instrumentos de pesquisa para Diagnóstico de diferentes fernômenos e processos nos contextos das organizações de trabalho.",
+    bgColor: "bg-primary-800",
+    delay: 0
+  },
+  {
+    icon: Presentation,
+    title: "Palestras e Workshops",
+    description: "Realizamos palestras temáticas e workshops para desenvolver competências, habilidades e atitudes nos níveis individuais e organizacionais.",
+    bgColor: "bg-primary-600",
+    delay: 100
+  },
+  {
+    icon: Users,
+    title: "Experiências (Inter)Culturais",
+    description: "Abordagens inovadoras que acionam sentidos, afetos e criatividade através do cinema, teatro e literatura, considerando diferentes contextos culturais.",
+    bgColor: "bg-secondary-700",
+    delay: 200
+  },
+  {
+    icon: LibraryBig,
+    title: "Grupos de Estudos",
+    description: "Facilitamos grupos para formação, aprofundamento e debate nos temas através do uso de diferentes dinâmicas, fontes e mídias.",
+    bgColor: "bg-secondary-600",
+    delay: 300
+  }
+];
+
+const FOCUS_AREAS = [
+  {
+    image: img1,
+    alt: "Saúde Coletiva - Profissionais em ambiente de trabalho saudável",
+    title: "Saúde Coletiva",
+    description: "Saúde mental, dimensões sociais, fenômenos ocupacionais e bem-estar, em conformidade com as diretrizes da NR-1.",
+    delay: 0
+  },
+  {
+    image: img2,
+    alt: "Educação - Ambiente de aprendizagem e desenvolvimento profissional",
+    title: "Educação",
+    description: "Formações e Desenvolvimento de Competências e Habilidades.",
+    delay: 100
+  },
+  {
+    image: img3,
+    alt: "Comunicação - Profissionais em interação e diálogo",
+    title: "Comunicação",
+    description: "Liderança, Comportamentos e Relações Interpessoais / Interculturais.",
+    delay: 200
+  }
+];
+
+const COMMON_STYLES = {
+  icon: "w-8 h-8 text-tertiary-50",
+  cardTitle: "text-lg font-medium text-tertiary-50 mt-12 mb-2",
+  cardDescription: "text-tertiary-50",
+  serviceTitle: "text-2xl tracking-tighter font-medium text-secondary-600 mb-3",
+  serviceDescription: "text-primary-900 leading-relaxed"
+};
+---
+
+<section id="transformacao-organizacional" class="w-full bg-tertiary-200 py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div>
+      <h2 class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600 mb-4">
+        {SECTION_INFO.title}
+        <span class="text-primary-600">{SECTION_INFO.titleHighlight}</span>
+      </h2>
+      
+      {SECTION_INFO.description.map((paragraph, index) => (
+        <p 
+          class={`text-lg text-primary-900 leading-relaxed max-w-3xl ${index === 0 ? 'mb-3' : ''}`}
+          set:html={paragraph}
+        />
+      ))}
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-28" data-aos="fade-up" data-aos-delay="200">
+      {METHODOLOGY_SERVICES.map((service) => (
+        <div class={`${service.bgColor} rounded-lg p-8`}>
+          <service.icon class={COMMON_STYLES.icon} />
+          <h3 class={COMMON_STYLES.cardTitle}>
+            {service.title}
+          </h3>
+          <p class={COMMON_STYLES.cardDescription}>
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 space-y-12 sm:space-y-0">
+      {FOCUS_AREAS.map((area) => (
+        <div class="text-center" data-aos="fade-up" data-aos-delay={area.delay}>
+          <div class="mb-5">
+            <Image 
+              src={area.image} 
+              alt={area.alt} 
+              format='webp'
+              width="900" 
+              height="600" 
+              class="rounded-lg"
+            />
+          </div>
+          
+          <h3 class={`${COMMON_STYLES.serviceTitle} text-center`}>
+            {area.title}
+          </h3>
+          
+          <p class={COMMON_STYLES.serviceDescription}>
+            {area.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

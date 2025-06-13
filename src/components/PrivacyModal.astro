@@ -1,0 +1,72 @@
+<div id="privacy-modal" class="fixed bottom-4 left-4 max-w-sm md:max-w-md lg:max-w-lg bg-white border border-primary-100 rounded-lg shadow-lg p-4 z-50 transform transition-transform duration-300">
+  <div class="flex flex-col space-y-3 md:flex-row md:items-center md:space-y-0 md:space-x-4">
+    <p class="text-xs text-gray-700 leading-relaxed md:flex-1">
+      Ao continuar navegando neste site, você concorda com o uso de cookies e com a nossa <a href=`${import.meta.env.BASE_URL}politica-de-privacidade` class="underline">Política de Privacidade.</a>
+    </p>
+    
+    <button 
+      id="accept-privacy" 
+      class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 text-xs md:flex-shrink-0 hover:cursor-pointer"
+    >
+      Eu concordo
+    </button>
+  </div>
+</div>
+
+<script>
+  function setCookie(name, value, hours) {
+    const date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  const hasAcceptedCookies = getCookie('privacy-accepted');
+  const modal = document.getElementById('privacy-modal');
+  const acceptButton = document.getElementById('accept-privacy');
+
+  if (!hasAcceptedCookies) {
+    modal.style.display = 'block';
+  } else {
+    modal.style.display = 'none';
+  }
+
+  acceptButton.addEventListener('click', () => {
+    setCookie('privacy-accepted', 'true', 1);
+    
+    modal.style.transform = 'translateX(-100%)';
+    modal.style.opacity = '0';
+    
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300);
+  });
+</script>
+
+<style>
+  #privacy-modal {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+</style>

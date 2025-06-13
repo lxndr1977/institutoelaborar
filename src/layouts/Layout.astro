@@ -1,3 +1,21 @@
+---
+import Head from "../components/Head.astro"
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import PrivacyModal from '../components/PrivacyModal.astro';
+import WhatsappButton from '../components/WhatsappButton.astro';
+
+import '../styles/global.css'
+
+const navItems = [
+	{ label: "O que fazemos", href: `${import.meta.env.BASE_URL}#o-que-fazemos` },
+	{ label: "Quem Somos", href: `${import.meta.env.BASE_URL}#quem-somos` },
+	{ label: "Transformação Social", href: `${import.meta.env.BASE_URL}#transformacao-social` },
+	{ label: "Transformação Organizacional", href: `${import.meta.env.BASE_URL}#transformacao-organizacional` },
+	{ label: "Contato", href: `${import.meta.env.BASE_URL}#contatos` }
+];
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,10 +23,36 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Instituto Elaborar</title>
+		
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="robots" content="noindex"> <!--- REMOVER -->
+
+		<Head />
 	</head>
-	<body>
+	<body class="bg-tertiary-50">
+		<Navbar
+			logoSrc={`${import.meta.env.BASE_URL}logo-instituto-elaborar-v2.svg`}
+			logoAlt="Instituto ELAborar"
+			logoUrl="/"
+			navItems={navItems}
+			ctaText="Doe aqui"
+			ctaUrl="https://www.asaas.com/c/xx1j5nwnb4lsny7u" 
+			/>        
+        
 		<slot />
+
+	    <WhatsappButton />
+		<PrivacyModal />
+
+      	<Footer />
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				AOS.init();
+			});
+		</script>
 	</body>
 </html>
 
@@ -18,5 +62,9 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	html {
+		scroll-behavior: smooth;
 	}
 </style>

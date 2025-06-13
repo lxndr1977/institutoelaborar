@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+
+import 'swiper/css';
+
+import imgFernandaMoraes from '../assets/images/team/fernanda-moraes.jpg';
+import imgLuizTonaco from '../assets/images/team/luiz-tonaco.jpg';
+import imgLucasMartins from '../assets/images/team/lucas-martins.jpg';
+import imgDiegoCezar from '../assets/images/team/diego-cezar.jpg';
+import imgCamilaVieira from '../assets/images/team/camila-vieira.jpg';
+import imgRobsGawlinski from '../assets/images/team/robs-gawlinksi.jpg';
+
+const foundingMembers = [
+  {
+    image: imgLuizTonaco,
+    name: 'Luiz Tonaco',
+    link: 'https://www.linkedin.com/in/luis-ant%C3%B4nio-tonaco-257522136?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+  },
+  {
+    image: imgDiegoCezar,
+    name: 'Diego Cezar',
+    link: 'https://www.linkedin.com/in/diegomcezar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+  },
+  {
+    image: imgLucasMartins,
+    name: 'Lucas Martins',
+    link: 'https://br.linkedin.com/in/lucas-martins-280a71139'
+  },
+  {
+    image: imgFernandaMoraes,
+    name: 'Fernanda Moraes',
+    link: 'https://www.linkedin.com/in/fernanda-moraes-7bab938b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+  },
+  {
+    image: imgRobsGawlinski,
+    name: 'Robs Gawlinski',
+    link: 'https://www.linkedin.com/in/robson-gawlinski-cunha-%F0%9F%8F%B3%EF%B8%8F%E2%80%8D%F0%9F%8C%88-480747165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+  },
+  {
+    image: imgCamilaVieira,
+    name: 'Camila Vieira',
+    link: 'https://www.linkedin.com/in/camila-vieira-sousa-6631711b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+  }
+];
+---
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-28">
+    <div class="text-center mb-16">
+        <h2 class="text-2xl lg:text-3xl font-medium text-secondary-600 mb- tracking-tighter">
+            Associados <span class="text-primary-600 tracking-tighter ml-1">Fundadores</span>
+        </h2>
+    </div>
+
+   <div>
+    <div class="swiper">
+        <div class="swiper-wrapper py-2 relative">
+            {foundingMembers.sort((a, b) => a.name.localeCompare(b.name)).map((member) => (
+                <div class="swiper-slide ">
+                <a
+                    href={member.link}
+                    class="flex flex-col items-center text-center transition transition-transform duration-300 ease-in-out hover:-translate-y-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Image
+                    src={member.image}
+                    alt={`Foto de ${member.name}`}
+                    width="96"
+                    height="96"
+                    class="rounded-md  mb-3 object-cover"
+                    />
+                    <span class="font-medium text-sm text-primary-600">{member.name}</span>
+                </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+
+</section>
+
+<script>
+  import Swiper from 'swiper/bundle';
+  import 'swiper/css/bundle';
+
+  new Swiper('.swiper', {
+    slidesPerView: 3.5,
+    spaceBetween: 16,
+    centerInsufficientSlides: true,
+    breakpoints: {
+      640: {
+        slidesPerView: 2.5,
+      },
+      768: {
+        slidesPerView: 3.5,
+      },
+      1024: {
+        slidesPerView: 6.5,
+      },
+    },
+  });
+</script>

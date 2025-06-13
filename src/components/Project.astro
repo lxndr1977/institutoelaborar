@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+
+import img from '../assets/images/services/projeto.jpg';
+---
+
+<section class="w-full bg-accent-200 pb-28">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div>
+                <Image src={img} width="900" height="600" alt="Projeto" class="rounded-lg">
+            </div>
+            
+            <div>
+                <h2 class="text-4xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
+                    Projeto
+                    ELAbora <span class="text-primary-600">Mulheres - Reconstruindo Vidas no Pós-Enchente RS</span>
+                </h2>
+                
+                <p class="text-primary-900 leading-relaxed mb-4">
+                    Junto aos nossos parceiros institucionais, trabalhamos para promover Saúde Integral para e 
+                    com mulheres e crianças em vulnerabilidade social, em uma comunidade periférica do município 
+                    de São Leopoldo, RS. Ao desenvolvermos o trabalho com profissionais especializados, estudantes
+                    e professores universitários, fomentamos a Educação Cidadã. O projeto está comprometido com
+                    o desenvolvimento de uma Cartografia Social, um ano após as enchentes.             
+                </p>
+            </div>
+        </div>
+    </section>
+</section>
