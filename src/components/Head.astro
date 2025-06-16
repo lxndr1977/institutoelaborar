@@ -133,6 +133,26 @@ const seoConfig = {
   gtag('config', 'AW-17215894711');
 </script> 
 
+
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17215894711/77RQCIXExdwaELfplpFA',
+      'value': 1.0,
+      'currency': 'BRL',
+      'transaction_id': '',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
 <style>
     body {
         font-family: var(--font-be-vietnam-pro);
