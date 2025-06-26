@@ -12,7 +12,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  base: '/instituto-elaborar/',
+  base: '',
   output: 'static',
 
   experimental: {
