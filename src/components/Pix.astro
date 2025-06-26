@@ -1,0 +1,246 @@
+---
+import {Image} from 'astro:assets';
+import qrCodePix from '../assets/images/qrcode-chave-pix-cnpj.jpg';
+const baseUrl = import.meta.env.BASE_URL;
+
+// Props
+interface Props {
+    variant?: 'compact' | 'full';
+    pixKey?: string;
+    companyName?: string;
+    companyCnpj?: string;
+}
+
+const { 
+    variant = 'compact', 
+    pixKey = "57976788000193",
+    companyName = "Instituto ELAborar - Saúde Coletiva, Educação e Comunicação",
+    companyCnpj = "57.976.788/0001-93"
+} = Astro.props;
+---
+
+{variant === 'compact' ? (
+    <!-- Versão Compacta -->
+        <button 
+                id="desktop-modal-btn"
+                class="cursor-pointer flex items-center justify-center gap-2 text-md mouse-pointer border border-primary text-primary-600 hover:text-primary-700 px-4 py-3 w-full rounded-md font-medium transition-colors duration-200 text-center"
+            >
+               <img src={`${baseUrl}icons/pix.svg`} class="w-6 h-6" alt="Pix" />
+                Chave Pix
+            </button>
+) : (
+    <!-- Versão Completa -->
+    <div class="flex flex-col md:flex-row items-center gap-6 ">
+        <!-- Texto do lado esquerdo -->
+        <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+                <img src={`${baseUrl}icons/pix.svg`} class="w-6 h-6" alt="Pix" />
+                <span class="text-sm md:text-base font-semibold">Doe via Pix</span>
+            </div>
+            <p class="text-sm text-primary-900 mb-4">
+                Escaneie o QR Code ou clique no botão "Doar com Pix" para copiar a chave.
+            </p>
+            <p class="text-sm text-primary-900 mb-3">
+               Antes de concluir a doação, verifique se os dados bancários do beneficiário são estes:
+            </p>
+            <div class="bg-tertiary-300 p-3 rounded  space-y-2 mb-6">
+               <p class="font-semibold text-primary-900 leading-5">{companyName}</p>
+               <p class="text-sm text-primary-900">CNPJ: {companyCnpj}</p>
+            </div>
+
+            <button 
+                id="full-donate-btn"
+                class="bg-primary-600 hover:bg-primary-700 text-white py-2 px-6 rounded transition-colors text-sm font-medium"
+                data-pix-key={pixKey}
+            >
+                Copiar chave Pix
+            </button>
+        </div>
+        
+        <!-- QR Code do lado direito -->
+        <div class="flex-shrink-0 p-4 hidden md:block">
+            <img src=`${baseUrl}qrcode-pix-cnpj.svg` alt="QR Code Pix" width="200" height="200"  />
+        </div>
+    </div>
+)}
+
+<!-- Modal Universal -->
+<div id="pix-modal" class="fixed inset-0 bg-zinc-900/70 invisible transition-all duration-300 flex items-center justify-center z-50">
+    <div id="modal-content" class="bg-white rounded p-6 max-w-2xl mx-4 transform scale-95 transition-transform duration-300 w-full">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-semibold text-primary-600">Doação com Pix</h3>
+            <button id="close-modal" class="text-gray-500 hover:text-primary-900 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Conteúdo do Modal -->
+        <div class="flex flex-col md:flex-row gap-6 text-primary-600">
+            <!-- Texto informativo -->
+            <div class="flex-1">
+                <div class="mb-4">
+                    <!-- Mensagem de sucesso mobile -->
+                    <div id="mobile-success-message" class="md:hidden bg-green-100 border border-green-400 text-green-700 px-3 py-2 rounded mb-4 hidden">
+                        <p class="font-semibold">✓ Chave copiada com sucesso!</p>
+                        <p class="text-sm">Finalize a doação no app do seu banco.</p>
+                    </div>
+                    
+                    <!-- Mensagem de sucesso desktop -->
+                    <div id="desktop-success-message" class="bg-green-100 border border-green-400 text-green-700 px-3 py-2 rounded mb-4  transition-all duration-300">
+                        <p class="font-semibold">✓ Chave copiada com sucesso!</p>
+                        <p class="text-sm">Finalize a doação no app do seu banco.</p>
+                    </div>
+                    
+                    <!-- Mensagem desktop inicial -->
+                    <p id="desktop-initial-message" class="text-sm text-primary-900 mb-3 hidden md:block">
+                        Cole a chave Pix no app do seu banco ou escaneie o QR Code.
+                    </p>
+                    
+                    <p class="text-sm text-primary-900 mb-3">
+                        Antes de concluir o pagamento da sua doação, verifique se os dados bancários do beneficiário são estes:
+                    </p>
+                    <div class="bg-tertiary-300 p-3 rounded  space-y-2">
+                        <p class="font-semibold text-primary-900 leading-5">{companyName}</p>
+                        <p class="text-sm text-primary-900">CNPJ: {companyCnpj}</p>
+                    </div>
+                    <p class="text-sm text-primary-900 mt-3">
+                        Se as informações estiverem iguais, finalize o pagamento com segurança.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- QR Code (oculto no mobile) -->
+            <div class="hidden md:block flex-shrink-0">
+                <img src=`${baseUrl}qrcode-pix-cnpj.svg` alt="QR Code Pix" width="200" height="200" />
+                <p class="text-xs text-primary-900 text-center mt-2">Escaneie com seu app bancário</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script define:vars={{ variant, pixKey }}>
+    // Função para copiar para área de transferência
+    async function copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+            return true;
+        } catch (err) {
+            // Fallback para navegadores mais antigos
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            return true;
+        }
+    }
+    
+    // Função para exibir toast de sucesso
+    function showSuccessToast() {
+        const toast = document.getElementById('success-toast');
+        toast.classList.remove('invisible', 'opacity-0');
+        toast.classList.add('opacity-100');
+        
+        setTimeout(() => {
+            toast.classList.remove('opacity-100');
+            toast.classList.add('opacity-0', 'invisible');
+        }, 3000);
+    }
+    
+    // Função para abrir modal
+    function openModal() {
+        const modal = document.getElementById('pix-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        modal.classList.remove('invisible', 'opacity-0');
+        modal.classList.add('opacity-100');
+        
+        setTimeout(() => {
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }, 10);
+    }
+    
+    // Função para fechar modal
+    function closeModal() {
+        const modal = document.getElementById('pix-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        modalContent.classList.remove('scale-100');
+        modalContent.classList.add('scale-95');
+        
+        setTimeout(() => {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'invisible');
+        }, 150);
+    }
+    
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        if (variant === 'compact') {
+            // Botão mobile - copiar e abrir modal
+            const mobileCopyBtn = document.getElementById('mobile-copy-btn');
+            mobileCopyBtn?.addEventListener('click', async () => {
+                const key = mobileCopyBtn.dataset.pixKey;
+                await copyToClipboard(key);
+                openModal();
+                
+                // Mostrar mensagem de sucesso no mobile
+                const mobileSuccessMsg = document.getElementById('mobile-success-message');
+                if (mobileSuccessMsg) {
+                    mobileSuccessMsg.classList.remove('hidden');
+                }
+            });
+            
+            // Botão desktop - copiar e abrir modal
+            const desktopModalBtn = document.getElementById('desktop-modal-btn');
+            desktopModalBtn?.addEventListener('click', async () => {
+                const key = pixKey;
+                await copyToClipboard(key);
+                openModal();
+                
+               //  // Mostrar mensagem de sucesso no desktop
+               //  const desktopSuccessMsg = document.getElementById('desktop-success-message');
+               //  const desktopInitialMsg = document.getElementById('desktop-initial-message');
+                
+               //  if (desktopSuccessMsg && desktopInitialMsg) {
+               //      // Ocultar mensagem inicial
+                    
+               //      // Mostrar mensagem de sucesso
+               //      desktopSuccessMsg.classList.remove('opacity-0', 'invisible');
+               //      desktopSuccessMsg.classList.add('opacity-100');
+               //  }
+            });
+        } else {
+            // Versão completa - botão doar
+            const fullDonateBtn = document.getElementById('full-donate-btn');
+            fullDonateBtn?.addEventListener('click', async () => {
+                const key = fullDonateBtn.dataset.pixKey;
+                await copyToClipboard(key);
+                openModal();
+            });
+        }
+        
+        // Fechar modal
+        const closeModalBtn = document.getElementById('close-modal');
+        closeModalBtn?.addEventListener('click', closeModal);
+        
+        // Fechar modal clicando fora
+        const modal = document.getElementById('pix-modal');
+        modal?.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Fechar modal com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    });
+</script>

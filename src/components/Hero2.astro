@@ -1,8 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import { HeartHandshake } from '@lucide/astro';
+import { HeartHandshake, Info } from '@lucide/astro';
+
+import Pix from '../components/Pix.astro';
 
 import imgBanner from '../assets/images/services/campanha-elabora-acao.jpg';
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 <section class="relative w-full bg-[#fffce6] py-20">
     <section class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -16,13 +20,20 @@ import imgBanner from '../assets/images/services/campanha-elabora-acao.jpg';
                 <p class="text-md text-primary-900 leading-relaxed mb-6 md:mb-8">
                      A campanha ELAbora Ação marca o início do Instituto ELAborar, uma organização dedicada à equidade, saúde integral, autonomia e segurança para e com mulheres. Nosso objetivo: arrecadar R$ 60 mil em 60 dias para sustentar os primeiros passos dessa jornada de transformação social.
                 </p>
-                 <div class="flex flex-col md:flex-row items-center gap-6">
-                    <a href="https://www.asaas.com/c/xx1j5nwnb4lsny7u" target="_blank" class="w-full md:w-auto flex justify-center items-center gap-2 text-lg bg-primary-600 hover:bg-primary-700 text-white px-12 py-2 rounded-md font-medium transition-colors duration-200">
-                    <HeartHandshake /> Doe aqui
+                 <div class="flex flex-col xl:flex-row items-center gap-6 mb-6 md:mb-8">
+                    <a href=`${import.meta.env.BASE_URL}campanha-elabora-acao`  class="w-full md:w-full flex justify-center items-center gap-2 text-md bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded-md font-medium transition-colors duration-200">
+                    <HeartHandshake /> Saiba Mais - Doe aqui
                     </a>
-                    <a href=`${import.meta.env.BASE_URL}campanha-elabora-acao` class="w-full md:w-auto text-lg mouse-pointer border border-primary text-primary-600 hover:text-primary-700 px-12 py-2 rounded-md font-medium transition-colors duration-200 text-center">Saiba mais</a>
 
+                     <Pix>
+
+                     <!-- <a href=`${import.meta.env.BASE_URL}campanha-elabora-acao` class="w-full md:w-auto text-lg mouse-pointer border border-primary text-primary-600 hover:text-primary-700 px-12 py-2 rounded-md font-medium transition-colors duration-200 text-center">Saiba mais</a> -->
                   </div>
+                  
+                  <!-- <a href=`${import.meta.env.BASE_URL}campanha-elabora-acao` class="flex gap-2 items-center md:items-start justify-center md:justify-start mouse-pointer text-md lg:text-lg text-primary-600 hover:text-primary-700 py-2 rounded-md font-medium transition-colors duration-200 text-center md:text-start">
+                     <Info />
+                     Saiba mais sobre a campanha
+                  </a> -->
             </div>
 
             <div>

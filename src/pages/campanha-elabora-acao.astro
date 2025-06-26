@@ -1,26 +1,34 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from 'astro:assets';
-
+import Pix from '../components/Pix.astro';
 import imgBanner from '../assets/images/services/teste3.png';
+import { Barcode, CreditCard  } from '@lucide/astro';
+import Donation from "../components/Donation.astro";
+
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout>
     <div class="py-20 space-y-6">
-        <section class="text-primary-900 pb-12 px-4 max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-4 text-secondary-600">Campanha <span class="text-primary-600">ELAbora Ação</span></h2>
+         <div class="text-primary-900  px-4 max-w-3xl mx-auto">
+            <h2 class="text-3xl font-medium tracking-tighter mb-4 text-secondary-600">
+               Campanha <span class="text-primary-600">ELAbora Ação</span>
+            </h2>
+            
             <p class="mb-6">Você acredita na força da ação coletiva, na escuta, no cuidado e na transformação?</p>
 
             <p class="mb-6">A <strong>Campanha ELAbora Ação</strong> marca o lançamento do <strong>Instituto ELAborar</strong>, uma organização da sociedade civil comprometida com a equidade, a saúde integral, a segurança e a autonomia das mulheres em comunidades e organizações do trabalho.</p>
 
             <p class="mb-6"><strong>Nosso objetivo é levantar R$ 60 mil em 60 dias</strong>, para construirmos os primeiros passos desta caminhada de transformação e impacto social, dando sustentação à missão que nos move.</p>
-        </section>
+         </div>
 
-         <section class="w-full text-center">
+         <div class="w-full text-center py-8">
             <Image src={imgBanner} alt="Campanha" width="900" height="600" class="mx-auto"/> 
-        </section>
+         </div>
         
-        <section class="text-primary-900 py-12 px-4 max-w-3xl mx-auto">
+         <div class="text-primary-900 px-4 max-w-3xl mx-auto pb-10">
 
             <p class="mb-6"><strong>Ao apoiar a campanha, você será reconhecida(o) na Galeria Pioneir@s da Causa ELAborar</strong>, um espaço permanente em nosso site dedicado a valorizar a rede que está construindo essa jornada por equidade, inclusão e pertencimento.*</p>
 
@@ -30,19 +38,45 @@ import imgBanner from '../assets/images/services/teste3.png';
 
             <p class="mb-6">Apoie. Compartilhe. Inspire outras pessoas.</p>
 
-            <p class="mb-6">Porque Transformação Social se elabora na ação coletiva!</p>
+            <p class="">Porque Transformação Social se elabora na ação coletiva!</p>
+         </div>
 
-            <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                <a href="https://www.asaas.com/c/xx1j5nwnb4lsny7u" target="_blank" class="bg-primary-600 text-white px-6 py-3 rounded-lg text-center font-semibold hover:bg-primary-700 transition">
-                    Quero apoiar
-                </a>
+         <div class="bg-secondary-100 py-20">
+            <div class="max-w-5xl mx-auto">
+               <Donation />
             </div>
+         </div>
 
+         <div class="max-w-3xl mx-auto pt-16 px-4 ">
+            <div class="border border-secondary-200 bg-secondary-100 shadow-md rounded-lg p-6 mb-12">
+               <p class="text-2xl font-semibold tracking-tighter text-primary-600 max-w-2xl mx-auto text-center">
+                 Ou defina um valor personalizado para a sua doação!
+               </p>
+            </div>
+               
+            <div class="border border-secondary-200 p-4 rounded-lg mb-6 lg:mb-12 p-6">
+               <Pix variant="full"/>
+            </div>
+            <div class="border border-secondary-200 p-4 rounded-lg mb-6 lg:mb-12 p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <CreditCard class="text-primary-600" />
+                  <span class="text-sm md:text-base font-semibold">Doe via Cartão de Crédito</span>
+
+               </div>
+
+               <p class="text-sm text-primary-900 mb-4">
+                 Caso prefira fazer a doação com cartão de crédito, clique no botão "Finalizar doação" e você será direcionado a página de pagamento.
+               </p>
+
+               <a href="https://www.asaas.com/c/xx1j5nwnb4lsny7u" target="_blank" class="bg-primary-600 text-white px-6 py-2 rounded text-center text-sm font-medium hover:bg-primary-700 transition">
+               Doar agora
+               </a>
+            </div>
 
             <div>
                 <p class="text-sm">* Caso não queira o seu nome veiculado, basta nos informar. Os valores doados não serão divulgados, qualquer quantia é muito bem-vinda e celebrada.
                 </p>
             </div>
-        </section>
+        </div>
     </div>
 </Layout>
