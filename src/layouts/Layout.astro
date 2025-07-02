@@ -30,13 +30,12 @@ const navItems = [
 
 		<Head />
 	</head>
-	<body class="bg-tertiary-50">
+	<body class="text-primary-900 bg-tertiary-50">
 
 		<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCFHNC42"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCFHNC42"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
 
 		<Navbar
 			logoSrc={`${import.meta.env.BASE_URL}logo-instituto-elaborar-v2.svg`}
@@ -49,10 +48,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
 		<slot />
 
-	    <WhatsappButton />
+      <WhatsappButton />
+
 		<PrivacyModal />
 
-      	<Footer />
+      <Footer />
 		
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
