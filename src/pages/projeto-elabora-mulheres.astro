@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from "../layouts/Layout.astro";
+import YouTubeEmbed from '../components/YouTubeEmbed.astro';
 
 import { SquareCheckBig } from '@lucide/astro';
 
@@ -49,13 +50,15 @@ const logos = [
       </div>
    </section>
 
+
+
    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-18">
       <h2 class="text-2xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
          Sobre <span class="text-primary-600">o projeto</span>
       </h2>
 
       <p class="mb-6">Em parceria com a Unisinos e o Serviço Jesuíta de Migrantes e Refugiados - SJMR Brasil, vamos promover atenção em saúde 
-         integral amulheres e crianças do território, no segundo semestre de 2025.
+         integral a mulheres e crianças do território, no segundo semestre de 2025.
       </p>
 
       <p class="">O Instituto ELAborar realiza a gestão pedagógica, metodológica e executiva do projeto, contratando professores para
@@ -78,6 +81,17 @@ const logos = [
                 </div>
             ))}
         </div>
+   </div>
+
+   <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 pb-18">
+      <YouTubeEmbed 
+         videoId="RNne4XcMwXk"
+         title="Projeto ELAbora Mulheres"
+         autoplay={false}
+         muted={false}
+         controls={false}
+         modestbranding={true} 
+      />
    </div>
 
    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 pb-18">
