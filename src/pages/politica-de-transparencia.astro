@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Defina o array de cards
+const cards = [
+  {
+    number: "01",
+    title: "Comunicação pública a acesso aberto",
+    description: "Todos os dados e registros do projeto serão divulgados de forma acessível e transparente em nossos canais públicos.",
+  },
+  {
+    number: "02",
+    title: "Relato estrututrado de cada ciclo do projeto",
+    description: "A cada etapa, será entregue um relatório com objetivos, atividades realizadas, resultados alcançados e aprendizados identificados.",
+  },
+  {
+    number: "03",
+    title: "Relatório anual de impacto e prestação de contas",
+    description: "Publicaremos um relatório anual com indicadores financeiros, sociais e institucionais, acessível a todos os parceiros.",
+  },
+  {
+    number: "04",
+    title: "Retorno personalizado aos apoiadores",
+    description: "Cada parceiro receberá um retorno exclusivo com destaque de sua participação, dados de impacto e inserção da marca nos materiais finais.",
+  },
+];
+---
+
+<Layout>
+  <div class="py-20 space-y-6">
+    <section class="w-full max-w-4xl mx-auto text-primary-950 relative px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-secondary-600 mb-2">Política de Transparência</h1>
+      <p class="text-xl mb-2 font-medium">A transparência é um dos pilares do Instituto ELAborar</p>
+      <p class="mb-12">
+        Assumimos o compromisso com a prestação de contas, tornando público nosso resultados para garantir confiança, diálogo e responsabilidade ética.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-12">
+        {cards.map((card) => (
+          <div key={card.number} class="relative border border-primary-600 rounded p-6 text-center py-12">
+            <div class="absolute left-1/2 transform -translate-x-1/2 -top-4 bg-tertiary-50 px-8 py-1 text-lg md:text-xl xl:text-2xl font-bold text-secondary-600">{card.number}</div>
+            <h2 class="font-bold tracking-tight uppercase mb-2 text-primary-600">{card.title}</h2>
+            <p>{card.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>
