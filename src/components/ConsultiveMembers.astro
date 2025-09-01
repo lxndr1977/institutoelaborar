@@ -1,41 +1,30 @@
 ---
 import { Image } from "astro:assets";
 
-import imgRenata from "../assets/images/team/renata-andreoni.jpg";
-import imgMadalena from "../assets/images/team/magdalena-cortese.jpg";
-import imgNeoma from "../assets/images/team/neoma-mendes.jpg";
 import imgJose from "../assets/images/team/jose-lucio.jpg";
 import imgCarolina from "../assets/images/team/carolina.jpg";
 
 const members = [
    {
-      initials: "AM",
-      name: "Renata Andreoni",
-      img: imgRenata,
-      position: "Fundadora e Presidente",
-      function: "Doutora em Comunicação, Historiadora, Educadora",
-      socialLink: "https://linkedin.com/in/renataandreoni",
+      initials: "PL",
+      name: "José Lúcio Machado",
+      img: imgJose,
+      position: "Conselheiro Consultivo",
+      function:
+         "Médico, Doutor em Cirurgia, Gestor na Educação Médica e Educador",
+      socialLink:
+         "https://linkedin.com/in/jos%C3%A9-l%C3%BAcio-martins-machado",
       delay: 0,
    },
    {
-      initials: "CS",
-      name: "Neoma Mendes de Assis",
-      img: imgNeoma,
-      position: "Fundadora e Vice-Presidente",
+      initials: "CL",
+      name: "Caroline Biehl",
+      img: imgCarolina,
+      position: "Conselheira Fiscal",
       function:
-         "Médica, Especialista em Medicina de Família e Comunidade, Educadora",
-      socialLink: "https://linkedin.com/in/neoma-mendes-8943551a8",
+         "Administradora e Mestre em Gestão de Pessoas e Relações de Trabalho",
+      socialLink: "",
       delay: 100,
-   },
-   {
-      initials: "MR",
-      name: "Magdalena Cortese Coelho ",
-      img: imgMadalena,
-      position: "Fundadora e Diretora de Operações",
-      function:
-         "Doutora em Administração, Especialista em Estudos de Gênero, Educadora",
-      socialLink: "https://linkedin.com/in/magdalenacortesecoelho",
-      delay: 200,
    },
 ];
 ---
@@ -45,13 +34,13 @@ const members = [
       <h2
          class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600 mb-4"
       >
-         Conselho de
-         <span class="text-primary-600">Administração</span>
+         Conselho
+         <span class="text-primary-600">Consultivo e Fiscal</span>
       </h2>
    </div>
 
    <div
-      class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 space-y-12 sm:space-y-0"
+      class="max-w-3xl mx-auto relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 space-y-12 sm:space-y-0"
    >
       {
          members.map((member) => (
@@ -71,7 +60,7 @@ const members = [
                            src={member.img}
                            alt={`Foto de ${member.name}`}
                            width
-                           class="w-100 h-auto rounded-lg"
+                           class="w-80 h-auto rounded-lg mx-auto"
                            widths={[200, 350, 500, 630]}
                            format="webp"
                            sizes="(max-width: 640px) 200px, (max-width: 1024px) 350px, 500px"
@@ -83,9 +72,11 @@ const members = [
                   <h3 class="text-lg font-medium text-primary-600 mb-1">
                      {member.name}
                   </h3>
-                  <p class="text-foreground-950 font-medium text-sm mb-2">
-                     {member.position}
-                  </p>
+                  {member.position && (
+                     <p class="text-foreground-950 font-medium text-sm mb-2">
+                        {member.position}
+                     </p>
+                  )}
                   <p class="text-foreground-950 text-sm mb-4 leading-relaxed">
                      {member.function}
                   </p>
