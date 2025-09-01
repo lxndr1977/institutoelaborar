@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 
 import imgJose from "../assets/images/team/jose-lucio.jpg";
 import imgCarolina from "../assets/images/team/carolina.jpg";
+import imgMilena from "../assets/images/team/milena-guerreiro.jpg";
 
 const members = [
    {
@@ -16,6 +17,16 @@ const members = [
          "https://linkedin.com/in/jos%C3%A9-l%C3%BAcio-martins-machado",
       delay: 0,
    },
+    {
+      initials: "ML",
+      name: "Milena Guerreiro",
+      img: imgMilena,
+      position: "Conselheira Fiscal",
+      function:
+         "Tabeliã, Mestre em Direito, Mercado, Compliance e Segurança Humana",
+      socialLink: "",
+      delay: 100,
+   },
    {
       initials: "CL",
       name: "Caroline Biehl",
@@ -24,7 +35,7 @@ const members = [
       function:
          "Administradora e Mestre em Gestão de Pessoas e Relações de Trabalho",
       socialLink: "",
-      delay: 100,
+      delay: 200,
    },
 ];
 ---
@@ -40,7 +51,7 @@ const members = [
    </div>
 
    <div
-      class="max-w-3xl mx-auto relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 space-y-12 sm:space-y-0"
+      class="max-w-4xl mx-auto relative grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 space-y-12 sm:space-y-0"
    >
       {
          members.map((member) => (
