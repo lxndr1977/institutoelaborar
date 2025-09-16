@@ -1,0 +1,94 @@
+---
+// src/pages/index.astro
+import Layout from "../layouts/Layout.astro";
+
+const pioneers = [
+   "Alan dos Santos Boff",
+   "Ana Rosa Venancio",
+   "Andreia Rosa dos Passos",
+   "Andresa Salatino",
+   "Arielle Silveira",
+   "Barbara Mota Souto",
+   "Calleb Rangel de Oliveira",
+   "Caroline Biehl",
+   "Caroline Müller Da Silva",
+   "Cassius Pinto De Souza",
+   "Claudia Antonello",
+   "Claudia D. Da Cruz Rezende",
+   "Cleusa Maria A. Scroferneker",
+   "Dorvalina de Lourdes L. Moraes",
+   "Edison Bisso Cruxen",
+   "Eduardo Esteve Amavisca",
+   "Eduardo Nascimento Cruz",
+   "Fernanda Moraes",
+   "Fernanda Riegert Borba",
+   "Fernanda Santos Bahi",
+   "Fernando Carara Lemos",
+   "Flavia Oliveira Do Carmo",
+   "Franthiella Scherolt Framarin",
+   "Gabriela Eltz Brum",
+   "Gabriela Moraes",
+   "Gabriele Domeneghini Mercali",
+   "Hudson De Souza Nogueira",
+   "Isaura Tonello",
+   "Israel Dutra Campos",
+   "Jalma Aparecida B. Ribeiro",
+   "Joao Carlos Wilhelm Coelho",
+   "José Lúcio M. Machado",
+   "Juliana Kraemer M. Teixeira",
+   "Lidia Bisso Cruxen",
+   "Lucas Guilherme M. Santos",
+   "Lucas Pereira Da Rosa",
+   "Luciana Buksztejn Gomes",
+   "Luciano Coelho",
+   "Luis Antonio B Tonaco",
+   "Magdalena Cortese Coelho",
+   "Marcos Schmeling Becker",
+   "Maria Carolina Vecchio",
+   "Maria Leticia R Ikeda",
+   "Maria Noemi Dos Santos Ba",
+   "Milena Guerreiro",
+   "Morgana Hardt Da Silva",
+   "Natalia Peroni Pellin",
+   "Natália Poock",
+   "Neiva Maria Coelho",
+   "Neoma Mendes De Assis",
+   "Oswaldo C De Souza",
+   "Priscila Sartori",
+   "Ranielle Leal Moura",
+   "Raul Paulo Weber",
+   "Renata Andreoni",
+   "Ricardo Alves De Carvalho",
+   "Rodrigo T Lopes",
+   "Rosely T. V. Coelho",
+   "Rosi Dopazo",
+   "Sarah M Viscardi Oliveira",
+   "Sibila Cruxen B. Llantada",
+   "Sofia Cunha",
+   "Soraya Romina",
+   "Suellen Corrêa de Souza",
+   "Susi Menezes",
+   "Victor Marcio Laus R. Gomes",
+];
+---
+
+<Layout>
+   <div class="py-20 space-y-6">
+      <section
+         class="w-full max-w-4xl mx-auto text-primary-950 relative px-4 sm:px-6 lg:px-8"
+      >
+         <h1
+            class="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tighter text-secondary-600 mb-6"
+         >
+            Lista de <span class="text-primary-600">Pioneir@s</span>
+         </h1>
+         <div class="space-y-4">
+            {
+               pioneers.map((name) => (
+                  <div class="py-3 mb-3 border-b border-gray-200">{name}</div>
+               ))
+            }
+         </div>
+      </section>
+   </div>
+</Layout>
