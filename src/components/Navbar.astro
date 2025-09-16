@@ -62,9 +62,9 @@ import { HeartHandshake } from '@lucide/astro';
             </div>
             <!-- Desktop menu -->
             <div class="hidden lg:block">
-                <div class="flex items-baseline space-x-1">
+                <div class="flex items-center space-x-1">
                     {navItems.map((item) => (
-                        <a href={item.href} class="text-sm text-base text-primary-800 hover:text-primary-600 px-3 py-2 font-medium  tracking-tight transition-colors duration-200">
+                        <a href={item.href} class="text-sm text-base text-center text-primary-800 hover:text-primary-600 px-3 py-2 font-medium  tracking-tight transition-colors duration-200">
                             {item.label}
                         </a>
                     ))}
@@ -161,7 +161,7 @@ import { HeartHandshake } from '@lucide/astro';
     </div>
 </nav>
 
-<script>
+<script is:inline>
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
