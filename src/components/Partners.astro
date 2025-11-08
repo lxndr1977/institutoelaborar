@@ -4,6 +4,8 @@ import { Image } from 'astro:assets';
 import logoUnisinos from '../assets/images/logos/logo-unisinos.png';
 import logoSjmr from '../assets/images/logos/logo-sjmr.png';
 import logoApac from '../assets/images/logos/logo-apac-bh.png';
+import logoBonanza from '../assets/images/logos/logo-bonanza.png';
+
 const logos = [
   {
     src: logoUnisinos,
@@ -22,6 +24,12 @@ const logos = [
     alt: 'Apac BH',
     delay: 200,
     url: 'https://www.instagram.com/apacfemininabh/'
+  },
+    { 
+    src: logoBonanza, 
+    alt: "Bonanza", 
+    delay: 400,
+    url: 'https://bonanza.ong/'
   }
 ]
 ---
@@ -36,7 +44,7 @@ const logos = [
           </h2>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
             {logos.map(logo => (
                 <div class="flex justify-center" data-aos="fade-up" data-aos-delay={logo.delay}>
                     <a href={logo.url} target="_blank">
