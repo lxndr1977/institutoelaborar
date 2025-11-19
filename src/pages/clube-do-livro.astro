@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
+import hero from "../assets/images/clube-do-livro/hero.jpg";
+
 import obraA from "../assets/images/clube-do-livro/livro-fique-comigo.jpg";
 import obraB from "../assets/images/clube-do-livro/livro-o-ceu-para-bastardos.jpg";
 import obraC from "../assets/images/clube-do-livro/livro-o-manuscrito.jpg";
@@ -40,31 +42,46 @@ const obras = [
 
 <Layout>
    <div class="mb-28 space-y-24">
- <!-- HERO -->
+      <!-- HERO -->
       <section class="w-full bg-secondary-100 py-20">
-         <div class="max-w-5xl mx-auto px-4 space-y-6 text-center">
-            <h1
-               class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600"
-            >
-               Clube do Livro <span class="text-primary-600"
-                  >ELAborando Mulheridades</span
-               >
-            </h1>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col lg:flex-row lg:items-center gap-12">
 
-            <p class="text-xl text-primary-900 max-w-3xl mx-auto">
-               Um convite ao encontro, à pausa e à (re)construção.
-            </p>
+      <!-- FOTO À ESQUERDA (UM POUCO MENOR) -->
+  
 
-            <p class="text-lg leading-relaxed text-primary-900 max-w-4xl mx-auto">
-               O Clube do Livro ELAborando Mulheridades é um espaço de leitura e
-               diálogo pensado por mulheres e para mulheres. Um lugar para
-               conversar sobre saúde integral, relacionamentos, vulnerabilidades
-               e potências, com a literatura como ponto de partida e companheira
-               de travessia. A cada mês, um novo livro nos convida a refletir
-               sobre o que significa ser e estar mulher no mundo contemporâneo.
-            </p>
-         </div>
-      </section>
+      <!-- TEXTO À DIREITA (MAIOR) -->
+      <div class="w-full md:w-3/5 space-y-6 text-left">
+        <h1 class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600">
+          Clube do Livro <span class="text-primary-600">ELAborando Mulheridades</span>
+        </h1>
+
+        <p class="text-xl text-primary-900">
+          Um convite ao encontro, à pausa e à (re)construção.
+        </p>
+
+        <p class="text-lg leading-relaxed text-primary-900">
+          O Clube do Livro ELAborando Mulheridades é um espaço de leitura e diálogo pensado por mulheres e para mulheres. 
+          Um lugar para conversar sobre saúde integral, relacionamentos, vulnerabilidades e potências, com a literatura como 
+          ponto de partida e companheira de travessia. A cada mês, um novo livro nos convida a refletir sobre o que significa 
+          ser e estar mulher no mundo contemporâneo.
+        </p>
+      </div>
+
+          <div class="order-1 lg:order-none w-full md:w-2/5">
+        <Image
+          src={hero}
+          alt="Clube do Livro"
+          width="800"
+          height="600"
+          class="rounded-xl shadow-md w-auto h-auto max-h-[520px] object-cover mx-auto"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <!-- OBRAS -->
       <section class="max-w-6xl mx-auto px-4 space-y-10">
@@ -99,7 +116,7 @@ const obras = [
       <!-- HISTÓRIAS QUE NOS ATRAVESSAM -->
       <section class="px-4 max-w-4xl mx-auto space-y-6">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl lg:text-3xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
          >
             Histórias que nos atravessam e nos conectam
          </h2>
@@ -130,7 +147,7 @@ const obras = [
 
       <section class="px-4 max-w-5xl mx-auto space-y-10">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl lg:text-4xl font-medium tracking-tighter text-center font-medium text-primary-700  gap-2"
          >
             As mediadoras
          </h2>
@@ -191,7 +208,7 @@ const obras = [
       <!-- PAUSA & CUIDADO -->
       <section class="px-4 max-w-4xl mx-auto space-y-6">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl font-medium lg:text-4xl font-medium tracking-tighter  text-primary-700 flex items-center gap-2"
          >
             Leitura como caminho de cuidado e consciência
          </h2>
@@ -215,7 +232,7 @@ const obras = [
       <!-- TRAVESSIA -->
       <section class="px-4 max-w-4xl mx-auto space-y-6">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
          >
             Um clube que também é travessia
          </h2>
@@ -253,7 +270,7 @@ const obras = [
       <!-- COMO FUNCIONA -->
       <section class="px-4 max-w-4xl mx-auto space-y-6">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
          >
             Como funciona
          </h2>
@@ -291,7 +308,7 @@ const obras = [
       <!-- MATERIAIS -->
       <section class="px-4 max-w-4xl mx-auto space-y-6">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
          >
             Conteúdos e materiais exclusivos
          </h2>
@@ -320,7 +337,7 @@ const obras = [
       <!-- GRUPO TELEGRAM -->
       <section class="px-4 max-w-4xl mx-auto space-y-6">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
          >
             Espaço de trocas
          </h2>
@@ -344,7 +361,7 @@ const obras = [
       <!-- INGRESSO AO CLUBE -->
       <section class="px-4 max-w-4xl mx-auto space-y-10">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
          >
             Ingresso ao Clube
          </h2>
@@ -358,7 +375,7 @@ const obras = [
                solidariedade.
             </p>
 
-            <h3 class="font-semibold text-primary-700">Contribuições</h3>
+            <h3 class="font-bold text-lg  text-primary-700">Contribuições</h3>
 
             <ul class="space-y-3">
                <li>
@@ -383,7 +400,7 @@ const obras = [
       <!-- POR QUE PARTICIPAR -->
       <section class="px-4 max-w-4xl mx-auto space-y-6">
          <h2
-            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+            class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
          >
             Por que participar?
          </h2>
