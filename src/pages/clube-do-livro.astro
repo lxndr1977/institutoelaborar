@@ -1,0 +1,404 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import obraA from "../assets/images/clube-do-livro/livro-fique-comigo.jpg";
+import obraB from "../assets/images/clube-do-livro/livro-o-ceu-para-bastardos.jpg";
+import obraC from "../assets/images/clube-do-livro/livro-o-manuscrito.jpg";
+import obraD from "../assets/images/clube-do-livro/livro-os-refens.jpg";
+
+import mediadoraFlavia from "../assets/images/clube-do-livro/flavia.jpg";
+import mediadoraRenata from "../assets/images/clube-do-livro/renata.jpg";
+
+const obras = [
+   {
+      src: obraA,
+      alt: "O Manuscrito – Elif Shafak",
+      caption: "O Manuscrito",
+      author: "Elif Shafak",
+   },
+   {
+      src: obraB,
+      alt: "Reféns – Nina Bouraoui",
+      caption: "Reféns",
+      author: "Nina Bouraoui",
+   },
+   {
+      src: obraC,
+      alt: "Fique Comigo - Ayòbámi Adébáyò",
+      caption: "Fique Comigo",
+      author: "Ayòbámi Adébáyò",
+   },
+   {
+      src: obraD,
+      alt: "O céu para os bastardos – Lilia Guerra",
+      caption: "O céu para os bastardos",
+      author: "Lilia Guerra",
+   },
+];
+---
+
+<Layout>
+   <div class="mb-28 space-y-24">
+ <!-- HERO -->
+      <section class="w-full bg-secondary-100 py-20">
+         <div class="max-w-5xl mx-auto px-4 space-y-6 text-center">
+            <h1
+               class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600"
+            >
+               Clube do Livro <span class="text-primary-600"
+                  >ELAborando Mulheridades</span
+               >
+            </h1>
+
+            <p class="text-xl text-primary-900 max-w-3xl mx-auto">
+               Um convite ao encontro, à pausa e à (re)construção.
+            </p>
+
+            <p class="text-lg leading-relaxed text-primary-900 max-w-4xl mx-auto">
+               O Clube do Livro ELAborando Mulheridades é um espaço de leitura e
+               diálogo pensado por mulheres e para mulheres. Um lugar para
+               conversar sobre saúde integral, relacionamentos, vulnerabilidades
+               e potências, com a literatura como ponto de partida e companheira
+               de travessia. A cada mês, um novo livro nos convida a refletir
+               sobre o que significa ser e estar mulher no mundo contemporâneo.
+            </p>
+         </div>
+      </section>
+
+      <!-- OBRAS -->
+      <section class="max-w-6xl mx-auto px-4 space-y-10">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Sobre as obras
+         </h2>
+
+         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {
+               obras.map((obra) => (
+                  <div class="text-center">
+                     <div class="w-full overflow-hidden rounded-lg shadow-md mb-6">
+                        <Image
+                           src={obra.src}
+                           alt={obra.alt}
+                           class="w-full h-full object-cover"
+                        />
+                     </div>
+
+                     <p class="text-sm font-bold text-primary-900 mb-1">
+                        {obra.caption}
+                     </p>
+                     <p class="text-sm text-primary-900">{obra.author}</p>
+                  </div>
+               ))
+            }
+         </div>
+      </section>
+
+      <!-- HISTÓRIAS QUE NOS ATRAVESSAM -->
+      <section class="px-4 max-w-4xl mx-auto space-y-6">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Histórias que nos atravessam e nos conectam
+         </h2>
+
+         <div
+            class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
+         >
+            <p>
+               Cada leitura abre portas para universos femininos múltiplos, onde
+               cabem diferentes etnias, raças, classes, gerações e sexualidades.
+            </p>
+            <p>
+               Vamos nos reconhecer e aprender umas com as outras, tecendo
+               pontes entre experiências singulares e o que nos une em
+               humanidade.
+            </p>
+            <p>
+               Ao longo dessa jornada, exploraremos as dimensões relacionais da
+               existência: as redes de afeto, cuidado e conflito que compõem
+               nossas identidades.
+            </p>
+            <p>
+               Família, amores, amizades, trabalho: em cada uma dessas relações,
+               se revelam nossos limites e possibilidades.
+            </p>
+         </div>
+      </section>
+
+      <section class="px-4 max-w-5xl mx-auto space-y-10">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            As mediadoras
+         </h2>
+
+         <div class="grid md:grid-cols-2 gap-12 items-start">
+            <div
+               class="flex flex-col bg-white p-6 rounded-xl shadow-md space-y-4"
+            >
+               <Image
+                  src={mediadoraFlavia}
+                  alt="Flavia Abade"
+                  width="500"
+                  height="600"
+                  class="rounded-lg"
+               />
+               <h3 class="text-lg font-semibold">Flavia Abade</h3>
+               <p class="text-primary-900 leading-relaxed">
+                  Educadora desde sempre, mãe de dois meninos, esposa
+                  apaixonante, amiga leal, psicóloga com graduação e mestrado
+                  pela UFMG e doutorado em Psicologia pela PUCMINAS. Atuei como
+                  gestora acadêmica no ensino superior em diversos cursos,
+                  inclusive como diretora acadêmica de medicina. Sou mineira, de
+                  BH. Gosto muito de ler, escrever, viajar, sou apaixonada pela
+                  aprendizagem e tenho dois certificados de atualização
+                  internacionais: em Educação pela Finland University e em
+                  Ciência do Bem-estar pela Yale University.
+               </p>
+            </div>
+
+            <div
+               class="flex flex-col bg-white p-6 rounded-xl shadow-md space-y-4"
+            >
+               <Image
+                  src={mediadoraRenata}
+                  alt="Renata Andreoni"
+                  width="500"
+                  height="600"
+                  class="rounded-lg"
+               />
+               <h3 class="text-lg font-semibold">Renata Andreoni</h3>
+               <p class="text-primary-900 leading-relaxed">
+                  Mulher privilegiada, mas com muitas vulnerabilidades.
+                  Educadora, comunicóloga, historiadora e doutora em Comunicação
+                  (PUCRS/Sorbonne-Paris IV). Empreendedora social e ativista na
+                  luta por equidade de gênero, raça e classe. Fundadora e
+                  presidente do Instituto ELAborar. Desde 2010, atuo na
+                  liderança de equipes e projetos de impacto em comunicação,
+                  educação, cultura e diversidade, articulando Ensino, Pesquisa
+                  e Extensão. Na minha trajetória, uno conhecimento acadêmico e
+                  propósito social, liderando iniciativas que conectam
+                  diferentes saberes, diálogo e ação para fortalecer comunidades
+                  e organizações mais plurais e sustentáveis.
+               </p>
+            </div>
+         </div>
+      </section>
+
+      <!-- PAUSA & CUIDADO -->
+      <section class="px-4 max-w-4xl mx-auto space-y-6">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Leitura como caminho de cuidado e consciência
+         </h2>
+
+         <div
+            class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
+         >
+            <p>
+               Os livros serão disparadores de reflexões sobre o paradoxo entre
+               o desejo de vínculo e a complexidade do conviver.
+            </p>
+            <p>
+               Vamos falar sobre as conversas difíceis, sobre como construir
+               vínculos que sustentem o (auto)cuidado e promovam saúde e
+               bem-estar, especialmente em tempos em que as crises psicossociais
+               atravessam todos os espaços que habitamos.
+            </p>
+         </div>
+      </section>
+
+      <!-- TRAVESSIA -->
+      <section class="px-4 max-w-4xl mx-auto space-y-6">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Um clube que também é travessia
+         </h2>
+
+         <div
+            class="bg-white p-6 rounded-xl shadow-sm space-y-6 text-primary-900 leading-relaxed"
+         >
+            <p>
+               “As histórias conferem movimento à nossa vida interior e
+               exterior. Elas abrem portas.”
+               <br />— Clarissa Pinkola Estés
+            </p>
+
+            <p>
+               Ter medo de parar, ter medo de agir, contar até três
+               repetidamente sem conseguir começar... Sentir-se insegura,
+               impotente, hesitante, bloqueada, incapaz de realizações,
+               escolhendo parceiros e trabalhos que esgotam sua energia. Essa
+               não é a natureza da MULHER.
+            </p>
+
+            <p>
+               Do ponto de vista da psicologia arquetípica a Mulher Selvagem é a
+               alma feminina. Acreditamos que o cinema e a literatura são como
+               vitaminas para alma.
+            </p>
+
+            <p>
+               O Clube do Livro ELAborando Mulheridades promove leituras com
+               mulheres. Um convite à PAUSA, a saúde e ELAboração.
+            </p>
+         </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section class="px-4 max-w-4xl mx-auto space-y-6">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Como funciona
+         </h2>
+
+         <div
+            class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
+         >
+            <p>
+               O Clube do Livro ELAborando Mulheridades acontecerá ao longo de 4
+               meses, de março a junho de 2026, com 1 livro por mês.
+            </p>
+
+            <p>
+               Teremos 3 encontros ao vivo por mês, sempre das 19h às 20h30, no
+               dia [a definir]. Todas as conversas ficarão gravadas e
+               disponíveis de forma vitalícia.
+            </p>
+
+            <h3 class="font-semibold text-primary-700">
+               Estrutura dos encontros
+            </h3>
+            <ul class="list-disc pl-4 space-y-1">
+               <li>Primeiro encontro – Leitura conjunta e partilha.</li>
+               <li>
+                  Segundo encontro – Continuação da leitura e reflexão coletiva.
+               </li>
+               <li>
+                  Terceiro encontro – Diálogo entre Psicologia e Comunicação,
+                  integrando literatura, cinema e expressões artísticas.
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- MATERIAIS -->
+      <section class="px-4 max-w-4xl mx-auto space-y-6">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Conteúdos e materiais exclusivos
+         </h2>
+
+         <div
+            class="bg-white p-6 rounded-xl shadow-sm space-y-4 text-primary-900 leading-relaxed"
+         >
+            <p>
+               Além dos encontros, cada obra contará com um material em PDF
+               exclusivo.
+            </p>
+
+            <ul class="list-disc pl-4 space-y-1">
+               <li>Síntese e provocações sobre o livro do mês;</li>
+               <li>
+                  Materiais complementares como textos, filmes, músicas e
+                  poesias;
+               </li>
+               <li>
+                  Curadoria de conteúdos para ampliar o olhar entre encontros.
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- GRUPO TELEGRAM -->
+      <section class="px-4 max-w-4xl mx-auto space-y-6">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Espaço de trocas
+         </h2>
+
+         <div
+            class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
+         >
+            <p>
+               As participantes também terão acesso a um grupo exclusivo no
+               Telegram, um espaço acolhedor para compartilhar impressões,
+               experiências e construir vínculos com outras mulheres.
+            </p>
+
+            <p>
+               O Clube do Livro ELAborando Mulheridades é uma experiência viva:
+               feita de leituras, escutas, partilhas e afetos.
+            </p>
+         </div>
+      </section>
+
+      <!-- INGRESSO AO CLUBE -->
+      <section class="px-4 max-w-4xl mx-auto space-y-10">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Ingresso ao Clube
+         </h2>
+
+         <div
+            class="bg-white p-6 rounded-xl shadow-sm space-y-6 text-primary-900 leading-relaxed"
+         >
+            <p>
+               Toda a arrecadação será destinada aos projetos sociais do
+               Instituto ELAborar. Participar do Clube é também um ato de
+               solidariedade.
+            </p>
+
+            <h3 class="font-semibold text-primary-700">Contribuições</h3>
+
+            <ul class="space-y-3">
+               <li>
+                  <strong>Cota Social – R$ 50</strong><br />
+                  Pensada para garantir a inclusão de mulheres de diferentes classes
+                  sociais.
+               </li>
+
+               <li>
+                  <strong>Cota Intermediária – R$ 250</strong><br />
+                  Contribui parcialmente para os custos do Clube.
+               </li>
+
+               <li>
+                  <strong>Cota Solidária – R$ 400</strong><br />
+                  Cobre integralmente os custos e fortalece os projetos sociais.
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- POR QUE PARTICIPAR -->
+      <section class="px-4 max-w-4xl mx-auto space-y-6">
+         <h2
+            class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+         >
+            Por que participar?
+         </h2>
+
+         <ul class="list-disc pl-4 space-y-2 text-primary-900">
+            <li>Para fazer uma pausa e cuidar de si por meio da leitura.</li>
+            <li>
+               Para refletir sobre o ser mulher em suas múltiplas dimensões.
+            </li>
+            <li>Para construir vínculos e redes de afeto e apoio.</li>
+            <li>Para dialogar sobre saúde, corpo, mente e relações.</li>
+            <li>
+               Para apoiar outras mulheres e contribuir com impacto social.
+            </li>
+         </ul>
+      </section>
+   </div>
+</Layout>

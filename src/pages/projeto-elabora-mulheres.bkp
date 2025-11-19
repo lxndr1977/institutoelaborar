@@ -1,0 +1,269 @@
+---
+import { Image } from 'astro:assets';
+import Layout from "../layouts/Layout.astro";
+import YouTubeEmbed from '../components/YouTubeEmbed.astro';
+
+import { SquareCheckBig } from '@lucide/astro';
+import Pix from '../components/Pix.astro';
+
+import img from '../assets/images/services/projeto.jpg';
+
+import logoUnisinos from '../assets/images/logos/logo-unisinos.png';
+import logoSjmr from '../assets/images/logos/logo-sjmr.png';
+
+const logos = [
+  {
+    src: logoUnisinos,
+    alt: 'Unisinos',
+    delay: 0,
+    url: 'https://www.unisinos.br/'
+  },
+  {
+    src: logoSjmr,
+    alt: 'SJMR Brasil',
+    delay: 100,
+    url: 'https://sjmrbrasil.org/'
+  },
+]
+---
+
+<Layout>
+   <section class="w-full bg-secondary-100 py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+               <h1 class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600 mb-2">
+                  Projeto <span class="text-primary-600">ELAbora Mulheres</span>
+               </h1>
+
+               <p class="font-medium text-2xl tracking-tighter mb-6">Reconstruindo Vidas no Pós-Enchente RS</p>
+               
+               <p class="text-lg text-primary-900 leading-relaxed">
+                 Reconstruir é verbo feminino: é agir com as mãos,é respeitar a memória e valorizar a dignidade. Conheça o projeto, nossas frentes de atuação 
+                 e os resultados que buscamos alcançar.              
+               </p>
+            </div>
+
+            <div>
+               <Image src={img} width="900" height="600" alt="Projeto" class="rounded-lg">
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+
+   <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 py-18">
+      <h2 class="text-2xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
+         Sobre <span class="text-primary-600">o projeto</span>
+      </h2>
+
+      <p class="mb-6">Em parceria com a Unisinos e o Serviço Jesuíta de Migrantes e Refugiados - SJMR Brasil, vamos promover atenção em saúde 
+         integral a mulheres e crianças do território, no segundo semestre de 2025.
+      </p>
+
+      <p class="">O Instituto ELAborar realiza a gestão pedagógica, metodológica e executiva do projeto, contratando professores para
+         atuarem semanalmente no território junto com estudantes de graduação, que terão suas horas de atividade prática certificadas pelo
+         Instituto.
+      </p>
+   </div>
+
+
+   <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 pb-12">
+      <div class="border border-secondary-200 p-4 rounded-lg mb-6 lg:mb-12 p-6">
+         <Pix variant="full"/>
+      </div>
+   </div>
+
+   <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 pb-18">
+      <h2 class="text-2xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
+         Parceiros <span class="text-primary-600">institucionais</span>
+      </h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-2 gap-8 items-center">
+            {logos.map(logo => (
+                <div class="flex justify-center" data-aos="fade-up" data-aos-delay={logo.delay}>
+                    <a href={logo.url} target="_blank">
+                      <Image src={logo.src} alt={logo.alt} width="300" height="300"/>
+                    </a>
+                </div>
+            ))}
+        </div>
+   </div>
+
+   <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 pb-18">
+      <YouTubeEmbed 
+         videoId="RNne4XcMwXk"
+         title="Projeto ELAbora Mulheres"
+         autoplay={false}
+         muted={false}
+         controls={false}
+         modestbranding={true} 
+      />
+   </div>
+
+   <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 pb-18">
+      <h2 class="text-2xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
+         Território <span class="text-primary-600">de atuação</span>
+      </h2>
+      <ul class="space-y-4">
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Ocupação RedeMix em São Leopoldo
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Moradia irregular, sem saneamento básico e energia elétrica
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Área submersa pela enchente de maio de 2024
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Cerca de 250 famílias em vulnerabilidade social
+            </p>
+         </li>
+      </ul>
+   </div>
+
+   <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 pb-18">
+      <h2 class="text-2xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
+         Realizações 
+         <!-- <span class="text-primary-600">de atuação</span> -->
+      </h2>
+
+      <ul class="space-y-4">
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Implementação de apoio matricial à Atenção Primária à Saúde na Rede Municipal de São Leopoldo, com foco na articulação
+               territorial e fortalecimento das práticas de cuidado;
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Promoção de processos formativos voltados à qualificação dos profissionais da Rede de Saúde;
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Fomento à construção de vínculos entre a comunidade e os serviços de saúde do território, com vistas à ampliação do 
+               acesso e fortalecimento das redes de cuidado;
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Elaboração de cartografia social da comunidade, integrando dados quantitativos e qualitativos para subsidiar o 
+               mapeamento territorial e a formulação de diagnósticos participativos;
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Desenvolvimento de ações pedagógico terapêuticas com enfoque interseccional, direcionadas a mulheres e crianças 
+               em contextos de vulnerabilidade social;
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-secondary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Registro de Memória Social, por meio da sistematização de narrativas de mulheres em processo de reconstrução
+               de suas vidas, um ano após os eventos decorrentes das enchentes de 2024.
+            </p>
+         </li>
+      </ul>
+   </div>
+
+   <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 pb-18 ">
+      <h2 class="text-2xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
+         Resultados <span class="text-primary-600">esperados ao final de 2025</span>
+      </h2>
+
+      <ul class="space-y-4 bg-primary-600 rounded-lg mb-18 text-white p-8 md:p-12">
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-tertiary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Relatórios de impacto quantitativos e qualitativos
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-tertiary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Diagnóstico social e em saúde
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-tertiary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Evidências das necessidades de mulheres migrantes
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-tertiary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Encaminhamentos para a construção de Políticas Públicas
+            </p>
+         </li>
+
+         <li class="flex items-start gap-3">
+            <div class="w-4 h-4 text-tertiary-600 shrink-0">
+               <SquareCheckBig class="w-full h-full mt-1" />
+            </div>
+            <p class="leading-relaxed">
+               Proposta técnica para continuidade em 2026, avançando no desenvolvimento de uma Tecnologia Social
+            </p>
+         </li>
+      </ul>
+   </div>
+
+</Layout>
