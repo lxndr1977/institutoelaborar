@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import imgCampaign from "../assets/images/campanha-vakinha.jpg";
+import { HeartHandshake, Info } from "@lucide/astro";
+---
+
+<section class="w-full bg-accent-200 py-12">
+   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+         <div class="w-full md:w-2/5">
+            <Image
+               src={imgCampaign}
+               width="900"
+               height="600"
+               alt="Projeto"
+               class="rounded-lg"
+            />
+            </div>
+
+            <div class="w-full md:w-3/5">
+               <h2
+                  class="text-3xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6 text-balance"
+               >
+                  Sobre a Campanha <span class="text-primary-600">ELAbora Solidariedade</span>
+               </h2>
+
+               <p class="text-primary-900 leading-relaxed mb-6">
+                  Ao doar, você apoia o projeto <strong>ELAbora Mulheres e Crianças</strong> e
+                  também doa um livro para alguém. Os livros foram cedidos pela
+                  <strong>TAG Livros</strong> e trazem histórias de mulheres de diferentes
+                  culturas, racas e classes sociais. Cada exemplar é entregue
+                  com um marcador do <strong>Instituto ELAborar</strong>, incentivando a
+                  construção de uma rede literária.
+               </p>
+
+               <a
+                  href="https://www.vakinha.com.br/vaquinha/elabora-solidariedade-rede-literaria-para-impactar-mulheres-e-criancas"
+                  target="_blank"
+                  class="w-full md:w-auto flex md:inline-flex justify-center items-center gap-2 text-md bg-primary-600 hover:bg-primary-700 text-white px-12 py-3 rounded-md font-medium transition-colors duration-200"
+               >
+                  <HeartHandshake /> Quero doar
+               </a>
+            </div>
+         </div>
+      </div>
+   </section>
+</section>
