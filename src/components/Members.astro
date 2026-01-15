@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 import imgRenata from "../assets/images/team/renata-andreoni.jpg";
-import imgMadalena from "../assets/images/team/magdalena-cortese.jpg";
+// import imgMadalena from "../assets/images/team/magdalena-cortese.jpg";
 import imgNeoma from "../assets/images/team/neoma-mendes.jpg";
 
 const members = [
@@ -25,16 +25,16 @@ const members = [
       socialLink: "https://linkedin.com/in/neoma-mendes-8943551a8",
       delay: 100,
    },
-   {
-      initials: "MR",
-      name: "Magdalena Cortese Coelho ",
-      img: imgMadalena,
-      position: "Cofundadora e Diretora de Operações",
-      function:
-         "Doutora em Administração, Especialista em Estudos de Gênero, Educadora",
-      socialLink: "https://linkedin.com/in/magdalenacortesecoelho",
-      delay: 200,
-   },
+   // {
+   //    initials: "MR",
+   //    name: "Magdalena Cortese Coelho ",
+   //    img: imgMadalena,
+   //    position: "Cofundadora e Diretora de Operações",
+   //    function:
+   //       "Doutora em Administração, Especialista em Estudos de Gênero, Educadora",
+   //    socialLink: "https://linkedin.com/in/magdalenacortesecoelho",
+   //    delay: 200,
+   // },
 ];
 ---
 
@@ -49,7 +49,7 @@ const members = [
    </div>
 
    <div
-      class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 space-y-12 sm:space-y-0"
+      class="relative grid grid-cols-1 md:grid-cols-2 md:max-w-5xl mx-auto gap-8 space-y-8 sm:space-y-0"
    >
       {
          members.map((member) => (
@@ -69,7 +69,7 @@ const members = [
                            src={member.img}
                            alt={`Foto de ${member.name}`}
                            width
-                           class="w-100 h-auto rounded-lg"
+                           class="w-100 h-auto rounded-lg mx-auto"
                            widths={[200, 350, 500, 630]}
                            format="webp"
                            sizes="(max-width: 640px) 200px, (max-width: 1024px) 350px, 500px"
