@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+
+import img from '../assets/images/clube-do-livro/hero-clube-do-livro.webp';
+---
+
+<section class="w-full bg-primary-100 py-20">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div>
+                <Image src={img} width="900" height="600" alt="Projeto" class="rounded-lg max-w-lg">
+            </div>
+            
+            <div>
+                <h2 class="text-4xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
+                    Clube do Livro <span class="text-primary-600">ELAborando Mulheridades</span>
+                </h2>
+                
+                <p class="text-primary-900 leading-relaxed mb-6">
+                    O Clube do Livro ELAborando Mulheridades é um espaço de leitura e diálogo pensado por mulheres e para mulheres. Um lugar para conversar sobre saúde integral, relacionamentos, vulnerabilidades e potências, com a literatura como ponto de partida e companheira de travessia. A cada mês, um novo livro nos convida a refletir sobre o que significa ser e estar mulher no mundo contemporâneo.            
+                </p>
+
+                <a href="clube-do-livro" class="bg-primary-600 text-white px-6 py-2 rounded text-center  font-medium hover:bg-primary-700 transition">Inscreva-se</a>
+            </div>
+        </div>
+    </section>
+</section>
