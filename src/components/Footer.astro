@@ -1,69 +1,81 @@
 ---
-import { Image } from 'astro:assets';
-import { Instagram, Linkedin, Smartphone, Mail } from "@lucide/astro";
+import { Image } from "astro:assets";
+import { Linkedin, Smartphone, Mail } from "@lucide/astro";
+// Instagram removido — deprecado no Lucide; usando SVG inline abaixo
 
-import logoTauana from '../assets/images/logos/tauana.png';
-import logoTripleA from '../assets/images/logos/logo-triple-a.png';
-import logoAlexandre from '../assets/images/logos/logo-alexandre-pereira.png';
-import logoSoftCs from '../assets/images/logos/logo-softcs.png';
+import logoTauana from "../assets/images/logos/tauana.png";
+import logoTripleA from "../assets/images/logos/logo-triple-a.png";
+import logoAlexandre from "../assets/images/logos/logo-alexandre-pereira.png";
+import logoSoftCs from "../assets/images/logos/logo-softcs.png";
 
 const CONTACT_INFO = {
   phone: {
     number: "5551993526153",
-    display: "(51) 99352-6153"
+    display: "(51) 99352-6153",
   },
-  email: "contato@institutoelaborar.org.br"
+  email: "contato@institutoelaborar.org.br",
 };
 
+// 'lucide' usa componente importado; 'custom' usa SVG inline identificado por svgKey
 const SOCIAL_LINKS = [
   {
     name: "Instagram",
     url: "https://www.instagram.com/instituto.elaborar",
-    icon: Instagram,
-    iconProps: { width: 26, height: 26 }
+    type: "custom",
+    svgKey: "instagram",
   },
   {
-    name: "LinkedIn", 
+    name: "LinkedIn",
     url: "https://www.linkedin.com/company/institutoelaborar/",
-    icon: Linkedin,
-    iconProps: { width: 26, height: 20 }
+  type: "custom",
+  svgKey: "linkedin",
   },
   {
     name: "Spotify",
     url: "https://open.spotify.com/show/23V0qlT5pEgUC1qpi3W72K?si=de7d6b918ffc4aaf",
-    icon: null, 
-    iconProps: null
-  }
+    type: "custom",
+    svgKey: "spotify",
+  },
+  {
+    name: "Substack",
+    url: "https://substack.com/@institutoelaborar", 
+    type: "custom",
+    svgKey: "substack",
+  },
 ];
 
 const NAVIGATION_LINKS = [
   { href: "#quem-somos", label: "Quem somos" },
   { href: "#o-que-fazemos", label: "O que fazemos" },
   { href: "#transformacao-social", label: "Transformação Social" },
-  { href: "#transformacao-organizacional", label: "Transformação Organizacional" },
+  {
+    href: "#transformacao-organizacional",
+    label: "Transformação Organizacional",
+  },
   { href: "politica-de-transparencia", label: "Transparência" },
-  { href: "galeria-de-pioneiros", label: "Galeria de Pioneir@s da Causa" }
+  { href: "galeria-de-pioneiros", label: "Galeria de Pioneir@s da Causa" },
 ];
 
 const SUPPORTERS = [
-  { 
-    logo: logoTauana, 
+  {
+    logo: logoTauana,
     alt: "Tauana",
-    url: "http://www.behance.net/tauanadambrosi", 
-    maxHeight: "max-h-12" },
-  { 
-    logo: logoTripleA, 
-    alt: "Triple A", 
+    url: "http://www.behance.net/tauanadambrosi",
     maxHeight: "max-h-12",
-    url: "https://tripleaie.com.br/"
+  },
+  {
+    logo: logoTripleA,
+    alt: "Triple A",
+    maxHeight: "max-h-12",
+    url: "https://tripleaie.com.br/",
   },
   { logo: logoAlexandre, alt: "Alexandre", maxHeight: "max-h-10" },
-  { 
-    logo: logoSoftCs, 
-    alt: "SoftCs", 
+  {
+    logo: logoSoftCs,
+    alt: "SoftCs",
     maxHeight: "max-h-10",
-    url: "https://softcs.com.br/"
-  }
+    url: "https://softcs.com.br/",
+  },
 ];
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -72,68 +84,109 @@ const baseUrl = import.meta.env.BASE_URL;
 <footer id="contatos" class="bg-tertiary-200 text-primary-900">
   <div class="max-w-7xl mx-auto px-6 py-28">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      
       <div class="space-y-6 lg:col-span-2">
         <div class="space-y-3">
           <div class="flex items-center">
-            <img 
-              src={`${baseUrl}logo-instituto-elaborar.svg`} 
-              alt="Logo Instituto ELAborar" 
+            <img
+              src={`${baseUrl}logo-instituto-elaborar.svg`}
+              alt="Logo Instituto ELAborar"
               class="w-64 h-auto"
               width="756"
               height="314"
-            >
+            />
           </div>
           <p class="text-primary-900 text-sm">CNPJ: 57.976.788/0001-93</p>
         </div>
-        
+
         <div>
-          <h2 class="text-lg font-semibold text-primary-900 mb-2">Fale conosco</h2>
-          
+          <h2 class="text-lg font-semibold text-primary-900 mb-2">
+            Fale conosco
+          </h2>
+
           <div class="mb-1">
-            <a href={`tel:${CONTACT_INFO.phone.number}`} class="flex items-center gap-2">
+            <a
+              href={`tel:${CONTACT_INFO.phone.number}`}
+              class="flex items-center gap-2"
+            >
               <Smartphone width={20} height={20} />
               <span class="text-primary-600">{CONTACT_INFO.phone.display}</span>
             </a>
           </div>
-          
+
           <div>
-            <a href={`mailto:${CONTACT_INFO.email}`} class="flex items-center gap-2">
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              class="flex items-center gap-2"
+            >
               <Mail width={20} height={20} />
               <span class="text-primary-600">{CONTACT_INFO.email}</span>
             </a>
           </div>
         </div>
-        
+
         <div>
-          <h2 class="text-sm font-semibold text-primary-900 mb-3">Siga nas redes sociais</h2>
+          <h2 class="text-sm font-semibold text-primary-900 mb-3">
+            Siga nas redes sociais
+          </h2>
           <div class="flex space-x-4">
-            {SOCIAL_LINKS.map((social) => (
-              <a 
-                href={social.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors"
-                aria-label={`Seguir no ${social.name}`}
-              >
-                {social.icon ? (
-                  <social.icon 
-                    class="text-tertiary-50" 
-                    {...social.iconProps}
-                  />
-                ) : (
-                  <div class="fill-tertiary-50 ps-[1px]">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="26" 
-                      height="26" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="#fffefb" 
-                      stroke-width="2" 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      class="icon icon-tabler icons-tabler-outline icon-tabler-brand-spotify"
+            {
+              SOCIAL_LINKS.map((social) => (
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center hover:bg-primary-700 transition-colors"
+                  aria-label={`Seguir no ${social.name}`}
+                >
+                  {social.type === "lucide" && social.icon ? (
+                    <social.icon
+                      class="text-tertiary-50"
+                      {...social.iconProps}
+                    />
+                  ) : social.svgKey === "linkedin" ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="#fffefb"
+                    >
+                      <path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.977 1.977 0 1 1 0-3.953 1.977 1.977 0 0 1 0 3.953zm1.707 13.019H3.63V9h3.414v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  ) : social.svgKey === "instagram" ? (
+                    /* Instagram — SVG próprio (ícone removido do Lucide) */
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fffefb"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle
+                        cx="17.5"
+                        cy="6.5"
+                        r="1"
+                        fill="#fffefb"
+                        stroke="none"
+                      />
+                    </svg>
+                  ) : social.svgKey === "spotify" ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fffefb"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     >
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
@@ -141,69 +194,94 @@ const baseUrl = import.meta.env.BASE_URL;
                       <path d="M9 15c1.5 -1 4 -1 5 .5" />
                       <path d="M7 9c2 -1 6 -2 10 .5" />
                     </svg>
-                  </div>
-                )}
-              </a>
-            ))}
+                  ) : social.svgKey === "substack" ? (
+                    /* Substack — ícone oficial (S estilizado) */
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="#fffefb"
+                    >
+                      <path d="M22 5.892H2V8.42h20V5.892zM2 10.946V24l10-5.25L22 24V10.946H2zM22 0H2v2.526h20V0z" />
+                    </svg>
+                  ) : null}
+                </a>
+              ))
+            }
           </div>
         </div>
       </div>
-      
+
       <div class="flex flex-col justify-between h-full">
         <div>
-          <h2 class="text-lg font-semibold text-primary-900 mb-6">Informações</h2>
+          <h2 class="text-lg font-semibold text-primary-900 mb-6">
+            Informações
+          </h2>
           <nav class="grid grid-cols-1 gap-4">
             <div class="space-y-3">
-              {NAVIGATION_LINKS.map((link) => (
-                <a 
-                  href={`${baseUrl}${link.href}`} 
-                  class="text-primary-900 hover:text-primary-900 transition-colors block"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {
+                NAVIGATION_LINKS.map((link) => (
+                  <a
+                    href={`${baseUrl}${link.href}`}
+                    class="text-primary-900 hover:text-primary-900 transition-colors block"
+                  >
+                    {link.label}
+                  </a>
+                ))
+              }
             </div>
           </nav>
         </div>
-        
+
         <div class="mt-8">
-          <h2 class="text-sm font-semibold text-primary-900 mb-4">Nossos Apoiadores</h2>
+          <h2 class="text-sm font-semibold text-primary-900 mb-4">
+            Nossos Apoiadores
+          </h2>
           <div class="flex flex-wrap items-center gap-4 justify-start">
-            {SUPPORTERS.map((supporter) => (
-              <div class="w-20 md:w-28 flex items-center justify-center">
-                {supporter.url ? (
-                  <a href={supporter.url} target="_blank" rel="noopener noreferrer">
-                    <Image 
-                      src={supporter.logo} 
-                      alt={supporter.alt} 
+            {
+              SUPPORTERS.map((supporter) => (
+                <div class="w-20 md:w-28 flex items-center justify-center">
+                  {supporter.url ? (
+                    <a
+                      href={supporter.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src={supporter.logo}
+                        alt={supporter.alt}
+                        class={`w-auto h-auto ${supporter.maxHeight}`}
+                      />
+                    </a>
+                  ) : (
+                    <Image
+                      src={supporter.logo}
+                      alt={supporter.alt}
+                      format="webp"
                       class={`w-auto h-auto ${supporter.maxHeight}`}
                     />
-                  </a>
-                ) : (
-                  <Image 
-                    src={supporter.logo} 
-                    alt={supporter.alt} 
-                    format="webp"
-                    class={`w-auto h-auto ${supporter.maxHeight}`}
-                  />
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="bg-tertiary-300">
     <div class="max-w-7xl mx-auto px-6 py-4">
-      <div class="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0"
+      >
         <p class="text-primary-900 text-sm">
-          © 2025 Instituto ELAborar. Todos os direitos reservados.
+          © 2026 Instituto ELAborar. Todos os direitos reservados.
         </p>
-        
-        <a 
-          href={`${baseUrl}politica-de-privacidade`} 
+
+        <a
+          href={`${baseUrl}politica-de-privacidade`}
           class="text-primary-900 hover:text-primary-900 transition-colors text-sm"
         >
           Política de Privacidade
