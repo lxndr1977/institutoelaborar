@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import imgRenata from "../assets/images/team/renata-andreoni.jpg";
 // import imgMadalena from "../assets/images/team/magdalena-cortese.jpg";
 import imgNeoma from "../assets/images/team/neoma-mendes.jpg";
+import imgFernanda from "../assets/images/team/fernanda-moraes.jpg";
 
 const members = [
    {
@@ -25,16 +26,16 @@ const members = [
       socialLink: "https://linkedin.com/in/neoma-mendes-8943551a8",
       delay: 100,
    },
-   // {
-   //    initials: "MR",
-   //    name: "Magdalena Cortese Coelho ",
-   //    img: imgMadalena,
-   //    position: "Cofundadora e Diretora de Operações",
-   //    function:
-   //       "Doutora em Administração, Especialista em Estudos de Gênero, Educadora",
-   //    socialLink: "https://linkedin.com/in/magdalenacortesecoelho",
-   //    delay: 200,
-   // },
+   {
+      initials: "FM",
+      name: "Fernanda Moraes",
+      img: imgFernanda,
+      position: "Cofundadora e Diretora",
+      function:
+         "Doutoranda em Comunicação Social e Executiva de Comunicação Corporativa e Marketing",
+      socialLink: "",
+      delay: 200,
+   },
 ];
 ---
 
@@ -49,7 +50,7 @@ const members = [
    </div>
 
    <div
-      class="relative grid grid-cols-1 md:grid-cols-2 md:max-w-5xl mx-auto gap-8 space-y-8 sm:space-y-0"
+      class="relative grid grid-cols-1 md:grid-cols-3 md:max-w-5xl mx-auto gap-8 space-y-8 sm:space-y-0"
    >
       {
          members.map((member) => (
