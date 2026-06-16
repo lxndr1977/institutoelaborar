@@ -15,6 +15,7 @@ import mediadoraRenata from "../assets/images/clube-do-livro/renata.webp";
 const obras = [
   {
     src: obraA,
+    srcHover: obraB,
     alt: "Uma, duas - Eliane Brum (Brasil)",
     caption: "Uma, duas",
     author: "Eliane Brum (Brasil)",
@@ -22,6 +23,8 @@ const obras = [
   },
   {
     src: obraC,
+    srcHover: obraB,
+
     alt: "Leme - Madalena Sá Fernandes (Portugal) ",
     caption: "Leme",
     author: "Madalena Sá Fernandes (Portugal)",
@@ -29,6 +32,7 @@ const obras = [
   },
   {
     src: obraB,
+    srcHover: obraC,
     alt: "A Vida Real - Adeline Dieudonné (Bélgica)",
     caption: "A Vida Real",
     author: "Adeline Dieudonné (Bélgica)",
@@ -36,6 +40,8 @@ const obras = [
   },
   {
     src: obraD,
+    srcHover: obraB,
+
     alt: "Saboroso Cadáver - Agustina Bazterrica (Argentina)",
     caption: "Saboroso Cadáver",
     author: "Agustina Bazterrica (Argentina)",
@@ -200,52 +206,46 @@ const testimonials = [
     </section>
 
     <!-- OBRAS -->
-    <section class="mx-auto p-20 lg:py-32">
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-center"
-      >
-        <h2
-          class="text-3xl lg:text-4xl font-semibold text-primary-700 tracking-tighter"
-        >
-          Sobre as obras
-        </h2>
+    <section class="mx-auto py-20 lg:py-32">
+  <div class="lmx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-center">
+    <h2 class="text-3xl lg:text-4xl font-semibold text-primary-700 tracking-tighter">
+      Sobre as obras
+    </h2>
+    <div class="lg:max-w-4xl mx-auto space-y-6 text-primary-900 leading-relaxed tracking-tight pb-8">
+      <p class="text-xl">
+        Quatro livros. Quatro escritoras. Quatro países. Uma escalada que
+        começa no vínculo mais íntimo da maternidade e atravessa diferentes
+        formas de violência até chegar à distopia, onde a literatura
+        radicaliza o real para que possamos imaginar, criar e transformar.
+      </p>
+      <p class="text-xl">Os livros, na ordem da travessia:</p>
+    </div>
 
-        <div
-          class="max-w-4xl mx-auto space-y-6 text-primary-900 leading-relaxed tracking-tight pb-8"
-        >
-          <p class="text-xl">
-            Quatro livros. Quatro escritoras. Quatro países. Uma escalada que
-            começa no vínculo mais íntimo da maternidade e atravessa diferentes
-            formas de violência até chegar à distopia, onde a literatura
-            radicaliza o real para que possamos imaginar, criar e transformar.
-          </p>
-          <p class="text-xl">Os livros, na ordem da travessia:</p>
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-2">
+      {obras.map((obra) => (
+        <div class="text-center">
+          <div
+            class="book-flip w-full overflow-hidden rounded-lg shadow-md mb-6 relative cursor-pointer"
+          >
+            <Image
+              src={obra.src}
+              alt={obra.alt}
+              class="book-front w-full h-full object-cover transition-opacity duration-300"
+            />
+            <Image
+              src={obra.srcHover}
+              alt={obra.alt}
+              class="book-back w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300"
+            />
+          </div>
+          <p class="font-semibold text-lg text-primary-900 mb-1">{obra.caption}</p>
+          <p class="text-primary-900 mb-1">{obra.author}</p>
+          <p class="text-sm">{obra.month}</p>
         </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-2">
-          {
-            obras.map((obra) => (
-              <div class="text-center">
-                <div class="w-full overflow-hidden rounded-lg shadow-md mb-6">
-                  <Image
-                    src={obra.src}
-                    alt={obra.alt}
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-
-                <p class="font-semibold text-lg text-primary-900 mb-1">
-                  {obra.caption}
-                </p>
-                <p class="text-primary-900  mb-1">{obra.author}</p>
-
-                <p class="text-sm">{obra.month}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+</section>
 
     <!-- UMA LENTE PARA A TRAVESSIA -->
     <section
@@ -763,3 +763,25 @@ const testimonials = [
     </section>
   </div>
 </Layout>
+
+
+
+<style>
+  @media (hover: hover) {
+    .book-flip:hover .book-front { opacity: 0; }
+    .book-flip:hover .book-back  { opacity: 1; }
+  }
+
+  @media (hover: none) {
+    .book-flip.flipped .book-front { opacity: 0; }
+    .book-flip.flipped .book-back  { opacity: 1; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.book-flip').forEach((el) => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('flipped');
+    });
+  });
+</script>
