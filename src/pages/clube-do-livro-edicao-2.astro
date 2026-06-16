@@ -7,6 +7,8 @@ import obraB from "../assets/images/clube-do-livro/livro-a-vida-real-adeline-dio
 import obraC from "../assets/images/clube-do-livro/livro-leme-madalena-sa-fernandes.webp";
 import obraD from "../assets/images/clube-do-livro/livro-saboroso-cadaver-augustina-bazterrica.webp";
 
+import capaDororidade from "../assets/images/clube-do-livro/livro-dororidade.jpg";
+
 import mediadoraFlavia from "../assets/images/clube-do-livro/flavia.jpg";
 import mediadoraRenata from "../assets/images/clube-do-livro/renata.jpg";
 
@@ -16,54 +18,145 @@ const obras = [
     alt: "Uma, duas - Eliane Brum (Brasil)",
     caption: "Uma, duas",
     author: "Eliane Brum (Brasil)",
-  },
-  {
-    src: obraB,
-    alt: "A Vida Real - Adeline Dieudonné (Bélgica)",
-    caption: "A Vida Real",
-    author: "Adeline Dieudonné (Bélgica)",
+    month: "Agosto",
   },
   {
     src: obraC,
     alt: "Leme - Madalena Sá Fernandes (Portugal) ",
     caption: "Leme",
     author: "Madalena Sá Fernandes (Portugal)",
+    month: "Setembro",
+  },
+  {
+    src: obraB,
+    alt: "A Vida Real - Adeline Dieudonné (Bélgica)",
+    caption: "A Vida Real",
+    author: "Adeline Dieudonné (Bélgica)",
+    month: "Outubro",
   },
   {
     src: obraD,
     alt: "Saboroso Cadáver - Agustina Bazterrica (Argentina)",
     caption: "Saboroso Cadáver",
     author: "Agustina Bazterrica (Argentina)",
+    month: "Novembro",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "A literatura sempre ocupou um lugar especial na minha vida. Com as exigências da vida adulta, fui diminuindo o ritmo das leituras. Participar do Clube do Livro acenou para mim como uma oportunidade de retomar esse hábito...",
+    body: "A curadoria dos livros é cuidadosa, a coordenação dos encontros feita pela Renata e pela Flávia é atenta e sensível, e as reflexões compartilhadas trazem alma, calor humano e pertencimento. Sem falar que estamos colaborando para esse potente projeto do Instituto ELAborar.",
+    name: "Cláudia Guerra",
+  },
+  {
+    quote:
+      "Amei poder participar de um projeto tão incrível. A qualidade dos materiais desenvolvidos mostra que tudo foi pensado com muito carinho.",
+    body: "O clube do livro vai além da leitura: é uma oportunidade de troca e conexão. Me senti honrada de participar, mesmo à distância. Que mais mulheres tenham a oportunidade de enriquecer sua visão sobre o mundo e fortalecer vínculos.",
+    name: "Malucy Macedo",
+  },
+  {
+    quote: "Participar do ELAborando Mulheridades tem sido muito gratificante.",
+    body: "O projeto reúne mulheres de diferentes idades e experiências. Os encontros são conduzidos com maestria, conectando literatura, filmes, séries e diferentes linguagens. Uma experiência rica de trocas e reflexões sobre o universo feminino.",
+    name: "Natália Maria Poock Delavequia",
+  },
+  {
+    quote: "Participar do clube do livro tem sido uma experiência incrível.",
+    body: "As mediadoras conduzem tudo com muito cuidado e sensibilidade, transformando os encontros em momentos de troca, reflexão e acolhimento. A organização e a forma como tudo acontece fazem toda a diferença.",
+    name: "Dorvalina Moraes",
+  },
+  {
+    quote:
+      "Participar do Clube do Livro tem sido uma excelente oportunidade de ocupar um espaço de escuta, troca e reflexão entre mulheres.",
+    body: "A cada encontro somos convidadas a olhar para temas profundos, ampliar compreensões e fortalecer a consciência sobre a defesa dos direitos das mulheres. Uma experiência potente, acolhedora e transformadora.",
+    name: "Mariana Carvalho Silveira",
+  },
+  {
+    quote:
+      "Participar do Clube do Livro ELAborando Mulheridades tem sido uma experiência muito enriquecedora.",
+    body: "Adorei a seleção de livros e os encontros muito bem moderados. São momentos genuínos de troca, escuta e acolhimento. Saímos de cada reunião com novas perspectivas e a sensação de pertencer a um espaço especial.",
+    name: "Ana Carolina Prado Souza",
   },
 ];
 ---
 
 <Layout>
-  <div class="mb-28 space-y-24">
-    <!-- HERO -->
-    <section class="w-full bg-secondary-100 py-20">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- <div class="flex flex-col lg:flex-row lg:items-center gap-12"> -->
+  <div class="mb-28">
+    <!-- HERO SECTION  -->
+    <section class="relative overflow-hidden bg-secondary-100">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-28">
+        <div class="flex flex-col items-center text-center space-y-8">
+          <p class="text-5xl tracking-tighter text-secondary-600">
+            Clube do Livro · 2ª Edição
+          </p>
 
-        <!-- FOTO À ESQUERDA (UM POUCO MENOR) -->
-
-        <!-- TEXTO À DIREITA (MAIOR) -->
-        <div class="w-full text- space-y-6 text-">
           <h1
-            class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600"
+            class="text-5xl sm:text-6xl lg:text-7xl tracking-tighter text-primary-600"
           >
-            Clube do Livro <span class="text-primary-600"
-              >ELAborando Mulheridades
-            </span>
+            ELAborando Mulheridades
           </h1>
-          <p class="text-3xl text-primary-600">2a. Edição</p>
 
-          <p class="text-xl text-primary-900">
-            Um convite ao encontro, à pausa e à (re)construção.
+          <p
+            class="text-xl lg:text-2xl text-primary-700 max-w-2xl leading-snug tracking-tight"
+          >
+            Um convite ao encontro, à pausa e a ELAboração
           </p>
         </div>
+      </div>
+    </section>
 
-        <div class="py-8 space-y-6">
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="px-4 max-w-3xl mx-auto text-center space-y-8">
+        <blockquote class="space-y-4">
+          <p
+            class="text-2xl lg:text-3xl font-light text-primary-800 leading-snug tracking-tight"
+          >
+            "Você acha que não fala a mesma língua, mas então se dá conta de que
+            a dor é a língua. Nós que temos passados conturbados nos
+            entendemos."
+          </p>
+          <cite
+            class="block text-primary-400 text-sm font-medium uppercase tracking-widest not-italic"
+          >
+            Elif Shafak
+          </cite>
+        </blockquote>
+
+        <div class="w-12 h-px bg-primary-200 mx-auto"></div>
+
+        <p class="text-primary-700 text-lg leading-relaxed">
+          A nossa comunicação se encontra na dor que nasce da violência,
+          simplesmente, por sermos mulheres. Mas nasce também na audácia de
+          escutar a própria voz e na força de lutar coletivamente contra essa
+          violência para renascer.
+        </p>
+      </div>
+    </section>
+
+    <!-- SOBRE A EDIÇÃO -->
+    <section class="mx-auto py-20 lg:py-32  bg-primary-50">
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+      <div class="grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5">
+          <div class="sticky top-32">
+            <p
+              class="text-sm uppercase tracking-[0.25em] font-semibold text-primary-500 mb-4"
+            >
+              Sobre a edição
+            </p>
+            <h2
+              class="text-3xl lg:text-4xl text-primary-600 leading-tighter tracking-tighter"
+            >
+              A travessia continua, agora com um tema que não nos deixa esquivar
+            </h2>
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-7 lg:col-start-6 space-y-6 text-lg leading-relaxed text-primary-800/90"
+        >
           <p class="text-lg leading-relaxed text-primary-900">
             A primeira edição do Clube do Livro ELAborando Mulheridades reuniu
             quase 30 mulheres de diferentes regiões do Brasil, de diferentes
@@ -98,139 +191,162 @@ const obras = [
         </div>
       </div>
     </section>
+    </section>
 
     <!-- OBRAS -->
-    <section class="max-w-6xl mx-auto px-4 space-y-10">
-      <h2
-        class="text-xl font-semibold text-primary-700 flex items-center gap-2"
+    <section class="mx-auto p-20 lg:py-32">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-center"
       >
-        Sobre as obras
-      </h2>
+        <h2
+          class="text-3xl lg:text-4xl font-semibold text-primary-700 tracking-tighter"
+        >
+          Sobre as obras
+        </h2>
 
-      <div class="max-w-4xl space-y-6 text-primary-900 leading-relaxed">
-        <p>
-          Quatro livros. Quatro escritoras. Quatro países. Uma escalada que
-          começa no vínculo mais íntimo da maternidade e atravessa diferentes
-          formas de violência até chegar à distopia, onde a literatura
-          radicaliza o real para que possamos imaginar, criar e transformar.
-        </p>
-        <p>Os livros, na ordem da travessia:</p>
-      </div>
+        <div
+          class="max-w-4xl mx-auto space-y-6 text-primary-900 leading-relaxed tracking-tight pb-8"
+        >
+          <p class="text-xl">
+            Quatro livros. Quatro escritoras. Quatro países. Uma escalada que
+            começa no vínculo mais íntimo da maternidade e atravessa diferentes
+            formas de violência até chegar à distopia, onde a literatura
+            radicaliza o real para que possamos imaginar, criar e transformar.
+          </p>
+          <p class="text-xl">Os livros, na ordem da travessia:</p>
+        </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {
-          obras.map((obra) => (
-            <div class="text-center">
-              <div class="w-full overflow-hidden rounded-lg shadow-md mb-6">
-                <Image
-                  src={obra.src}
-                  alt={obra.alt}
-                  class="w-full h-full object-cover"
-                />
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-2">
+          {
+            obras.map((obra) => (
+              <div class="text-center">
+                <div class="w-full overflow-hidden rounded-lg shadow-md mb-6">
+                  <Image
+                    src={obra.src}
+                    alt={obra.alt}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <p class="font-semibold text-lg text-primary-900 mb-1">
+                  {obra.caption}
+                </p>
+                <p class="text-primary-900  mb-1">{obra.author}</p>
+
+                <p class="text-sm">{obra.month}</p>
               </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-              <p class="text-sm font-bold text-primary-900 mb-1">
-                {obra.caption}
-              </p>
-              <p class="text-sm text-primary-900">{obra.author}</p>
-            </div>
-          ))
-        }
+    <!-- UMA LENTE PARA A TRAVESSIA -->
+    <section
+      class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 py-20 lg:py-32"
+    >
+      <!-- Layout duas colunas: capa + texto -->
+      <div class="flex flex-col sm:flex-row gap-12 items-start">
+        <Image
+          src={capaDororidade}
+          alt="Capa do livro Dororidade, de Vilma Piedade"
+          class="w-36 sm:w-64 rounded shadow-sm shrink-0 mx-auto sm:mx-0"
+        />
+        <div class="space-y-4">
+          <h2
+            class="text-3xl lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center mb-10 gap-2"
+          >
+            Uma lente para a travessia
+          </h2>
+          <div class="space-y-6 text-primary-900 leading-relaxed">
+            <p>
+              Os quatro romances desta edição nos colocam diante de diferentes
+              formas de violência contra a mulher e de diferentes formas de
+              silenciamento da voz feminina. Para percorrer essa travessia,
+              precisamos ter a "audácia de escutar", como propõe Carol Gilligan,
+              e uma lente que reconheça as diferenças entre nós.
+            </p>
+            <p>É o que Dororidade, de Vilma Piedade, nos oferece.</p>
+            <p>
+              Publicado em 2017 pela Editora Nós, o livro propõe um conceito que
+              nasce da percepção de que a sororidade, palavra que nomeia a
+              solidariedade entre mulheres, precisa ser aprofundada para
+              contemplar a experiência das mulheres negras.
+            </p>
+            <p>
+              Dororidade é o eixo conceitual desta edição: uma lente para
+              percorrer romances que narram experiências de mulheres de
+              diferentes países, raças, classes e contextos. Porque construir um
+              fortalecimento coletivo entre mulheres exige aprender a escutar as
+              dores que diferem das nossas, reconhecê-las como reais e deixar
+              que ampliem nossa consciência e nossa capacidade de agir juntas.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- HISTÓRIAS QUE NOS ATRAVESSAM -->
-    <section class="px-4 max-w-4xl mx-auto space-y-6">
-      <h2
-        class="text-xl lg:text-3xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
-      >
-        Uma lente para a travessia
-      </h2>
-
+    <section class="mx-auto py-20 lg:py-32 bg-primary-50">
       <div
-        class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
+        class="px-4 max-w-5xl px-4 sm:px-6 lg:px-8 space-y-6 mx-auto space-y-6"
       >
-        <p>
-          Os quatro romances desta edição nos colocam diante de diferentes
-          formas de violência contra a mulher e de diferentes formas de
-          silenciamento da voz feminina. Para percorrer essa travessia,
-          precisamos ter a “audácia de escutar”, como propõe Carol Gilligan, e
-          uma lente que reconheça as diferenças entre nós.
-        </p>
-        <p>É o que Dororidade, de Vilma Piedade, nos oferece.</p>
-        <p>
-          Publicado em 2017 pela Editora Nós, o livro propõe um conceito que
-          nasce da percepção de que a sororidade, palavra que nomeia a
-          solidariedade entre mulheres, precisa ser aprofundada para contemplar
-          a experiência das mulheres negras.
-        </p>
-        <p>
-          Dororidade é o eixo conceitual desta edição: uma lente para percorrer
-          romances que narram experiências de mulheres de diferentes países,
-          raças, classes e contextos. Porque construir um fortalecimento
-          coletivo entre mulheres exige aprender a escutar as dores que diferem
-          das nossas, reconhecê-las como reais e deixar que ampliem nossa
-          consciência e nossa capacidade de agir juntas.
-        </p>
+        <h2
+          class="text-3xl lg:text-4xl mb-10 font-medium tracking-tighter text-primary-700 flex items-center gap-2"
+        >
+          Histórias que nos atravessam e nos conectam
+        </h2>
+
+        <div class="space-y-6 text-primary-900 leading-relaxed">
+          <p>
+            A escolha dos livros foi visceral e extremamente ousada. Cada livro
+            desta edição nos coloca diante de uma forma de violência que existe
+            de verdade, que tem endereço, que tem rosto, que muitas vezes tem o
+            rosto de alguém conhecido.
+          </p>
+          <p>
+            Reconhecemos que a igualdade de gênero não está apenas nos salários,
+            cargos e representatividade. A violência é um fenômeno estrutural
+            que atravessa tudo isso e afeta diretamente a autonomia, carreira,
+            saúde e participação política das mulheres.
+          </p>
+          <p>
+            Começamos onde a violência tem início com mais frequência: dentro de
+            casa, dentro do vínculo, dentro do amor que machuca sem pedir
+            licença e se repete, mesmo sem querer. Atravessamos a infância
+            interrompida, a memória que a morte do agressor não apaga, o corpo
+            feminino reduzido a mercadoria. E chegamos à distopia, não como fuga
+            do real, mas como radicalização dele.
+          </p>
+          <p>
+            Enfrentar dilemas do mundo real também é papel das lideranças
+            femininas, que precisam lidar com a solidão, a exigência de
+            sustentar emocionalmente relações, de navegar no caos e de bater
+            metas, mesmo tendo que “abater a saúde mental” dos liderados.
+          </p>
+          <p>
+            Entre esses quatro livros, há uma progressão que não é só literária.
+            É a progressão de um mundo que aprendeu a conviver com o sofrimento
+            das mulheres como se fosse inevitável. A literatura recusa esse
+            conformismo. Ela nos devolve a capacidade de imaginar, criar, pensar
+            e transformar.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- HISTÓRIAS QUE NOS ATRAVESSAM -->
-    <section class="px-4 max-w-4xl mx-auto space-y-6">
+    <!-- AS MEDIADORAS -->
+    <section
+      class="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-10 py-20 lg:py-32"
+    >
       <h2
-        class="text-xl lg:text-3xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
-      >
-        Histórias que nos atravessam e nos conectam
-      </h2>
-
-      <div
-        class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
-      >
-        <p>
-          A escolha dos livros foi visceral e extremamente ousada. Cada livro
-          desta edição nos coloca diante de uma forma de violência que existe de
-          verdade, que tem endereço, que tem rosto, que muitas vezes tem o rosto
-          de alguém conhecido.
-        </p>
-        <p>
-          Reconhecemos que a igualdade de gênero não está apenas nos salários,
-          cargos e representatividade. A violência é um fenômeno estrutural que
-          atravessa tudo isso e afeta diretamente a autonomia, carreira, saúde e
-          participação política das mulheres.
-        </p>
-        <p>
-          Começamos onde a violência tem início com mais frequência: dentro de
-          casa, dentro do vínculo, dentro do amor que machuca sem pedir licença
-          e se repete, mesmo sem querer. Atravessamos a infância interrompida, a
-          memória que a morte do agressor não apaga, o corpo feminino reduzido a
-          mercadoria. E chegamos à distopia, não como fuga do real, mas como
-          radicalização dele.
-        </p>
-        <p>
-          Enfrentar dilemas do mundo real também é papel das lideranças
-          femininas, que precisam lidar com a solidão, a exigência de sustentar
-          emocionalmente relações, de navegar no caos e de bater metas, mesmo
-          tendo que “abater a saúde mental” dos liderados.
-        </p>
-        <p>
-          Entre esses quatro livros, há uma progressão que não é só literária. É
-          a progressão de um mundo que aprendeu a conviver com o sofrimento das
-          mulheres como se fosse inevitável. A literatura recusa esse
-          conformismo. Ela nos devolve a capacidade de imaginar, criar, pensar e
-          transformar.
-        </p>
-      </div>
-    </section>
-
-    <section class="px-4 max-w-5xl mx-auto space-y-10">
-      <h2
-        class="text-xl lg:text-4xl font-medium tracking-tighter text-center font-medium text-primary-700 gap-2"
+        class="text-3xl lg:text-4xl font-medium tracking-tighter text-center font-medium text-primary-700 gap-2 pb-10"
       >
         As mediadoras
       </h2>
 
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div class="flex flex-col bg-white p-6 rounded-xl shadow-md space-y-4">
+      <div class="grid md:grid-cols-2 gap-32 items-start">
+        <div class="flex flex-col space-y-4">
           <Image
             src={mediadoraFlavia}
             alt="Flavia Abade"
@@ -251,7 +367,7 @@ const obras = [
           </p>
         </div>
 
-        <div class="flex flex-col bg-white p-6 rounded-xl shadow-md space-y-4">
+        <div class="flex flex-col space-y-4">
           <Image
             src={mediadoraRenata}
             alt="Renata Andreoni"
@@ -276,17 +392,50 @@ const obras = [
       </div>
     </section>
 
+    <!-- DEPOIMENTOS -->
+    <section class="mx-auto py-20 lg:py-32 bg-primary-50">
+      <div class="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-10">
+        <h2
+          class="text-xl lg:text-4xl font-medium tracking-tighter text-primary-700 text-center"
+        >
+          O que as participantes dizem
+        </h2>
+
+        <p class="text-center text-primary-900 max-w-3xl mx-auto">
+          Histórias, reflexões, conexões e pertencimento. Conheça a experiência
+          de mulheres que participaram da primeira edição do Clube do Livro
+          ELAborando Mulheridades.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {
+            testimonials.map((t) => (
+              <div class="bg-white p-6 rounded-xl shadow-md flex flex-col">
+                <p class="text-primary-600 font-semibold leading-relaxed italic mb-4">
+                  {t.quote}
+                </p>
+                <p class="text-primary-900 leading-relaxed flex-1">{t.body}</p>
+                <div class="pt-4 mt-auto">
+                  <p class="font-semibold text-primary-700">{t.name}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <!-- PAUSA & CUIDADO -->
-    <section class="px-4 max-w-4xl mx-auto space-y-6">
+    <section
+      class="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-6 py-20 lg:py-32"
+    >
       <h2
-        class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
+        class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2 mb-10"
       >
         Leitura como caminho de cuidado e consciência
       </h2>
 
-      <div
-        class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
-      >
+      <div class="space-y-6 text-primary-900 leading-relaxed">
         <p>
           Os livros que escolhemos para esta edição não são confortáveis, mas
           são necessários! Eles nos convidam a olhar para o que preferiríamos
@@ -311,20 +460,24 @@ const obras = [
     </section>
 
     <!-- TRAVESSIA -->
-    <section class="px-4 max-w-4xl mx-auto space-y-6">
+    <section
+      class="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-6 pb-20 lg:pb-32"
+    >
       <h2
-        class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
+        class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2 mb-10"
       >
         Um clube que também é travessia
       </h2>
 
       <div
-        class="bg-white p-6 rounded-xl shadow-sm space-y-6 text-primary-900 leading-relaxed"
+        class="bg-white p-6 lg:p-8 rounded-xl shadow-sm space-y-6 text-primary-900 leading-relaxed"
       >
         <p>
-          “As histórias conferem movimento à nossa vida interior e exterior.
-          Elas abrem portas.”
-          <br />— Clarissa Pinkola Estés
+          <span class="text-xl tracking-tight italic"
+            >“As histórias conferem movimento à nossa vida interior e exterior.
+            Elas abrem portas.”</span
+          >
+          <br />- Clarissa Pinkola Estés
         </p>
 
         <p>
@@ -355,18 +508,18 @@ const obras = [
           fortalecimento coletivo.
         </p>
       </div>
+    </section>
 
-      <!-- COMO FUNCIONA -->
-      <section class="px-4 max-w-4xl mx-auto space-y-6">
+    <!-- COMO FUNCIONA -->
+    <section class="mx-auto py-20 lg:py-32 bg-primary-50">
+      <div class="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-6">
         <h2
           class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
         >
           Como funciona
         </h2>
 
-        <div
-          class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
-        >
+        <div class="space-y-6 text-primary-900 leading-relaxed">
           <p>
             O Clube do Livro ELAborando Mulheridades acontecerá ao longo de 4
             meses, de agosto a novembro de 2026, com 1 livro por mês.
@@ -395,196 +548,212 @@ const obras = [
             adicionais nas cidades de Belo Horizonte/MG e em Porto Alegre/RS.
           </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- MATERIAIS -->
-      <section class="px-4 max-w-4xl mx-auto space-y-6">
-        <h2
-          class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
-        >
-          Conteúdos e materiais exclusivos
-        </h2>
+    <!-- MATERIAIS -->
+    <section
+      class="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-6 py-20 lg:py-32"
+    >
+      <h2
+        class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
+      >
+        Conteúdos e materiais exclusivos
+      </h2>
 
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm space-y-4 text-primary-900 leading-relaxed"
-        >
-          <p>
-            Além dos encontros, cada obra contará com um material em PDF
-            exclusivo, produzido pelas mediadoras sob as lentes da Comunicologia
-            e da Psicologia.
-          </p>
-          <p>
-            O material de cada mês incluirá síntese e provocações sobre o livro,
-            curadoria de filmes, músicas, textos e outros conteúdos em diálogo
-            com a obra, e a Cartografia Literária com perguntas para a reflexão
-            individual e coletiva.
-          </p>
-        </div>
-      </section>
+      <div class="space-y-4 text-primary-900 leading-relaxed">
+        <p>
+          Além dos encontros, cada obra contará com um material em PDF
+          exclusivo, produzido pelas mediadoras sob as lentes da Comunicologia e
+          da Psicologia.
+        </p>
+        <p>
+          O material de cada mês incluirá síntese e provocações sobre o livro,
+          curadoria de filmes, músicas, textos e outros conteúdos em diálogo com
+          a obra, e a Cartografia Literária com perguntas para a reflexão
+          individual e coletiva.
+        </p>
+      </div>
+    </section>
 
-      <!-- GRUPO TELEGRAM -->
-      <section class="px-4 max-w-4xl mx-auto space-y-6">
-        <h2
-          class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
-        >
-          Espaço de trocas
-        </h2>
+    <!-- GRUPO TELEGRAM -->
+    <section
+      class="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-6 pb-20 lg:pb-32"
+    >
+      <h2
+        class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
+      >
+        Espaço de trocas
+      </h2>
 
-        <div
-          class="bg-secondary-50 p-6 rounded-md shadow-sm space-y-6 text-primary-900 leading-relaxed"
-        >
-          <p>
-            As participantes também terão acesso a um grupo exclusivo no
-            WhatsApp, um espaço acolhedor para compartilhar impressões,
-            experiências e construir vínculos com outras mulheres entre os
-            encontros.
-          </p>
+      <div class="space-y-6 text-primary-900 leading-relaxed">
+        <p>
+          As participantes também terão acesso a um grupo exclusivo no WhatsApp,
+          um espaço acolhedor para compartilhar impressões, experiências e
+          construir vínculos com outras mulheres entre os encontros.
+        </p>
 
-          <p>
-            O Clube do Livro ELAborando Mulheridades é uma experiência viva:
-            feita de leituras, escutas, partilhas e afetos. E, nesta edição,
-            também de coragem.
-          </p>
-        </div>
-      </section>
+        <p>
+          O Clube do Livro ELAborando Mulheridades é uma experiência viva: feita
+          de leituras, escutas, partilhas e afetos. E, nesta edição, também de
+          coragem.
+        </p>
+      </div>
+    </section>
 
-      <!-- INGRESSO AO CLUBE -->
-      <section class="px-4 max-w-5xl mx-auto space-y-10">
+    <!-- INGRESSO AO CLUBE -->
+    <section class="mx-auto py-20 lg:py-32 bg-primary-50">
+      <section class="px-4 max-w-7xl mx-auto space-y-10">
         <h2
           class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
         >
           Ingresso ao Clube
         </h2>
 
-        <div
-          class="bg-white p-6 rounded-xl shadow-sm space-y-6 text-primary-900 leading-relaxed"
-        >
+        <div class="space-y-6 text-primary-900 leading-relaxed">
           <p>
-          Toda a arrecadação será destinada aos projetos sociais do Instituto
-          ELAborar. Participar do Clube é também um ato de solidariedade.
-        </p>
+            Toda a arrecadação será destinada aos projetos sociais do Instituto
+            ELAborar. Participar do Clube é também um ato de solidariedade.
+          </p>
 
           <h3 class="font-bold text-lg text-primary-700">Contribuições</h3>
 
-          <ul class="space-y-12">
-               <li>
-                  <div>
-                     <strong>Cota Social – R$ 50</strong><br />
-                     <p class="mb-6">
-                        Pensada para garantir a inclusão de mulheres de
-                        diferentes classes sociais, possibilitando que todas
-                        possam participar deste espaço de encontro, trocas e
-                        reflexão.
-                     </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Cota Social -->
+            <div
+              class="border border-primary-100 bg-white rounded-xl p-6 flex flex-col gap-4"
+            >
+              <div>
+                <span
+                  class="inline-block text-xs font-medium bg-primary-50 text-primary-700 px-3 py-1 rounded-md mb-3"
+                >
+                  Cota Social
+                </span>
+                <p class="text-3xl font-medium text-primary-700">R$ 50</p>
+              </div>
+              <p class="text-sm text-primary-800 leading-relaxed flex-1">
+                Pensada para garantir a inclusão de mulheres de diferentes
+                classes sociais, possibilitando que todas possam participar
+                deste espaço de encontro, trocas e reflexão.
+              </p>
 
-                     <a
-                        href="https://www.asaas.com/c/bmiu61uh7b5fnsl9"
-                        target="_blank"
-                        class="bg-primary-600 text-white px-6 py-2 rounded text-center text-sm font-medium hover:bg-primary-700 transition"
-                     >
-                        Inscreva-se
-                     </a>
-                  </div>
-               </li>
+              <a
+                href="https://www.asaas.com/c/bmiu61uh7b5fnsl9"
+                target="_blank"
+                class="bg-primary-600 text-white px-6 py-2.5 rounded text-center text-sm font-medium hover:bg-primary-700 transition mt-auto"
+              >
+                Inscreva-se
+              </a>
+            </div>
 
-               <li>
-                  <div>
-                     <strong>Cota Intermediária – R$ 250</strong><br />
-                     <p class="mb-6">
-                        Valor que contribui parcialmente para o custeio das
-                        atividades do Clube, ajudando a viabilizar encontros,
-                        materiais e recursos de comunicação.
-                     </p>
+            <!-- Cota Intermediária -->
+            <div
+              class="border border-primary-100 bg-white rounded-xl p-6 flex flex-col gap-4"
+            >
+              <div>
+                <span
+                  class="inline-block text-xs font-medium bg-primary-50 text-primary-700 px-3 py-1 rounded-md mb-3"
+                >
+                  Cota Intermediária
+                </span>
+                <p class="text-3xl font-medium text-primary-700">R$ 250</p>
+              </div>
+              <p class="text-sm text-primary-800 leading-relaxed flex-1">
+                Valor que contribui parcialmente para o custeio das atividades
+                do Clube, ajudando a viabilizar encontros, materiais e recursos
+                de comunicação.
+              </p>
 
-                     <a
-                        href="https://www.asaas.com/c/id2tox9dzb8i1cww"
-                        target="_blank"
-                        class="bg-primary-600 text-white px-6 py-2 rounded text-center text-sm font-medium hover:bg-primary-700 transition"
-                     >
-                        Inscreva-se
-                     </a>
-                  </div>
-               </li>
+              <a
+                href="https://www.asaas.com/c/id2tox9dzb8i1cww"
+                target="_blank"
+                class="bg-primary-600 text-white px-6 py-2.5 rounded text-center text-sm font-medium hover:bg-primary-700 transition mt-auto"
+              >
+                Inscreva-se
+              </a>
+            </div>
 
-               <li>
-                  <div>
-                     <strong>Cota Solidária – R$ 400</strong><br />
-                     <p class="mb-6">
-                        Contribuição que cobre integralmente os custos de
-                        produção e realização do Clube, fortalecendo também os
-                        projetos de impacto social do Instituto ELAborar.
-                     </p>
+            <!-- Cota Solidária (destaque) -->
+            <div
+              class="border-2 border-primary-100 bg-white rounded-xl p-6 flex flex-col gap-4"
+            >
+              <div>
+                <span
+                  class="inline-block text-xs font-medium bg-primary-50 text-primary-700 px-3 py-1 rounded-md mb-3"
+                >
+                  Cota Solidária
+                </span>
+                <p class="text-3xl font-medium text-primary-700">R$ 400</p>
+              </div>
+              <p class="text-sm text-primary-800 leading-relaxed flex-1">
+                Contribuição que cobre integralmente os custos de produção e
+                realização do Clube, fortalecendo também os projetos de impacto
+                social do Instituto ELAborar.
+              </p>
+              <p class="text-xs text-primary-600 font-medium">
+                À vista ou em até 6x sem juros
+              </p>
 
-                     <div class="grid grid-cols-2">
-                        <div>
-                           <p class="font-medium text-sm mb-3">
-                              À vista ou em até 6x sem juros
-                           </p>
-                           <a
-                              href="https://www.asaas.com/c/3dad524fyo4qqsd1"
-                              target="_blank"
-                              class="bg-primary-600 text-white px-6 py-2 rounded text-center text-sm font-medium hover:bg-primary-700 transition"
-                           >
-                              Inscreva-se
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-            </ul>
+              <a
+                href="https://www.asaas.com/c/3dad524fyo4qqsd1"
+                target="_blank"
+                class="bg-primary-600 text-white px-6 py-2.5 rounded text-center text-sm font-medium hover:bg-primary-700 transition mt-auto"
+              >
+                Inscreva-se
+              </a>
+            </div>
+          </div>
 
-          <p><strong>Observação:</strong> Os livros não estão inclusos e poderão ser adquiridos na sua livraria de preferência. Estamos buscando parcerias com editoras e lojas, esperamos em breve compartilhar boas novidades por aqui!</p>
-             
-
-          <!-- <p>
-            Inscrições encerradas. Em breve, anunciaremos a próxima edição do
-            Clube do Livro ELAborando Mulheridades. Fique atenta às nossas redes
-            sociais para não perder as novidades.
-          </p> -->
+          <p>
+            <strong>Observação:</strong> Os livros não estão inclusos e poderão ser
+            adquiridos na sua livraria de preferência. Estamos buscando parcerias
+            com editoras e lojas, esperamos em breve compartilhar boas novidades
+            por aqui!
+          </p>
         </div>
       </section>
+    </section>
 
-      <!-- POR QUE PARTICIPAR -->
-      <section class="px-4 max-w-4xl mx-auto space-y-6">
-        <h2
-          class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
-        >
-          Por que participar?
-        </h2>
+    <!-- POR QUE PARTICIPAR -->
+    <section
+      class="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-6 pt-20 lg:pt-32"
+    >
+      <h2
+        class="text-xl font-medium lg:text-4xl font-medium tracking-tighter text-primary-700 flex items-center gap-2"
+      >
+        Por que participar?
+      </h2>
 
-        <ul class="list-disc pl-4 space-y-2 text-primary-900">
-          <li>Para criar um espaço de cuidado por meio da leitura.</li>
+      <ul class="list-disc pl-4 space-y-2 text-primary-900">
+        <li>Para criar um espaço de cuidado por meio da leitura.</li>
+        <li>
+          Para criar pausa: tempo, linguagem e companhia para compreender
+          experiências que muitas vezes vivemos sozinhas.
+        </li>
+        <li>
+          Para ampliar perspectivas e conectar experiências pessoais a contextos
+          globais.
           <li>
-            Para criar pausa: tempo, linguagem e companhia para compreender
-            experiências que muitas vezes vivemos sozinhas.
+            Para enfrentar temas urgentes com profundidade e sem
+            sensacionalismo.
           </li>
           <li>
-            Para ampliar perspectivas e conectar experiências pessoais a
-            contextos globais.
-            <li>
-              Para enfrentar temas urgentes com profundidade e sem
-              sensacionalismo.
-            </li>
-            <li>
-              Para nomear o que dói e encontrar linguagem onde havia silêncio.
-            </li>
-            <li>
-              Para construir vínculos e redes de afeto, apoio e resistência.
-            </li>
-            <li>
-              Para dialogar sobre violência, corpo, saúde e relações a partir de
-              uma perspectiva feminista e interseccional.
-            </li>
-            <li>
-              Para promover saúde, pensamento crítico e valorização da
-              diversidade humana.
-            </li>
-            <li>
-              Para apoiar outras mulheres e contribuir com impacto social.
-            </li>
+            Para nomear o que dói e encontrar linguagem onde havia silêncio.
           </li>
-        </ul>
-      </section>
+          <li>
+            Para construir vínculos e redes de afeto, apoio e resistência.
+          </li>
+          <li>
+            Para dialogar sobre violência, corpo, saúde e relações a partir de
+            uma perspectiva feminista e interseccional.
+          </li>
+          <li>
+            Para promover saúde, pensamento crítico e valorização da diversidade
+            humana.
+          </li>
+          <li>Para apoiar outras mulheres e contribuir com impacto social.</li>
+        </li>
+      </ul>
     </section>
   </div>
 </Layout>
