@@ -4,8 +4,13 @@ export async function onRequestPost({ request, env }: any) {
   const name = String(formData.get("name") || "");
   const email = String(formData.get("email") || "");
 
-  if (!name || !email) {
-    return new Response("Nome e email obrigatórios", { status: 400 });
+  const listId = Number(env.BREVO_LIST_ID);
+
+  if (!listId || Number.isNaN(listId)) {
+    return new Response(
+      `BREVO_LIST_ID inválido: ${env.BREVO_LIST_ID}`,
+      { status: 500 }
+    );
   }
 
   const response = await fetch("https://api.brevo.com/v3/contacts", {
@@ -13,14 +18,14 @@ export async function onRequestPost({ request, env }: any) {
     headers: {
       "api-key": env.BREVO_API_KEY,
       "Content-Type": "application/json",
-      "Accept": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
       email,
       attributes: {
         FIRSTNAME: name,
       },
-      listIds: [Number(env.BREVO_LIST_ID)],
+      listIds: [listId],
       updateEnabled: true,
     }),
   });
