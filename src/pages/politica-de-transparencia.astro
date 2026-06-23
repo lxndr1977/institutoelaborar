@@ -1,71 +1,236 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { BadgeCheck } from "@lucide/astro";
 
-// Defina o array de cards
+const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+
 const cards = [
-   {
-      number: "01",
-      title: "Comunicação pública",
-      description:
-         "Compartilhamento dos projetos e ações em execução.<br/><br/> Divulgação das parcerias institucionais firmadas com organizações públicas e privadas",
-   },
-   {
-      number: "02",
-      title: "Relatório Financeiro Anual",
-      description:
-         "Apresentação das fontes de recursos do Instituto, de pessoas físicas e jurídicas.<br/><br/>Discriminação de receitas e despesas.",
-   },
-   {
-      number: "03",
-      title: "Resultados",
-      description:
-         "Apresentação de indicadores de resultado e de impacto das ações realizadas.",
-   },
+  {
+    number: "01",
+    title: "Comunicação pública",
+    description:
+      "Compartilhamento dos projetos e ações em execução.<br/><br/> Divulgação das parcerias institucionais firmadas com organizações públicas e privadas",
+  },
+  {
+    number: "02",
+    title: "Relatório Financeiro Anual",
+    description:
+      "Apresentação das fontes de recursos do Instituto, de pessoas físicas e jurídicas.<br/><br/>Discriminação de receitas e despesas.",
+  },
+  {
+    number: "03",
+    title: "Resultados",
+    description:
+      "Apresentação de indicadores de resultado e de impacto das ações realizadas.",
+  },
 ];
 ---
 
-<Layout>
-   <div class="py-20 space-y-6">
-      <section
-         class="w-full max-w-4xl mx-auto text-primary-950 relative px-4 sm:px-6 lg:px-8"
-      >
-         <h1
-            class="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tighter text-secondary-600 mb-6"
-         >
-            Política de <span class="text-primary-600">Transparência</span>
-         </h1>
-         <p class="text-xl mb-4 font-medium">
-            A transparência é um dos pilares do Instituto ELAborar
-         </p>
-         <p class="mb-3">
-            A prestação de contas é essencial para o Instituto ELAborar,
-            garantindo confiança, diálogo, e responsabilidade ética em nossos
-            relacionamentos.
-         </p>
-         <p class="mb-12">
-            Contamos com uma assessoria contábil e jurídica para garantir a
-            integridade dos processos de trabalho.
-         </p>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer
+></script>
 
-         <div
-            class="grid grid-cols-1 md:grid-cols-1 gap-6 xl:gap-12 auto-rows-fr"
-         >
-            {
-               cards.map((card) => (
-                  <div
-                     class="relative border border-primary-600 rounded p-6 text-center h-full flex flex-col items-center justify-center py-12"
-                  >
-                     <div class="absolute left-1/2 transform -translate-x-1/2 -top-4 bg-tertiary-50 px-8 py-1 text-lg md:text-xl xl:text-2xl font-bold text-secondary-600">
-                        {card.number}
-                     </div>
-                     <h2 class="text-xl font-bold tracking-tight uppercase mb-4 text-primary-600">
-                        {card.title}
-                     </h2>
-                     <p set:html={card.description} />
-                  </div>
-               ))
-            }
-         </div>
-      </section>
-   </div>
+<Layout>
+  <div class="py-20 space-y-6">
+    <section
+      class="w-full max-w-4xl mx-auto text-primary-950 relative px-4 sm:px-6 lg:px-8"
+    >
+      <h1
+        class="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tighter text-secondary-600 mb-6"
+      >
+        Política de <span class="text-primary-600">Transparência</span>
+      </h1>
+      <p class="text-xl mb-4 font-medium">
+        A transparência é um dos pilares do Instituto ELAborar
+      </p>
+      <p class="mb-3">
+        A prestação de contas é essencial para o Instituto ELAborar, garantindo
+        confiança, diálogo, e responsabilidade ética em nossos relacionamentos.
+      </p>
+      <p class="mb-12">
+        Contamos com uma assessoria contábil e jurídica para garantir a
+        integridade dos processos de trabalho.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-1 gap-6 xl:gap-12 auto-rows-fr">
+        {
+          cards.map((card) => (
+            <div class="relative border border-primary-600 rounded p-6 text-center h-full flex flex-col items-center justify-center py-12">
+              <div class="absolute left-1/2 transform -translate-x-1/2 -top-4 bg-tertiary-50 px-8 py-1 text-lg md:text-xl xl:text-2xl font-bold text-secondary-600">
+                {card.number}
+              </div>
+              <h2 class="text-xl font-bold tracking-tight uppercase mb-4 text-primary-600">
+                {card.title}
+              </h2>
+              <p set:html={card.description} />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2
+          class="text-4xl lg:text-5xl font-medium tracking-tighter text-secondary-600 mb-6"
+        >
+          Prestação de <span class="text-primary-600">Contas</span>
+        </h2>
+        <p class="text-lg text-foreground-950 leading-relaxed">
+          O Instituto ELAborar disponibiliza o 1º Relatório Anual, referente ao
+          período de Outubro/Novembro 2024 a Dezembro 2025, com informações
+          detalhadas sobre nossas atividades, resultados e impacto social.
+        </p>
+      </div>
+
+      <!-- Formulário para baixar o relatório -->
+      <div
+        class="relative border border-primary-600 rounded mt-6 xl:mt-12 overflow-hidden"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <!-- Lado esquerdo: informações com fundo escuro -->
+          <div
+            class="bg-primary-600 p-10 pt-14 flex flex-col justify-center items-center text-center lg:items-start lg:text-left gap-6"
+          >
+            <!-- Ícone de transparência -->
+            <div
+              class="bg-[#935549] p-4 rounded-full w-16 h-16 flex items-center justify-center shrink-0 mb-20"
+            >
+              <BadgeCheck class="w-8 h-8 text-tertiary-50" />
+            </div>
+
+            <div>
+              <p
+                class="text-tertiary-50/70 text-sm uppercase tracking-widest font-medium mb-2"
+              >
+                Prestação de Contas
+              </p>
+              <h2
+                class="text-2xl xl:text-3xl font-bold tracking-tight text-tertiary-50 leading-snug mb-4"
+              >
+                1º Relatório Anual do Instituto ELAborar
+              </h2>
+              <p class="text-tertiary-50/80 text-base leading-relaxed">
+                Outubro/Novembro 2024 a Dezembro 2025
+              </p>
+            </div>
+
+            <div class="border-t border-tertiary-50/20 pt-6 w-full">
+              <p class="text-tertiary-50/60 text-sm leading-relaxed">
+                Preencha o formulário ao lado para visualizar o relatório
+                completo de prestação de contas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Lado direito: formulário -->
+          <div class="p-10 pt-14 flex flex-col justify-center">
+            <div class="mb-6">
+              <h3
+                class="text-xl font-bold tracking-tight uppercase text-primary-600 mb-1"
+              >
+                Visualizar relatório
+              </h3>
+              <p class="text-sm text-primary-950/60">
+                Preencha os dados abaixo para visualizar o relatório.
+              </p>
+            </div>
+
+            <form
+              id="lead-form"
+              action="/lead"
+              method="POST"
+              class="flex flex-col gap-4"
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="Nome"
+                  required
+                  class="border border-primary-600 rounded px-4 py-3 text-primary-950 placeholder:text-primary-950/40 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition bg-transparent w-full"
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Sobrenome"
+                  required
+                  class="border border-primary-600 rounded px-4 py-3 text-primary-950 placeholder:text-primary-950/40 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition bg-transparent w-full"
+                />
+              </div>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                required
+                class="border border-primary-600 rounded px-4 py-3 text-primary-950 placeholder:text-primary-950/40 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition bg-transparent w-full"
+              />
+
+              <input
+                type="tel"
+                name="whatsapp"
+                placeholder="WhatsApp"
+                required
+                class="border border-primary-600 rounded px-4 py-3 text-primary-950 placeholder:text-primary-950/40 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition bg-transparent w-full"
+              />
+
+              <div class="flex justify-center">
+                <div class="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY}>
+                </div>
+              </div>
+
+<button
+    type="submit"
+    id="submit-btn"
+    class="border border-primary-600 rounded px-8 py-3 text-primary-600 font-bold tracking-tight uppercase hover:bg-primary-600 hover:text-tertiary-50 transition-colors duration-200 w-full mt-2"
+  >
+    Baixar PDF
+  </button>
+  
+  <p id="form-error" class="text-red-600 text-sm text-center hidden"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
+
+<script>
+  const form = document.getElementById("lead-form") as HTMLFormElement;
+  const btn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const errorEl = document.getElementById("form-error") as HTMLParagraphElement;
+
+  const PDF_URL = "/downloads/relatorio-anual-elaborar-2025.pdf"; 
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorEl.classList.add("hidden");
+    btn.disabled = true;
+    btn.textContent = "Enviando...";
+
+    try {
+      const res = await fetch("/lead", {
+        method: "POST",
+        body: new FormData(form),
+      });
+
+      if (res.ok) {
+        window.open(PDF_URL, "_blank");
+        form.reset();
+        btn.textContent = "PDF enviado!";
+      } else {
+        const msg = await res.text();
+        errorEl.textContent = msg || "Erro ao enviar. Tente novamente.";
+        errorEl.classList.remove("hidden");
+        btn.textContent = "Baixar PDF";
+        btn.disabled = false;
+      }
+    } catch {
+      errorEl.textContent = "Erro de conexão. Tente novamente.";
+      errorEl.classList.remove("hidden");
+      btn.textContent = "Baixar PDF";
+      btn.disabled = false;
+    }
+  });
+</script>
