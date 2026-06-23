@@ -11,19 +11,20 @@ export default defineConfig({
   base: '',
   output: 'static',
 
-  experimental: {
-    fonts: [{
-      provider: fontProviders.google(),
-      name: "Be Vietnam Pro",
-      cssVariable: "--font-be-vietnam-pro",
-      weights: [400, 500, 600, 700],
-    }]
-  },
+  fonts: [{
+    provider: fontProviders.google(),
+    name: "Be Vietnam Pro",
+    cssVariable: "--font-be-vietnam-pro",
+    weights: [400, 500, 600, 700],
+  }],
 
   devToolbar: {
     enabled: false
   },
 
   site: 'https://institutoelaborar.org',
-  integrations: [sitemap()]
+
+  integrations: [
+    sitemap()
+  ]
 });

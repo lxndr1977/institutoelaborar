@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { BadgeCheck } from "@lucide/astro";
+import { BadgeCheck } from "lucide-astro";
 
 const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -95,27 +95,27 @@ const cards = [
             <div
               class="bg-[#935549] p-4 rounded-full w-16 h-16 flex items-center justify-center shrink-0 mb-20"
             >
-              <BadgeCheck class="w-8 h-8 text-tertiary-50" />
+              <BadgeCheck class="w-8 h-8 text-white" />
             </div>
 
             <div>
               <p
-                class="text-tertiary-50/70 text-sm uppercase tracking-widest font-medium mb-2"
+                class="text-white text-sm uppercase tracking-widest font-medium mb-2"
               >
                 Prestação de Contas
               </p>
               <h2
-                class="text-2xl xl:text-3xl font-bold tracking-tight text-tertiary-50 leading-snug mb-4"
+                class="text-2xl xl:text-3xl font-medium tracking-tight text-tertiary-50 leading-snug mb-4"
               >
                 1º Relatório Anual do Instituto ELAborar
               </h2>
-              <p class="text-tertiary-50/80 text-base leading-relaxed">
+              <p class="text-white text-base leading-relaxed">
                 Outubro/Novembro 2024 a Dezembro 2025
               </p>
             </div>
 
             <div class="border-t border-tertiary-50/20 pt-6 w-full">
-              <p class="text-tertiary-50/60 text-sm leading-relaxed">
+              <p class="text-white text-sm leading-relaxed">
                 Preencha o formulário ao lado para visualizar o relatório
                 completo de prestação de contas.
               </p>
@@ -168,26 +168,31 @@ const cards = [
 
               <input
                 type="tel"
-                name="whatsapp"
-                placeholder="WhatsApp"
+                id="whatsapp-input"
+                placeholder="(11) 99999-9999"
                 required
                 class="border border-primary-600 rounded px-4 py-3 text-primary-950 placeholder:text-primary-950/40 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition bg-transparent w-full"
               />
+              <input type="hidden" name="whatsapp" id="whatsapp-e164" />
 
               <div class="flex justify-center">
                 <div class="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY}>
                 </div>
               </div>
 
-<button
-    type="submit"
-    id="submit-btn"
-    class="border border-primary-600 rounded px-8 py-3 text-primary-600 font-bold tracking-tight uppercase hover:bg-primary-600 hover:text-tertiary-50 transition-colors duration-200 w-full mt-2"
-  >
-    Baixar PDF
-  </button>
-  
-  <p id="form-error" class="text-red-600 text-sm text-center hidden"></p>
+              <button
+                type="submit"
+                id="submit-btn"
+                class="border border-primary-600 rounded px-8 py-3 text-primary-600 font-medium tracking-tight  bg-primary-600 hover:bg-primary-700 text-white transition-colors duration-200 w-full mt-2"
+              >
+                Baixar Relatório
+              </button>
+
+              <p
+                id="form-error"
+                class="text-red-600 text-sm text-center hidden"
+              >
+              </p>
             </form>
           </div>
         </div>
@@ -197,15 +202,37 @@ const cards = [
 </Layout>
 
 <script>
+  import intlTelInput from "intl-tel-input";
+  import "intl-tel-input/styles";
+  import "intl-tel-input/utils";
+
   const form = document.getElementById("lead-form") as HTMLFormElement;
   const btn = document.getElementById("submit-btn") as HTMLButtonElement;
   const errorEl = document.getElementById("form-error") as HTMLParagraphElement;
+  const input = document.getElementById("whatsapp-input") as HTMLInputElement;
+  const hidden = document.getElementById("whatsapp-e164") as HTMLInputElement;
 
-  const PDF_URL = "/downloads/relatorio-anual-elaborar-2025.pdf"; 
+  const PDF_URL = "/downloads/relatorio-anual-elaborar-2025.pdf";
+
+  const iti = intlTelInput(input, {
+    initialCountry: "br",
+    countryOrder: ["br", "us", "pt"],
+    loadUtils: () => import("intl-tel-input/dist/js/utils.js"),
+  });
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     errorEl.classList.add("hidden");
+
+    // valida telefone antes de enviar
+    if (!iti.isValidNumber()) {
+      input.setCustomValidity("Número de WhatsApp inválido.");
+      input.reportValidity();
+      return;
+    }
+    input.setCustomValidity("");
+    hidden.value = iti.getNumber(); // ex: +5511999999999
+
     btn.disabled = true;
     btn.textContent = "Enviando...";
 
@@ -218,6 +245,7 @@ const cards = [
       if (res.ok) {
         window.open(PDF_URL, "_blank");
         form.reset();
+          iti.setNumber(""); // limpa o número
         btn.textContent = "PDF enviado!";
       } else {
         const msg = await res.text();
