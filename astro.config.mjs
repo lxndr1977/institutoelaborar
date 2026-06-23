@@ -1,11 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
-
 import sitemap from '@astrojs/sitemap';
-
-import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   vite: {
@@ -29,6 +25,5 @@ export default defineConfig({
   },
 
   site: 'https://institutoelaborar.org',
-  integrations: [sitemap()],
-  adapter: cloudflare()
+  integrations: [sitemap()]
 });
