@@ -1,9 +1,50 @@
-<form action="/lead" method="POST">
-  <input type="text" name="name" placeholder="Seu nome" required />
+---
+const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
 
-  <input type="email" name="email" placeholder="Seu email" required />
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer
+></script>
+
+<form action="/lead" method="POST">
+
+  <input
+    type="text"
+    name="firstName"
+    placeholder="Nome"
+    required
+  />
+
+  <input
+    type="text"
+    name="lastName"
+    placeholder="Sobrenome"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="E-mail"
+    required
+  />
+
+  <input
+    type="tel"
+    name="whatsapp"
+    placeholder="WhatsApp"
+    required
+  />
+
+  <div
+    class="cf-turnstile"
+    data-sitekey={TURNSTILE_SITE_KEY}
+  ></div>
 
   <button type="submit">
     Baixar PDF
   </button>
+
 </form>
