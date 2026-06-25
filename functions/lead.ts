@@ -93,7 +93,7 @@ export async function onRequestPost({ request, env }: any) {
       attributes: {
         FIRSTNAME: firstName,
         LASTNAME: lastName,
-        SMS: whatsapp,
+        WHATSAPP: whatsapp,
       },
       listIds: [listId],
       updateEnabled: true,
