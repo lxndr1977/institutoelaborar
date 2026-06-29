@@ -1,33 +1,52 @@
 ---
-import { Image } from 'astro:assets';
+import Pix from "./Pix.astro";
+import { Image } from "astro:assets";
 
-import img from '../assets/images/services/projeto.jpg';
+import img from "../assets/images/services/projeto_2.jpg";
 ---
 
 <section class="w-full bg-accent-200 py-28">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            <div>
-                <Image src={img} width="900" height="600" alt="Projeto" class="rounded-lg" />
-            </div>
-            
-            <div>
-                <h2 class="text-4xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6">
-                    Projeto
-                    ELAbora <span class="text-primary-600">Mulheres - Reconstruindo Vidas no Pós-Enchente RS</span>
-                </h2>
-                
-                <p class="text-primary-900 leading-relaxed mb-6">
-                    Junto aos nossos parceiros institucionais, trabalhamos para promover Saúde Integral para e 
-                    com mulheres e crianças em vulnerabilidade social, em uma comunidade periférica do município 
-                    de São Leopoldo, RS. Ao desenvolvermos o trabalho com profissionais especializados, estudantes
-                    e professores universitários, fomentamos a Educação Cidadã. O projeto está comprometido com
-                    o desenvolvimento de uma Cartografia Social, um ano após as enchentes.             
-                </p>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <Image
+          src={img}
+          width="900"
+          height="600"
+          alt="Projeto"
+          class="rounded-lg"
+        />
+      </div>
 
-                <a href="projeto-elabora-mulheres"  class="bg-primary-600 text-white px-6 py-2 rounded text-center  font-medium hover:bg-primary-700 transition">Saiba mais</a>
-            </div>
+      <div>
+        <h2
+          class="text-4xl lg:text-3xl font-medium tracking-tighter text-secondary-600 mb-6"
+        >
+          Projeto ELAbora <span class="text-primary-600"
+            >Mulheres - Reconstruindo Vidas no Pós-Enchente RS</span
+          >
+        </h2>
+
+        <p class="text-primary-900 leading-relaxed mb-6">
+          Junto aos nossos parceiros institucionais, trabalhamos para promover
+          Saúde Integral para e com mulheres e crianças em vulnerabilidade
+          social, em uma comunidade periférica do município de São Leopoldo, RS.
+          Ao desenvolvermos o trabalho com profissionais especializados,
+          estudantes e professores universitários, fomentamos a Educação Cidadã.
+          O projeto está comprometido com o desenvolvimento de uma Cartografia
+          Social, um ano após as enchentes.
+        </p>
+
+        <div class="flex flex-col xl:flex-row items-center gap-6 mb-6 md:mb-8">
+          <a
+            href="projeto-elabora-mulheres"
+            class="w-full md:w-full flex justify-center items-center gap-2 text-md bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded-md font-medium transition-colors duration-200"
+          >
+            Saiba mais</a
+          >
+          <Pix />
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </section>
