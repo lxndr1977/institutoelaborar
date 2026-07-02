@@ -1,0 +1,50 @@
+---
+import { Building2, Users } from 'lucide-astro';
+
+const impactCards = [
+  {
+    title: "Na sua organização",
+    description:
+      "Desenvolvimento real, entregas técnicas de alta qualidade, cultura mais saudável e inclusiva.",
+    icon: Building2,
+    delay: 0,
+  },
+  {
+    title: "Nos territórios",
+    description:
+      "Mulheres, crianças e famílias atendidas pelo Instituto.",
+    icon: Users,
+    delay: 100,
+  },
+];
+---
+<section id="impacto" class="w-full bg-tertiary-200 relative py-28">
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-medium tracking-tighter text-secondary-600">
+        Quem nos contrata gera&nbsp;
+        <span class="text-primary-600">impacto duas vezes</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {impactCards.map(card => (
+        <div
+          class="bg-primary-600 rounded-lg p-10 text-center flex flex-col items-center shadow-sm hover:shadow-md transition-shadow duration-300"
+          data-aos="fade-up"
+          data-aos-delay={card.delay}
+        >
+          <div class="bg-[#935549] p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+            <card.icon class="w-8 h-8 text-tertiary-50" />
+          </div>
+          <h3 class="text-2xl font-medium text-tertiary-50 mb-4">
+            {card.title}
+          </h3>
+          <p class="text-tertiary-50/90 leading-relaxed">
+            {card.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+</section>

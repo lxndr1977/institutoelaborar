@@ -1,0 +1,129 @@
+---
+import {
+  ShieldCheck,
+  Presentation,
+  HeartPulse,
+  Scale,
+  ClipboardList,
+  HeartHandshake,
+  ShieldAlert,
+  Users,
+  Network,
+} from 'lucide-astro';
+
+const serviceGroups = [
+  {
+    category: "Para Empresas",
+    services: [
+      {
+        title: "Diagnósticos e implementação de protocolos organizacionais - Riscos Psicossociais NR-1",
+        description: "",
+        icon: ShieldCheck,
+      },
+      {
+        title: "Palestras, Formações, Workshops, Grupos temáticos e Mentorias",
+        description: "",
+        icon: Presentation,
+      },
+      {
+        title: "Saúde integral no trabalho e segurança psicológica",
+        description: "",
+        icon: HeartPulse,
+      },
+      {
+        title: "ESG, Diversidade e Prevenção à violência contra mulheres",
+        description: "",
+        icon: Scale,
+      },
+    ],
+  },
+  {
+    category: "Para Escolas",
+    services: [
+      {
+        title: "Diagnósticos e Formações",
+        description: "",
+        icon: ClipboardList,
+      },
+      {
+        title: "Promoção de Saúde Integral e equidade de gênero e raça",
+        description: "",
+        icon: HeartHandshake,
+      },
+      {
+        title: "Prevenção à violência — Lei 14.164 e ECA Digital",
+        description: "",
+        icon: ShieldAlert,
+      },
+      {
+        title: "Palestras e atividades integradoras",
+        description: "",
+        icon: Users,
+      },
+    ],
+  },
+];
+
+const professionalNetwork = {
+  category: "Rede de Profissionais",
+  icon: Network,
+  description:
+    "Elaboramos uma rede multiprofissional de pessoas qualificadas (educadoras, psicólogas, comunicólogas, profissionais de saúde, especialistas em gestão e diversidade) contratadas conforme a necessidade de cada serviço.",
+};
+---
+<section id="transformacao-social" class="w-full bg-tertiary-50">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+      <div class="lg:sticky lg:top-32 lg:self-start pr-16">
+        <h2 class="text-4xl lg:text-4xl font-medium tracking-tighter text-secondary-600 mb-6">
+          Transformação&nbsp;
+          <span class="text-primary-600">Organizacional</span>
+        </h2>
+        <p class="text-lg text-primary-900 leading-relaxed">
+          Serviços destinados a fomentar saúde integral, desenvolvimento humano e relações saudáveis em empresas e escolas.
+        </p>
+      </div>
+
+      <div class="space-y-16">
+        {serviceGroups.map(group => (
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-8 pb-3 border-b border-primary-200">
+              {group.category}
+            </h3>
+
+            <div class="space-y-12">
+              {group.services.map(service => (
+                <div>
+                  <div class="bg-tertiary-300 p-2 rounded-full w-12 h-12 flex items-center justify-center mb-5">
+                    <service.icon class="w-6 h-6 text-primary-900" />
+                  </div>
+                  <h4 class="text-lg tracking-tighter text-primary-900 mb-3">
+                    {service.title}
+                  </h4>
+                  {service.description && (
+                    <p class="text-primary-900 mb-4">
+                      {service.description}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-primary-600 mb-8 pb-3 border-b border-primary-200">
+            {professionalNetwork.category}
+          </h3>
+
+          <div class="bg-tertiary-300 p-2 rounded-full w-12 h-12 flex items-center justify-center mb-5">
+            <professionalNetwork.icon class="w-6 h-6 text-primary-900" />
+          </div>
+          <p class="text-lg text-primary-900 leading-relaxed">
+            {professionalNetwork.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
