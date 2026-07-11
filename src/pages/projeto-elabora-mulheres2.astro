@@ -1,0 +1,389 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const infanciaDots = Array.from({ length: 10 });
+---
+
+<Layout>
+  <div class="">
+    <!-- HERO / CAPA -->
+    <section class="relative overflow-hidden bg-primary-900">
+      <div
+        class="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-primary-700/60 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute -bottom-32 -left-24 w-72 h-72 rounded-full bg-primary-700/40 pointer-events-none"
+      >
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-6 lg:px-10 pt-28 pb-32">
+        <p
+          class="text-sm uppercase tracking-[0.5em] font-semibold text-primary-200 mb-8"
+        >
+          Diagnóstico Inédito
+        </p>
+
+        <h1
+          class="text-5xl sm:text-6xl lg:text-7xl tracking-tighter text-white leading-[1.05] max-w-3xl mb-10"
+        >
+          Uma comunidade que existe há 10 anos e ainda espera ser vista
+        </h1>
+
+        <div class="w-16 h-1 bg-primary-400 mb-6"></div>
+
+        <p class="text-lg lg:text-xl text-primary-100">
+          Ocupação RedeMix, São Leopoldo/RS
+        </p>
+        <p class="text-lg lg:text-xl text-primary-200">
+          Diagnóstico do Instituto ELAborar · 2026
+        </p>
+      </div>
+    </section>
+
+    <!-- O QUE O ESTUDO ENCONTROU -->
+    <section class="relative overflow-hidden bg-primary-50">
+      <div class="bg-primary-100 py-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+          <p
+            class="text-xs sm:text-sm uppercase tracking-[0.4em] font-semibold text-secondary-600 mb-2"
+          >
+            O que o estudo encontrou
+          </p>
+          <h2 class="text-2xl lg:text-3xl tracking-tighter text-primary-900">
+            Ocupação RedeMix · São Leopoldo · RS
+          </h2>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20 space-y-12">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="bg-primary-700 rounded-xl p-10 text-center">
+            <p class="text-6xl font-bold text-white mb-3">580</p>
+            <p class="text-primary-100 leading-snug">
+              moradores<br />mapeados
+            </p>
+          </div>
+          <div class="bg-primary-500 rounded-xl p-10 text-center">
+            <p class="text-6xl font-bold text-white mb-3">200</p>
+            <p class="text-primary-50 leading-snug">
+              domicílios<br />levantados
+            </p>
+          </div>
+          <div class="bg-primary-900 rounded-xl p-10 text-center">
+            <p class="text-6xl font-bold text-white mb-3">94h</p>
+            <p class="text-primary-100 leading-snug">
+              de trabalho<br />técnico direto
+            </p>
+          </div>
+        </div>
+
+        <div class="border-t border-primary-200 pt-8 space-y-2">
+          <h3 class="font-semibold text-primary-800 text-lg">
+            Equipe Interprofissional
+          </h3>
+          <p class="text-primary-800 leading-relaxed max-w-2xl">
+            Profissionais de Psicologia, Enfermagem, Serviço Social,
+            Pedagogia e Comunicação atuaram no território.
+          </p>
+          <p class="text-sm text-primary-500 pt-2">
+            Em parceria com Unisinos · SJMR · Secretaria de Saúde de São
+            Leopoldo
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RENDA -->
+    <section class="relative overflow-hidden bg-primary-600">
+      <div
+        class="absolute -top-28 -right-16 w-80 h-80 rounded-full bg-primary-500/50 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute -bottom-28 -left-16 w-72 h-72 rounded-full bg-primary-700/40 pointer-events-none"
+      >
+      </div>
+
+      <div class="relative max-w-5xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+        <p
+          class="text-sm uppercase tracking-[0.4em] font-semibold text-primary-100 mb-6"
+        >
+          Renda
+        </p>
+        <p
+          class="text-7xl sm:text-8xl font-bold tracking-tighter text-white mb-8"
+        >
+          87,4%
+        </p>
+        <p class="text-xl lg:text-2xl text-primary-50 max-w-xl leading-snug">
+          das famílias sobrevivem com menos de 2 salários mínimos.
+        </p>
+        <p class="text-lg text-white font-semibold mt-6 max-w-xl">
+          45,1% têm renda familiar de até R$ 1.500/mês.
+        </p>
+      </div>
+    </section>
+
+    <!-- SAÚDE -->
+    <section class="relative overflow-hidden bg-primary-500">
+      <div
+        class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary-400/40 pointer-events-none"
+      >
+      </div>
+
+      <div class="relative max-w-5xl mx-auto px-6 lg:px-10 py-20 lg:py-28 space-y-14">
+        <p
+          class="text-sm uppercase tracking-[0.4em] font-semibold text-primary-50"
+        >
+          Saúde
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-10">
+          <div>
+            <p class="text-6xl font-bold tracking-tighter text-white mb-3">
+              43,7%
+            </p>
+            <p class="text-primary-50 leading-relaxed max-w-xs">
+              das mulheres realizam tratamento para doenças crônicas
+              (DCNTs).
+            </p>
+          </div>
+          <div>
+            <p class="text-6xl font-bold tracking-tighter text-white mb-3">
+              47,9%
+            </p>
+            <p class="text-primary-50 leading-relaxed max-w-xs">
+              das mulheres fazem uso de medicamentos diários.
+            </p>
+          </div>
+        </div>
+
+        <blockquote class="max-w-2xl space-y-4 border-t border-primary-300/50 pt-8">
+          <p class="text-xl font-light text-white leading-snug tracking-tight">
+            "Embora os índices sejam altos, os casos ainda são
+            subnotificados, pois muitas mulheres não acessam a rede para
+            acompanhamento das condições de saúde."
+          </p>
+          <cite
+            class="block text-primary-100 text-sm font-medium uppercase tracking-widest not-italic"
+          >
+            Dra. Renata Andreoni · Coordenadora do Projeto e Presidente do
+            Instituto ELAborar
+          </cite>
+        </blockquote>
+
+        <p class="font-semibold text-white text-lg">
+          É necessário fortalecer a Atenção Primária em Saúde na
+          Comunidade!
+        </p>
+      </div>
+    </section>
+
+    <!-- INSEGURANÇA ALIMENTAR -->
+    <section class="relative overflow-hidden bg-primary-900">
+      <div
+        class="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-primary-700/40 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute -bottom-24 -left-20 w-72 h-72 rounded-full bg-primary-700/30 pointer-events-none"
+      >
+      </div>
+
+      <div class="relative max-w-3xl mx-auto px-6 lg:px-10 py-20 lg:py-28 text-center">
+        <p
+          class="text-sm uppercase tracking-[0.4em] font-semibold text-primary-200 mb-8"
+        >
+          Insegurança Alimentar
+        </p>
+
+        <p class="text-7xl sm:text-8xl font-bold tracking-tighter text-white mb-6">
+          1 em 4
+        </p>
+
+        <p class="text-xl text-primary-100">
+          famílias passou fome no último mês.
+        </p>
+      </div>
+    </section>
+
+    <!-- INFÂNCIA -->
+    <section class="relative overflow-hidden bg-primary-50">
+      <div class="max-w-5xl mx-auto px-6 lg:px-10 py-20 lg:py-28 space-y-12">
+        <p
+          class="text-sm uppercase tracking-[0.4em] font-semibold text-primary-500"
+        >
+          Infância
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="grid grid-cols-5 gap-4 max-w-xs">
+            {
+              infanciaDots.map((_, i) => (
+                <div
+                  class={`w-12 h-12 rounded-full ${
+                    i < 4 ? "bg-primary-700" : "bg-primary-200"
+                  }`}
+                />
+              ))
+            }
+          </div>
+
+          <div>
+            <p class="text-5xl font-bold tracking-tighter text-primary-700 mb-2">
+              4 em cada 10
+            </p>
+            <p class="text-primary-900 leading-relaxed">
+              moradores são crianças ou adolescentes.
+            </p>
+          </div>
+        </div>
+
+        <div class="border-t border-primary-200 pt-8 space-y-3">
+          <p class="text-primary-900 leading-relaxed max-w-2xl italic">
+            62% dos moradores vivem no local há mais de 3 anos, mesmo diante
+            da insegurança habitacional.
+          </p>
+          <p class="text-primary-700 font-semibold max-w-2xl">
+            Das 71 mulheres que responderam o questionário realizado, 15,5%
+            são imigrantes venezuelanas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIOLÊNCIA -->
+    <section class="relative overflow-hidden bg-primary-900">
+      <div
+        class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-primary-700/50 pointer-events-none"
+      >
+      </div>
+
+      <div class="relative max-w-5xl mx-auto px-6 lg:px-10 py-20 lg:py-28 space-y-14">
+        <p
+          class="text-sm uppercase tracking-[0.4em] font-semibold text-primary-200"
+        >
+          Violência
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="bg-primary-700 rounded-xl p-10 text-center">
+            <p class="text-6xl font-bold text-white mb-3">7%</p>
+            <p class="text-primary-100 leading-relaxed">
+              responderam "sim" quando perguntadas diretamente.
+            </p>
+          </div>
+          <div class="bg-primary-500 rounded-xl p-10 text-center">
+            <p class="text-6xl font-bold text-white mb-3">21%</p>
+            <p class="text-primary-50 leading-relaxed">
+              relataram quando tiveram espaço livre para falar.
+            </p>
+          </div>
+        </div>
+
+        <blockquote class="max-w-2xl space-y-4 border-t border-primary-700/60 pt-8">
+          <p class="text-xl font-light text-primary-100 leading-snug tracking-tight">
+            "Quando uma mulher não nomeia como violência o que viveu, isso
+            não é negação. É o resultado de anos de invisibilidade
+            institucional."
+          </p>
+          <cite
+            class="block text-primary-300 text-sm font-medium uppercase tracking-widest not-italic"
+          >
+            Dra. Neoma Mendes de Assis · Médica de Família e Comunidade,
+            Vice-Presidente do Instituto ELAborar
+          </cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- O DIAGNÓSTICO PROPÕE -->
+    <section class="bg-primary-50 py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 space-y-10">
+        <div class="max-w-2xl">
+          <p
+            class="text-sm uppercase tracking-[0.4em] font-semibold text-primary-500 mb-3"
+          >
+            O diagnóstico propõe
+          </p>
+          <h2 class="text-3xl lg:text-4xl tracking-tighter text-primary-800">
+            3 frentes prioritárias de intervenção a partir daqui
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-primary-600 rounded-xl p-8 flex flex-col gap-6">
+            <p class="text-5xl font-bold text-white">01</p>
+            <div class="w-10 h-0.5 bg-primary-400"></div>
+            <h3 class="text-xl font-semibold text-white">
+              Moradia e território
+            </h3>
+            <p class="text-primary-200 leading-relaxed">
+              Regularização fundiária e melhoria da infraestrutura com
+              compromisso socioambiental.
+            </p>
+          </div>
+
+          <div class="bg-primary-600 rounded-xl p-8 flex flex-col gap-6">
+            <p class="text-5xl font-bold text-white">02</p>
+            <div class="w-10 h-0.5 bg-primary-300"></div>
+            <h3 class="text-xl font-semibold text-white">
+              Saúde e proteção
+            </h3>
+            <p class="text-primary-100 leading-relaxed">
+              Ampliação do acesso à saúde, assistência e segurança, com o
+              fortalecimento das linhas de cuidado.
+            </p>
+          </div>
+
+          <div class="bg-primary-600 rounded-xl p-8 flex flex-col gap-6">
+            <p class="text-5xl font-bold text-white">03</p>
+            <div class="w-10 h-0.5 bg-primary-100"></div>
+            <h3 class="text-xl font-semibold text-white">
+              Renda e comunidade
+            </h3>
+            <p class="text-primary-50 leading-relaxed">
+              Geração de renda para as mulheres, fortalecimento de vínculos
+              intrafamiliares e comunitários.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="relative overflow-hidden bg-primary-600">
+      <div
+        class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary-700/40 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-primary-500/50 pointer-events-none"
+      >
+      </div>
+
+      <div class="relative px-6 lg:px-10 py-24 lg:py-32 max-w-3xl mx-auto text-center space-y-6">
+        <h2 class="text-3xl lg:text-4xl tracking-tighter text-white">
+          Dados que iluminam o que a invisibilidade apagou
+        </h2>
+        <p class="text-primary-50 text-lg leading-relaxed">
+          Quer saber mais sobre o Diagnóstico e os próximos passos do
+          Projeto? Entre em contato com a gente!
+        </p>
+        <a
+          href="https://wa.me/5551993526153?text=Ol%C3%A1!%20Quero%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Diagn%C3%B3stico%20da%20Ocupa%C3%A7%C3%A3o%20RedeMix."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-white text-primary-700 px-8 py-3 rounded text-sm font-semibold hover:bg-primary-50 transition"
+        >
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+            ></path>
+          </svg>
+          Falar com a gente no WhatsApp
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
