@@ -1,0 +1,612 @@
+---
+import { Font } from "astro:assets";
+import "../styles/global.css";
+import "../styles/causas-que-elaboram.css";
+
+const title = "Causas que ELAboram | Instituto Elaborar + MKT de Causas";
+const description = "Experiências de voluntariado e mobilização para conectar sua empresa, pessoas e causas sociais. Uma parceria entre Instituto Elaborar e MKT de Causas.";
+const canonical = new URL("causas-que-elaboram/", Astro.site);
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL("images/causas-que-elaboram/causas-logo.png", Astro.site)} />
+    <meta name="theme-color" content="#782a1b" />
+    <Font cssVariable="--font-be-vietnam-pro" preload />
+  </head>
+  <body class="causas-body text-primary-900 bg-tertiary-50">
+    <a class="causas-skip" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="causas-header">
+      <div class="causas-header-inner">
+        <a href="#conteudo" aria-label="Causas que ELAboram — início">
+          <img src="/images/causas-que-elaboram/causas-logo.png" width="1800" height="400" alt="Causas que ELAboram" />
+        </a>
+        <nav aria-label="Navegação da página">
+          <a href="#proposta">A proposta</a>
+          <a href="#jornada">A jornada</a>
+          <a href="#formatos">Formatos</a>
+          <a href="#impacto">Impacto social</a>
+        </nav>
+        <a class="causas-header-cta" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+<main class="causas-page" id="conteudo">
+ <div class="wrap">
+  <section class="hero">
+   <div>
+    <h1>
+     Sua empresa apoia causas. Mas as pessoas se sentem parte delas?
+    </h1>
+    <p>
+     Transformamos causas sociais em experiências que sensibilizam, mobilizam e envolvem colaboradores em ações conectadas à comunidade.
+    </p>
+    <a class="btn contact" href="#contato">
+     Vamos conversar
+     <span>
+      ↗
+     </span>
+    </a>
+    <p class="partnership">
+     Uma parceria para conectar empresa, pessoas e território.
+    </p>
+   </div>
+   <div aria-label="Realização Instituto ELAborar e MKT de Causas" class="art hero-partners">
+    <span class="kicker">
+     Uma parceria
+    </span>
+    <div class="partner-marks">
+     <img alt="Instituto ELAborar" height="262" src="/images/causas-que-elaboram/instituto-logo.png" width="597"/>
+     <span aria-hidden="true">
+      +
+     </span>
+     <img alt="MKT de Causas" height="324" src="/images/causas-que-elaboram/mkt-logo.png" width="659"/>
+    </div>
+   </div>
+  </section>
+  <div class="strip">
+   <span>
+    Conhecimento da causa
+   </span>
+   <span>
+    Participação das pessoas
+   </span>
+   <span>
+    Conexão com o território
+   </span>
+   <span>
+    Compromisso social
+   </span>
+  </div>
+  <section class="section problem">
+   <div>
+    <span class="kicker">
+     O desafio da sua empresa
+    </span>
+    <h2>
+     Como transformar apoio em participação?
+    </h2>
+    <ul>
+     <li>
+      Datas importantes entram no calendário.
+     </li>
+     <li>
+      Palestras são realizadas.
+     </li>
+     <li>
+      Campanhas são divulgadas.
+     </li>
+    </ul>
+    <p class="problem-call">
+     Mas, muitas vezes, cada ação acontece de forma isolada — e a mobilização termina junto com ela.
+    </p>
+   </div>
+   <figure>
+    <img alt="Cena ilustrativa de pessoas em uma roda de diálogo" height="1024" loading="lazy" src="/images/causas-que-elaboram/dialogo.webp" width="1536"/>
+    <figcaption>
+     Imagem ilustrativa gerada por IA.
+    </figcaption>
+   </figure>
+  </section>
+  <section class="section intro" id="proposta">
+   <div>
+    <span class="kicker">
+     A proposta
+    </span>
+    <h2>
+     Uma causa pode ser o começo de uma rede.
+    </h2>
+   </div>
+   <div>
+    <p class="lead">
+     Quando as pessoas compreendem uma causa e encontram caminhos para participar, o compromisso social ganha espaço no cotidiano da empresa.
+    </p>
+    <p class="muted">
+     O Causas que ELAboram conecta sensibilização, comunicação e ação social em uma jornada planejada com a sua organização. Diferentes temáticas podem orientar ações pontuais, projetos e programas que aproximam pessoas colaboradoras, organizações sociais e comunidades.
+    </p>
+    <p class="muted">
+     Partimos do contexto da empresa e da escuta das organizações e pessoas do território para construir experiências com sentido para quem participa.
+    </p>
+   </div>
+  </section>
+ </div>
+ <section class="section blue" id="jornada">
+  <div class="wrap">
+   <div class="section-head">
+    <span class="kicker">
+     Como acontece
+    </span>
+    <h2>
+     Da sensibilização à ação.
+     <br/>
+     Com aprendizado em cada etapa.
+    </h2>
+   </div>
+   <div class="journey">
+    <article class="step">
+     <span class="num">
+      01 / CONHECER
+     </span>
+     <h3>
+      Aproximar
+     </h3>
+     <p>
+      Apresentamos a causa e sua relação com a realidade das pessoas.
+     </p>
+    </article>
+    <article class="step">
+     <span class="num">
+      02 / CONVERSAR
+     </span>
+     <h3>
+      Dialogar
+     </h3>
+     <p>
+      Criamos espaços e conteúdos para compartilhar percepções e ampliar a compreensão.
+     </p>
+    </article>
+    <article class="step">
+     <span class="num">
+      03 / MOBILIZAR
+     </span>
+     <h3>
+      Envolver
+     </h3>
+     <p>
+      Convidamos e preparamos as pessoas para participar da experiência.
+     </p>
+    </article>
+    <article class="step">
+     <span class="num">
+      04 / AGIR
+     </span>
+     <h3>
+      Construir
+     </h3>
+     <p>
+      Conectamos a participação a uma ação alinhada à causa e ao território.
+     </p>
+    </article>
+    <article class="step">
+     <span class="num">
+      05 / DEMONSTRAR
+     </span>
+     <h3>
+      Compartilhar
+     </h3>
+     <p>
+      Registramos a experiência, os aprendizados e os resultados observados.
+     </p>
+    </article>
+   </div>
+  </div>
+ </section>
+ <div class="wrap">
+  <section class="section" id="formatos">
+   <div class="section-head">
+    <span class="kicker">
+     Possibilidades de participação
+    </span>
+    <h2>
+     Diferentes caminhos.
+     <br/>
+     Uma construção compartilhada.
+    </h2>
+    <p class="muted">
+     O formato é definido conforme o contexto da empresa, a causa escolhida e as condições de participação.
+    </p>
+   </div>
+   <div aria-label="Formatos do serviço" class="format-tabs" hidden="" role="tablist">
+    <button aria-controls="ativo" aria-selected="true" class="tab" id="tab-ativo" role="tab">
+     Voluntariado ativo
+    </button>
+    <button aria-controls="mob" aria-selected="false" class="tab" id="tab-mob" role="tab" tabindex="-1">
+     Mobilização
+    </button>
+   </div>
+   <div aria-labelledby="tab-ativo" class="format-panel" id="ativo" role="tabpanel" tabindex="0">
+    <div>
+     <figure class="format-photo">
+      <img alt="Cena ilustrativa de participação em uma horta comunitária" height="1024" loading="lazy" src="/images/causas-que-elaboram/voluntariado.webp" width="1536"/>
+      <figcaption>
+       Imagem ilustrativa gerada por IA.
+      </figcaption>
+     </figure>
+     <h3>
+      Uma vivência no território
+     </h3>
+     <p class="muted">
+      Ação presencial em uma organização parceira, construída a partir do alinhamento entre os envolvidos e acompanhada de preparação e reflexão sobre a experiência.
+     </p>
+    </div>
+    <ul>
+     <li>
+      Alinhamento e compreensão do contexto.
+     </li>
+     <li>
+      Sensibilização sobre a temática.
+     </li>
+     <li>
+      Definição e preparação do grupo participante.
+     </li>
+     <li>
+      Realização da ação combinada com a organização.
+     </li>
+     <li>
+      Compartilhamento e sistematização dos aprendizados.
+     </li>
+    </ul>
+   </div>
+   <div aria-labelledby="tab-mob" class="format-panel" id="mob" role="tabpanel" tabindex="0">
+    <div>
+     <figure class="format-photo">
+      <img alt="Cena ilustrativa de construção coletiva de uma ação comunitária" height="1024" loading="lazy" src="/images/causas-que-elaboram/mobilizacao.webp" width="1536"/>
+      <figcaption>
+       Imagem ilustrativa gerada por IA.
+      </figcaption>
+     </figure>
+     <h3>
+      Uma causa no cotidiano da empresa
+     </h3>
+     <p class="muted">
+      Sensibilização e envolvimento das pessoas por meio de conteúdos, encontros e atividades que aproximam a causa da realidade do grupo.
+     </p>
+    </div>
+    <ul>
+     <li>
+      Alinhamento e diagnóstico rápido.
+     </li>
+     <li>
+      Planejamento da abordagem e da comunicação.
+     </li>
+     <li>
+      Participação de organização parceira, quando pertinente.
+     </li>
+     <li>
+      Sensibilização e mobilização do grupo.
+     </li>
+     <li>
+      Avaliação e sistematização da experiência.
+     </li>
+    </ul>
+   </div>
+  </section>
+  <section class="section">
+   <span class="kicker">
+    Da ideia à realização
+   </span>
+   <h2>
+    Uma experiência planejada
+    <br/>
+    com a sua empresa.
+   </h2>
+   <div class="deliver">
+    <div>
+     <span>
+      01
+     </span>
+     Planejamento alinhado à causa e ao contexto
+    </div>
+    <div>
+     <span>
+      02
+     </span>
+     Sensibilização das pessoas colaboradoras
+    </div>
+    <div>
+     <span>
+      03
+     </span>
+     Comunicação e materiais para mobilização
+    </div>
+    <div>
+     <span>
+      04
+     </span>
+     Articulação da ação com organizações parceiras
+    </div>
+    <div>
+     <span>
+      05
+     </span>
+     Preparação das pessoas envolvidas
+    </div>
+    <div>
+     <span>
+      06
+     </span>
+     Registro e sistematização dos resultados
+    </div>
+   </div>
+   <div class="calendar">
+    <div>
+     <span class="kicker">
+      Ao longo do ano
+     </span>
+     <h3>
+      Sua empresa escolhe a causa.
+      <br/>
+      Juntas, desenhamos a jornada.
+     </h3>
+    </div>
+    <div>
+     <p>
+      Datas do calendário, causas prioritárias e compromissos sociais da empresa podem orientar o planejamento e a continuidade das ações.
+     </p>
+     <p>
+      Trabalhamos diferentes temáticas a partir das campanhas mensais de sensibilização e dos interesses de cada empresa, construindo propostas customizadas.
+     </p>
+     <p>
+      <strong>
+       O enfrentamento à violência contra mulheres e meninas está entre nossas prioridades.
+      </strong>
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="section benefits">
+   <span class="kicker">
+    Participação que faz sentido
+   </span>
+   <h2>
+    O que muda quando sua empresa envolve as pessoas em uma causa?
+   </h2>
+   <div class="benefit-grid">
+    <article>
+     <span>
+      01
+     </span>
+     <p>
+      Colaboradores que compreendem melhor as causas apoiadas pela empresa.
+     </p>
+    </article>
+    <article>
+     <span>
+      02
+     </span>
+     <p>
+      Oportunidades de participação para além das campanhas pontuais.
+     </p>
+    </article>
+    <article>
+     <span>
+      03
+     </span>
+     <p>
+      Relacionamento com organizações sociais e comunidades.
+     </p>
+    </article>
+    <article>
+     <span>
+      04
+     </span>
+     <p>
+      Registro de resultados, experiências e aprendizados que podem orientar novas ações, gerar sensibilização sobre as temáticas e engajamento.
+     </p>
+    </article>
+   </div>
+  </section>
+  <section class="section">
+   <span class="kicker">
+    A parceria
+   </span>
+   <h2>
+    Saberes que se encontram.
+    <br/>
+    Redes que se tornam ação.
+   </h2>
+   <div class="partners">
+    <article>
+     <h3 class="partner-heading">
+      <img alt="Instituto ELAborar" height="262" src="/images/causas-que-elaboram/instituto-logo.png" width="597"/>
+     </h3>
+     <p class="muted">
+      Conhecimento técnico em Saúde, Educação e Comunicação, experiência social e articulação com territórios, mulheres, crianças e famílias.
+     </p>
+     <p>
+      Conteúdo e experiência social para aproximar a causa da vida cotidiana.
+     </p>
+    </article>
+    <article>
+     <h3 class="partner-heading">
+      <img alt="MKT de Causas" height="324" src="/images/causas-que-elaboram/mkt-logo.png" width="659"/>
+     </h3>
+     <p class="muted">
+      Desenho da experiência, comunicação, mobilização, narrativa, relacionamento e sistematização do impacto.
+     </p>
+     <p>
+      Estratégia e comunicação para transformar conexão em participação.
+     </p>
+    </article>
+   </div>
+   <p class="partnership-lead">
+    Sua empresa não precisa começar do zero. Reunimos conhecimento sobre causas sociais, experiência com organizações e territórios e comunicação estratégica para construir ações que façam sentido para quem participa e para quem recebe.
+   </p>
+  </section>
+ </div>
+ <section class="section impact" id="impacto">
+  <div class="wrap impact-grid">
+   <div>
+    <div class="impact-logo">
+     <img alt="Instituto ELAborar" height="262" src="/images/causas-que-elaboram/instituto-logo.png" width="597"/>
+    </div>
+    <span class="kicker">
+     Um ciclo de impacto social
+    </span>
+    <h2>
+     O que sua empresa mobiliza também fortalece outras redes.
+    </h2>
+    <p>
+     A contratação do Causas que ELAboram contribui para a sustentabilidade dos projetos sociais do Instituto ELAborar, destinados a mulheres, crianças e famílias em situação de vulnerabilidade.
+    </p>
+    <p>
+     Parte dos recursos do serviço apoia a continuidade desse trabalho, articulando desenvolvimento organizacional, cuidado e transformação social.
+    </p>
+   </div>
+   <div class="impact-mark">
+    Empresa.
+    <br/>
+    Pessoas.
+    <br/>
+    Território.
+    <br/>
+    <span class="impact-caption">
+     Conexões que ampliam possibilidades.
+    </span>
+   </div>
+  </div>
+ </section>
+ <section class="section wrap">
+  <div class="faq">
+   <span class="kicker">
+    Para começar a conversa
+   </span>
+   <h2>
+    Algumas dúvidas frequentes
+   </h2>
+   <details>
+    <summary>
+     Minha empresa precisa ter um programa de voluntariado?
+    </summary>
+    <p>
+     A proposta é construída a partir do contexto da organização. A conversa inicial permite compreender iniciativas já existentes e possibilidades de estruturar a participação das pessoas.
+    </p>
+   </details>
+   <details>
+    <summary>
+     As atividades são sempre presenciais?
+    </summary>
+    <p>
+     As atividades poderão ser presenciais, online e/ou híbridas, conforme a proposta customizada para a realidade de cada empresa.
+    </p>
+   </details>
+   <details>
+    <summary>
+     Podemos trabalhar uma causa específica?
+    </summary>
+    <p>
+     Sim. O planejamento pode partir de causas prioritárias, datas do calendário ou compromissos sociais da empresa, em alinhamento com a atuação das organizações envolvidas.
+    </p>
+   </details>
+   <details>
+    <summary>
+     Como são definidos duração e investimento?
+    </summary>
+    <p>
+     Escopo, cronograma e investimento são definidos na proposta comercial, considerando a causa, o formato, o público e as atividades planejadas.
+    </p>
+   </details>
+   <details>
+    <summary>
+     O que acontece depois do primeiro contato?
+    </summary>
+    <p>
+     Conversamos sobre o contexto da empresa e a causa de interesse para avaliar as possibilidades de atuação e construir uma proposta alinhada à organização.
+    </p>
+   </details>
+  </div>
+ </section>
+ <section class="closing" id="contato">
+  <span class="kicker">
+   O próximo encontro pode começar aqui
+  </span>
+  <h2>
+   Qual causa sua empresa
+   <br/>
+   quer mobilizar?
+  </h2>
+  <p>
+   Vamos construir uma experiência que conecte pessoas, fortaleça redes e amplie a participação social.
+  </p>
+  <p>
+   O primeiro passo é conhecer o contexto da sua empresa, o público participante e a causa que vocês desejam mobilizar.
+  </p>
+  <div class="contact-links">
+   <a href="mailto:contato@institutoelaborar.org.br">
+    contato@institutoelaborar.org.br
+   </a>
+   <a href="https://wa.me/5551993526153" rel="noopener" target="_blank">
+    WhatsApp · (51) 99352-6153 ↗
+   </a>
+   <a href="mailto:paula@mktdecausas.com.br?subject=Causas%20que%20ELAboram">
+    MKT de Causas · paula@mktdecausas.com.br
+   </a>
+  </div>
+ </section>
+</main>
+
+    <footer class="causas-footer">
+      <div class="causas-footer-inner">
+        <div class="causas-footer-brands" aria-label="Uma parceria Instituto Elaborar e MKT de Causas">
+          <a href="/" aria-label="Instituto Elaborar — página inicial">
+            <img src="/images/causas-que-elaboram/instituto-logo.png" width="120" height="54" alt="Instituto ELAborar" loading="lazy" />
+          </a>
+          <span aria-hidden="true">+</span>
+          <img src="/images/causas-que-elaboram/mkt-logo.png" width="120" height="54" alt="MKT de Causas" loading="lazy" />
+        </div>
+        <a class="causas-footer-link" href="/programa-pilar">Conheça também o Programa PILAR <span aria-hidden="true">↗</span></a>
+        <span>Causas que ELAboram · Prévia</span>
+      </div>
+    </footer>
+    <script>
+      const tablist = document.querySelector<HTMLElement>('.causas-page [role="tablist"]');
+      const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.causas-page [role="tab"]'));
+      function activateTab(tab: HTMLButtonElement) {
+        tabs.forEach((item) => {
+          const selected = item === tab;
+          item.setAttribute('aria-selected', String(selected));
+          item.tabIndex = selected ? 0 : -1;
+          const panel = document.getElementById(item.getAttribute('aria-controls') ?? '');
+          if (panel) panel.hidden = !selected;
+        });
+      }
+      if (tablist && tabs.length) {
+        activateTab(tabs[0]);
+        tablist.hidden = false;
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', () => activateTab(tab));
+          tab.addEventListener('keydown', (event) => {
+            if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+            event.preventDefault();
+            const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1
+              : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+            activateTab(tabs[next]);
+            tabs[next].focus();
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
