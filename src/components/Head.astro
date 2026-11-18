@@ -75,10 +75,10 @@ const seoConfig = {
 <Font cssVariable='--font-be-vietnam-pro' preload/>
 
 <SEO
-  title={seoConfig.title}
-  description={seoConfig.description}
-  canonical={seoConfig.canonical}
-  openGraph={seoConfig.openGraph}
+  title={Astro.props.title ?? seoConfig.title}
+  description={Astro.props.description ?? seoConfig.description}
+  canonical={new URL(Astro.url.pathname, seoConfig.canonical).href}
+  openGraph={{ ...seoConfig.openGraph, basic: { ...seoConfig.openGraph.basic, title: Astro.props.title ?? seoConfig.openGraph.basic.title, url: new URL(Astro.url.pathname, seoConfig.canonical).href }, optional: { ...seoConfig.openGraph.optional, description: Astro.props.description ?? seoConfig.openGraph.optional.description } }}
   extend={seoConfig.extend}
 />
 <!-- Google Tag Manager -->

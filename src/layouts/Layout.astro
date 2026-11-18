@@ -38,7 +38,7 @@ const navItems = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width" />
@@ -49,7 +49,7 @@ const navItems = [
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
       <link rel="sitemap" href="/sitemap-index.xml" />
 
-      <Head />
+      <Head title={Astro.props.title} description={Astro.props.description} />
    </head>
    <body class="text-primary-900 bg-tertiary-50">
       <!-- Google Tag Manager (noscript) -->
